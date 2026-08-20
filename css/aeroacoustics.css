@@ -1,0 +1,1665 @@
+/* =========================================================
+   VAWT AEROACOUSTICS CASE STUDY
+   Page-specific stylesheet
+
+   Loaded after style.css.
+
+   Everything specific to this page uses the aa- prefix
+   to minimise interference with the rest of the site.
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.aeroacoustics-page {
+    width: calc(100% - 40px);
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.aa-hero {
+    max-width: 1000px;
+
+    margin-bottom: 100px;
+}
+
+
+.aa-eyebrow {
+    margin-bottom: 18px;
+
+    color: var(--accent);
+
+    font-size: 0.78rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+.aa-hero h1 {
+    max-width: 950px;
+
+    margin-bottom: 28px;
+
+    font-size: clamp(3rem, 7vw, 5.7rem);
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+}
+
+
+.aa-lead {
+    max-width: 850px;
+
+    margin-bottom: 0;
+
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    line-height: 1.65;
+}
+
+
+
+/* =========================================================
+   HERO METADATA
+   ========================================================= */
+
+.aa-meta {
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+
+.aa-meta-item {
+    min-height: 100px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.aa-meta-item span {
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+.aa-meta-item strong {
+    color: var(--text);
+
+    font-size: 0.94rem;
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   MAIN TECHNICAL SECTIONS
+   ========================================================= */
+
+.aa-section {
+    padding: 100px 0;
+
+    display: grid;
+
+    grid-template-columns: 70px minmax(0, 1fr);
+
+    gap: 50px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.aa-section-number {
+    padding-top: 6px;
+
+    color: var(--muted);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.8rem;
+}
+
+
+.aa-section-body {
+    min-width: 0;
+}
+
+
+.aa-section-label {
+    margin-bottom: 12px;
+
+    color: var(--accent);
+
+    font-size: 0.76rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+.aa-section-body > h2 {
+    max-width: 900px;
+
+    margin-bottom: 55px;
+
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+
+.aa-section-intro {
+    max-width: 780px;
+
+    margin-top: -25px;
+    margin-bottom: 45px;
+
+    font-size: 1.08rem;
+}
+
+
+
+/* =========================================================
+   NARRATIVE BLOCKS
+   ========================================================= */
+
+.aa-block {
+    max-width: 960px;
+
+    margin-bottom: 85px;
+}
+
+
+.aa-block:last-child {
+    margin-bottom: 0;
+}
+
+
+.aa-block h3 {
+    max-width: 800px;
+
+    margin-bottom: 22px;
+
+    font-size: clamp(1.35rem, 2.3vw, 1.65rem);
+
+    letter-spacing: -0.025em;
+}
+
+
+.aa-block > p {
+    max-width: 790px;
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =========================================================
+   PROJECT PROCESS
+   ========================================================= */
+
+.aa-process {
+    margin: 45px 0 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
+
+    gap: 12px;
+
+    align-items: stretch;
+}
+
+
+.aa-process-step {
+    padding: 22px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+
+.aa-process-step span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--accent);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 0.72rem;
+}
+
+
+.aa-process-step strong {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 0.95rem;
+}
+
+
+.aa-process-step p {
+    margin: 0;
+
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+
+.aa-process-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--muted);
+}
+
+
+
+/* =========================================================
+   PARAMETER GRIDS
+   ========================================================= */
+
+.aa-parameters {
+    margin: 40px 0 5px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+
+.aa-parameters > div {
+    min-height: 100px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.aa-parameters span {
+    color: var(--muted);
+
+    font-size: 0.75rem;
+}
+
+
+.aa-parameters strong {
+    color: var(--text);
+
+    font-size: 1.08rem;
+    font-weight: 600;
+}
+
+
+/* Four-item parameter sets, such as mesh parameters */
+
+.aa-parameters-two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+/* =========================================================
+   GENERAL FIGURES
+   ========================================================= */
+
+.aa-figure {
+    margin: 35px 0;
+}
+
+
+.aa-figure img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+
+.aa-figure-wide {
+    width: 100%;
+    max-width: 1050px;
+}
+
+
+
+/* =========================================================
+   FIGURE CAPTIONS + SOURCES
+   ========================================================= */
+
+.aa-figure figcaption {
+    margin-top: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    line-height: 1.5;
+}
+
+
+.aa-figure-caption {
+    color: var(--muted);
+
+    font-size: 0.79rem;
+}
+
+
+.aa-figure-source {
+    color: var(--muted);
+
+    font-size: 0.71rem;
+    font-style: italic;
+}
+
+
+.aa-figure-source a {
+    color: inherit;
+
+    text-decoration: underline;
+
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+
+.aa-figure-source a:hover {
+    color: var(--accent);
+}
+
+
+.aa-group-source {
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 0.71rem;
+    font-style: italic;
+}
+
+
+
+/* =========================================================
+   TEXT + FIGURE SPLIT
+   ========================================================= */
+
+.aa-text-figure {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(360px, 1.1fr);
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+
+.aa-text-column p {
+    margin-bottom: 18px;
+}
+
+
+.aa-text-figure .aa-figure {
+    margin-top: 0;
+}
+
+
+
+/* =========================================================
+   TWO-FIGURE GRID
+   ========================================================= */
+
+.aa-figure-grid {
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+.aa-figure-grid .aa-figure {
+    margin: 0;
+}
+
+
+
+/* =========================================================
+   GEOMETRY SETUP
+   Two equal reference figures
+   ========================================================= */
+
+.aa-geometry-layout {
+    width: 100%;
+
+    margin: 40px 0 45px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+.aa-geometry-layout .aa-figure {
+    margin: 0;
+}
+
+
+.aa-geometry-image-frame {
+    width: 100%;
+    height: 310px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+
+.aa-geometry-image-frame img {
+    width: 100%;
+    height: 100%;
+
+    padding: 22px;
+
+    object-fit: contain;
+
+    border: none;
+    border-radius: 0;
+}
+
+
+
+/* =========================================================
+   MESH STRUCTURE
+   Equal visual frames:
+   Far-field | Rotating core | BOI
+   ========================================================= */
+
+.aa-mesh-triptych {
+    margin: 40px 0 12px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+.aa-mesh-triptych .aa-figure {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.aa-image-heading {
+    display: block;
+
+    min-height: 24px;
+
+    margin-bottom: 10px;
+
+    color: var(--text);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+.aa-mesh-triptych .aa-figure img {
+    width: 100%;
+    height: 270px;
+
+    object-fit: contain;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+
+.aa-mesh-triptych .aa-figure figcaption {
+    flex: 1;
+}
+
+
+
+/* =========================================================
+   TECHNICAL CALLOUTS
+   ========================================================= */
+
+.aa-callout {
+    max-width: 800px;
+
+    margin: 38px 0;
+
+    padding: 26px 30px;
+
+    background: var(--surface);
+
+    border-left: 3px solid var(--accent);
+}
+
+
+.aa-callout > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--accent);
+
+    font-size: 0.71rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+.aa-callout p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+
+
+/* =========================================================
+   RESULTS HIGHLIGHT
+   ========================================================= */
+
+.aa-result-highlight {
+    max-width: 680px;
+
+    margin-bottom: 60px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border: 1px solid var(--border);
+}
+
+
+.aa-result-highlight > div {
+    padding: 30px;
+}
+
+
+.aa-result-highlight > div + div {
+    border-left: 1px solid var(--border);
+}
+
+
+.aa-result-highlight span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+.aa-result-highlight strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+}
+
+
+
+/* =========================================================
+   EQUATIONS
+   ========================================================= */
+
+.aa-equation {
+    max-width: 520px;
+
+    margin: 27px 0;
+
+    padding: 21px 24px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    color: var(--text);
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 1.3rem;
+
+    text-align: center;
+}
+
+
+.aa-equation-small {
+    margin: 20px 0;
+
+    font-size: 1.15rem;
+}
+
+
+
+/* =========================================================
+   VORTICITY COMPARISON
+   ========================================================= */
+
+.aa-vorticity-comparison {
+    margin: 45px 0 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+.aa-vorticity-group {
+    min-width: 0;
+}
+
+
+.aa-vorticity-group h4 {
+    min-height: 26px;
+
+    margin: 0 0 7px;
+
+    color: var(--text);
+
+    font-size: 1.05rem;
+}
+
+
+.aa-vorticity-subtitle {
+    min-height: 52px;
+
+    margin-bottom: 24px;
+
+    color: var(--muted);
+
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+
+
+/* ---------------------------------------------------------
+   CURRENT-STUDY VORTICITY
+
+   The 150° image is used as the visual-size reference.
+
+       SCALE       135°      150°
+
+                     180°
+
+   135° and 180° source images contain more empty space,
+   so they are zoomed inside fixed square viewports.
+   --------------------------------------------------------- */
+
+.aa-vorticity-local-layout {
+    display: grid;
+
+    grid-template-columns:
+        115px
+        minmax(0, 1fr);
+
+    gap: 22px;
+
+    align-items: center;
+}
+
+
+
+/* ---------------------------------------------------------
+   Current-study colour scale
+   --------------------------------------------------------- */
+
+.aa-vorticity-scale {
+    margin: 0;
+
+    align-self: stretch;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+.aa-vorticity-scale img {
+    display: block;
+
+    width: 105px;
+    max-width: none;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+
+/* ---------------------------------------------------------
+   Current-study angle grid
+   --------------------------------------------------------- */
+
+.aa-vorticity-angle-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    grid-template-areas:
+        "angle135 angle150"
+        "angle180 angle180";
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+
+.aa-vorticity-angle {
+    margin: 0;
+
+    min-width: 0;
+
+    text-align: center;
+}
+
+
+.aa-vorticity-135 {
+    grid-area: angle135;
+}
+
+
+.aa-vorticity-150 {
+    grid-area: angle150;
+}
+
+
+.aa-vorticity-180 {
+    grid-area: angle180;
+
+    width: calc(50% - 12px);
+
+    justify-self: center;
+}
+
+
+
+/* ---------------------------------------------------------
+   Uniform viewport for the three local CFD images
+
+   The images themselves are not stretched.
+   Instead, the viewport clips any excess after zooming.
+   --------------------------------------------------------- */
+
+.aa-vorticity-image-box {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+}
+
+
+.aa-vorticity-image-box img {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    transform-origin: center;
+}
+
+
+
+/*
+   150° is our visual reference.
+   No additional zoom.
+*/
+
+.aa-vorticity-150 .aa-vorticity-image-box img {
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+
+/*
+   135° has considerably more empty space in the source
+   image. Zoom it until the circular flow field visually
+   matches the 150° result.
+*/
+
+.aa-vorticity-135 .aa-vorticity-image-box img {
+    transform:
+        translate(-50%, -50%)
+        scale(1.9);
+}
+
+
+
+/*
+   180° also has more empty margin than the 150° image.
+   Zoom separately rather than resizing the entire grid cell.
+*/
+
+.aa-vorticity-180 .aa-vorticity-image-box img {
+    transform:
+        translate(-50%, -50%)
+        scale(1.58);
+}
+
+
+.aa-vorticity-angle figcaption {
+    margin-top: 8px;
+
+    color: var(--text);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+
+/* ---------------------------------------------------------
+   REFERENCE-STUDY VORTICITY
+
+   Left unchanged from the existing arrangement.
+   --------------------------------------------------------- */
+
+.aa-vorticity-reference-layout {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+
+.aa-vorticity-reference-results,
+.aa-vorticity-reference-scale {
+    margin: 0;
+}
+
+
+.aa-vorticity-reference-results img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+.aa-vorticity-reference-scale {
+    width: 75%;
+}
+
+
+.aa-vorticity-reference-scale img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+
+/* =========================================================
+   LIMITATIONS
+   ========================================================= */
+
+.aa-limitations {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+
+/* ---------------------------------------------------------
+   Standard limitation cards
+   --------------------------------------------------------- */
+
+.aa-limitation {
+    min-width: 0;
+    min-height: 330px;
+
+    padding: 32px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.aa-limitation-number {
+    display: block;
+
+    margin-bottom: 28px;
+
+    color: var(--accent);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 0.75rem;
+}
+
+
+.aa-limitation h3 {
+    max-width: 620px;
+
+    margin-bottom: 16px;
+
+    font-size: 1.22rem;
+}
+
+
+.aa-limitation p {
+    max-width: 760px;
+
+    margin-bottom: 12px;
+
+    font-size: 0.93rem;
+}
+
+
+.aa-limitation p:last-child {
+    margin-bottom: 0;
+}
+
+
+.aa-limitation .aa-equation {
+    max-width: 100%;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    background: var(--background);
+}
+
+
+
+/* ---------------------------------------------------------
+   Full-width limitation cards
+   Used by 03 and 06
+   --------------------------------------------------------- */
+
+.aa-limitation-wide {
+    grid-column: 1 / -1;
+
+    min-height: 0;
+}
+
+
+
+/* ---------------------------------------------------------
+   Wide timestep card:
+   text + Courant plot
+   --------------------------------------------------------- */
+
+.aa-limitation-wide-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.85fr)
+        minmax(380px, 1.15fr);
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+.aa-limitation-text {
+    min-width: 0;
+}
+
+
+.aa-limitation-text h3 {
+    margin-bottom: 16px;
+}
+
+
+.aa-limitation-text p {
+    margin-bottom: 12px;
+}
+
+
+
+/* ---------------------------------------------------------
+   Courant figure
+   --------------------------------------------------------- */
+
+.aa-courant-figure {
+    margin: 0;
+}
+
+
+.aa-courant-figure img {
+    width: 100%;
+}
+
+
+
+/* =========================================================
+   REFLECTIONS
+   ========================================================= */
+
+.aa-reflections {
+    border-top: 1px solid var(--border);
+}
+
+
+.aa-reflections article {
+    padding: 38px 0;
+
+    display: grid;
+
+    grid-template-columns: 55px minmax(0, 1fr);
+
+    gap: 24px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.aa-reflections article > span {
+    color: var(--accent);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 0.76rem;
+}
+
+
+.aa-reflections h3 {
+    max-width: 730px;
+
+    margin-bottom: 15px;
+
+    font-size: 1.25rem;
+}
+
+
+.aa-reflections p {
+    max-width: 770px;
+
+    margin-bottom: 11px;
+}
+
+
+
+/* =========================================================
+   FUTURE WORK
+   ========================================================= */
+
+.aa-future-work {
+    max-width: 880px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    counter-reset: future-work;
+}
+
+
+.aa-future-work li {
+    position: relative;
+
+    padding: 21px 20px 21px 64px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    counter-increment: future-work;
+}
+
+
+.aa-future-work li:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+
+.aa-future-work li::before {
+    content:
+        counter(future-work, decimal-leading-zero);
+
+    position: absolute;
+
+    top: 22px;
+    left: 10px;
+
+    color: var(--accent);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 0.74rem;
+}
+
+
+
+/* =========================================================
+   REFERENCES
+   ========================================================= */
+
+.aa-references {
+    max-width: 900px;
+}
+
+
+.aa-references article {
+    padding: 30px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.aa-references article:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+
+.aa-references article > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--accent);
+
+    font-size: 0.71rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+.aa-references p {
+    max-width: 830px;
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =========================================================
+   EMBEDDED PRESENTATION
+   ========================================================= */
+
+.aa-pdf-container {
+    width: 100%;
+
+    margin-top: 35px;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+
+.aa-pdf-viewer {
+    display: block;
+
+    width: 100%;
+    height: 90vh;
+
+    min-height: 650px;
+
+    border: none;
+}
+
+
+.aa-document-link {
+    margin-top: 16px;
+}
+
+
+.aa-document-link a {
+    color: var(--accent);
+
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   PAGE FOOTER
+   ========================================================= */
+
+.aa-project-footer {
+    margin-top: 80px;
+
+    padding-top: 32px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.aa-project-footer a {
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .aa-meta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .aa-section {
+        grid-template-columns: 40px minmax(0, 1fr);
+
+        gap: 25px;
+    }
+
+
+    .aa-process {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aa-process-arrow {
+        display: none;
+    }
+
+
+    .aa-text-figure {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aa-parameters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .aa-mesh-triptych {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aa-vorticity-comparison {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    .aa-vorticity-subtitle {
+        min-height: 0;
+    }
+
+
+    .aa-limitation-wide-layout {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .aeroacoustics-page {
+        width: calc(100% - 32px);
+
+        padding-top: 55px;
+    }
+
+
+    .aa-hero {
+        margin-bottom: 70px;
+    }
+
+
+    .aa-hero h1 {
+        font-size: clamp(2.7rem, 14vw, 4.5rem);
+    }
+
+
+    .aa-meta {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aa-section {
+        padding: 70px 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .aa-section-number {
+        padding: 0;
+    }
+
+
+    .aa-section-body > h2 {
+        margin-bottom: 40px;
+    }
+
+
+    .aa-block {
+        margin-bottom: 65px;
+    }
+
+
+    .aa-parameters,
+    .aa-parameters-two {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aa-figure-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Geometry figures stack vertically */
+
+    .aa-geometry-layout {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .aa-geometry-image-frame {
+        height: 280px;
+    }
+
+
+    /* Mesh figures stack vertically */
+
+    .aa-mesh-triptych {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Result highlight */
+
+    .aa-result-highlight {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aa-result-highlight > div + div {
+        border-left: none;
+
+        border-top: 1px solid var(--border);
+    }
+
+
+    /* Vorticity comparison */
+
+    .aa-vorticity-comparison {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    .aa-vorticity-local-layout {
+        grid-template-columns:
+            88px
+            minmax(0, 1fr);
+
+        gap: 14px;
+    }
+
+
+    .aa-vorticity-scale img {
+        width: 80px;
+    }
+
+
+    .aa-vorticity-angle-grid {
+        gap: 12px;
+    }
+
+
+    .aa-vorticity-180 {
+        width: calc(50% - 6px);
+    }
+
+
+    .aa-vorticity-reference-scale {
+        width: 90%;
+    }
+
+
+    /* Limitations */
+
+    .aa-limitations {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aa-limitation {
+        min-height: 0;
+    }
+
+
+    .aa-limitation-wide {
+        grid-column: auto;
+    }
+
+
+    .aa-limitation-wide-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Reflections */
+
+    .aa-reflections article {
+        grid-template-columns: 35px minmax(0, 1fr);
+
+        gap: 14px;
+    }
+
+
+    /* Embedded PDF */
+
+    .aa-pdf-viewer {
+        height: 75vh;
+
+        min-height: 500px;
+    }
+
+}
