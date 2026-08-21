@@ -9,6 +9,7 @@ if (navigation) {
     const prefix = isProjectPage ? "../" : "";
 
     navigation.innerHTML = `
+
         <nav class="site-nav">
 
             <a class="site-logo" href="${prefix}index.html">
@@ -35,5 +36,35 @@ if (navigation) {
             </div>
 
         </nav>
+
     `;
+
+    /*
+       Project-page table of contents
+       --------------------------------
+       Only project pages load these two files. Root pages such as
+       index.html, projects.html, about.html and cv.html never request
+       them, so the feature remains completely project-specific.
+    */
+    if (isProjectPage) {
+
+        if (!document.querySelector('link[data-project-toc-styles]')) {
+            const tocStyles = document.createElement("link");
+
+            tocStyles.rel = "stylesheet";
+            tocStyles.href = `${prefix}css/project-toc.css`;
+            tocStyles.dataset.projectTocStyles = "";
+
+            document.head.appendChild(tocStyles);
+        }
+
+        if (!document.querySelector('script[data-project-toc-script]')) {
+            const tocScript = document.createElement("script");
+
+            tocScript.src = `${prefix}js/project-toc.js`;
+            tocScript.dataset.projectTocScript = "";
+
+            document.body.appendChild(tocScript);
+        }
+    }
 }

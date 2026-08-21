@@ -1,0 +1,320 @@
+/* =========================================================
+   Project page table of contents
+   Loaded by js/navigation.js only for pages inside /projects/.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Shared heading behaviour
+   --------------------------------------------------------- */
+
+.project-toc-enabled h2[id],
+.project-toc-enabled h3[id],
+.project-toc-enabled h4[id] {
+    scroll-margin-top: 34px;
+}
+
+
+/* ---------------------------------------------------------
+   TOC shell
+   --------------------------------------------------------- */
+
+.project-toc {
+    --toc-width: 248px;
+    --toc-top: 118px;
+    position: relative;
+    z-index: 80;
+}
+
+.project-toc__panel {
+    position: fixed;
+    top: var(--toc-top);
+    right: 22px;
+    width: var(--toc-width);
+    max-height: calc(100vh - var(--toc-top) - 28px);
+    padding: 0 0 8px;
+    background: color-mix(in srgb, var(--background, #f7f7f4) 94%, transparent);
+    border-left: 1px solid var(--border, #d8d8d3);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.project-toc__header {
+    padding: 4px 0 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.project-toc__eyebrow {
+    margin: 0;
+    color: var(--muted, #626262);
+    font-size: 0.69rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.project-toc__close {
+    display: none;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-small, 6px);
+    color: var(--muted, #626262);
+    font: inherit;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.project-toc__close:hover,
+.project-toc__close:focus-visible {
+    background: var(--surface, #ffffff);
+    color: var(--text, #171717);
+    outline: none;
+}
+
+.project-toc__nav {
+    max-height: calc(100vh - var(--toc-top) - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--border, #d8d8d3)
+        transparent;
+}
+
+.project-toc__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-toc__item {
+    margin: 0;
+    padding: 0;
+}
+
+.project-toc__link {
+    position: relative;
+    display: block;
+    padding: 7px 12px 7px 18px;
+    border-left: 2px solid transparent;
+    color: var(--muted, #626262);
+    font-size: 0.78rem;
+    font-weight: 450;
+    line-height: 1.36;
+    text-decoration: none;
+    transition:
+        border-color 140ms ease,
+        color 140ms ease,
+        background 140ms ease;
+}
+
+.project-toc__item[data-depth="1"] .project-toc__link {
+    padding-left: 32px;
+    font-size: 0.75rem;
+}
+
+.project-toc__item[data-depth="2"] .project-toc__link {
+    padding-left: 46px;
+    font-size: 0.72rem;
+}
+
+.project-toc__item[data-depth="3"] .project-toc__link {
+    padding-left: 58px;
+    font-size: 0.7rem;
+}
+
+.project-toc__link:hover,
+.project-toc__link:focus-visible {
+    background: color-mix(in srgb, var(--surface, #ffffff) 72%, transparent);
+    color: var(--text, #171717);
+    outline: none;
+}
+
+.project-toc__link.is-active {
+    border-left-color: var(--accent, #173f5f);
+    color: var(--text, #171717);
+    font-weight: 650;
+}
+
+
+/* ---------------------------------------------------------
+   Collapsed right-edge control
+   --------------------------------------------------------- */
+
+.project-toc__toggle {
+    position: fixed;
+    top: 116px;
+    right: 14px;
+    display: none;
+    min-height: 42px;
+    padding: 9px 12px;
+    align-items: center;
+    gap: 9px;
+    background: var(--surface, #ffffff);
+    border: 1px solid var(--border, #d8d8d3);
+    border-radius: var(--radius-small, 6px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    color: var(--text, #171717);
+    font: inherit;
+    cursor: pointer;
+}
+
+.project-toc__toggle:hover,
+.project-toc__toggle:focus-visible {
+    border-color: var(--accent, #173f5f);
+    outline: none;
+}
+
+.project-toc__toggle-label {
+    font-size: 0.76rem;
+    font-weight: 650;
+}
+
+.project-toc__toggle-icon {
+    color: var(--muted, #626262);
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.project-toc__backdrop {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   Drawer mode
+   Keeps the TOC available without covering project content.
+   --------------------------------------------------------- */
+
+@media (max-width: 1580px) {
+
+    .project-toc__toggle {
+        display: inline-flex;
+    }
+
+    .project-toc__panel {
+        top: 0;
+        right: 0;
+        width: min(340px, calc(100vw - 38px));
+        max-height: 100vh;
+        height: 100vh;
+        padding: 24px 0 20px;
+        background: var(--background, #f7f7f4);
+        border-left: 1px solid var(--border, #d8d8d3);
+        box-shadow: -18px 0 48px rgba(0, 0, 0, 0.12);
+        transform: translateX(104%);
+        visibility: hidden;
+        transition:
+            transform 180ms ease,
+            visibility 180ms ease;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .project-toc.is-open .project-toc__panel {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .project-toc__header {
+        padding: 0 20px 18px 22px;
+    }
+
+    .project-toc__close {
+        display: inline-grid;
+        place-items: center;
+    }
+
+    .project-toc__nav {
+        max-height: calc(100vh - 78px);
+        padding-bottom: 22px;
+    }
+
+    .project-toc__link {
+        padding-top: 9px;
+        padding-bottom: 9px;
+        padding-left: 22px;
+        font-size: 0.84rem;
+    }
+
+    .project-toc__item[data-depth="1"] .project-toc__link {
+        padding-left: 40px;
+        font-size: 0.8rem;
+    }
+
+    .project-toc__item[data-depth="2"] .project-toc__link {
+        padding-left: 58px;
+        font-size: 0.76rem;
+    }
+
+    .project-toc__item[data-depth="3"] .project-toc__link {
+        padding-left: 72px;
+        font-size: 0.74rem;
+    }
+
+    .project-toc__backdrop {
+        position: fixed;
+        inset: 0;
+        display: block;
+        background: rgba(0, 0, 0, 0.18);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 180ms ease,
+            visibility 180ms ease;
+    }
+
+    .project-toc.is-open .project-toc__backdrop {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Phone
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+    .project-toc__toggle {
+        top: auto;
+        right: 14px;
+        bottom: 18px;
+    }
+
+    .project-toc__toggle-label {
+        display: none;
+    }
+
+    .project-toc__toggle-icon {
+        font-size: 1rem;
+    }
+
+    .project-toc__panel {
+        width: min(360px, calc(100vw - 18px));
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-toc__panel,
+    .project-toc__backdrop,
+    .project-toc__link {
+        transition: none;
+    }
+}
