@@ -1,0 +1,930 @@
+/* =========================================================
+   WEB CV
+   Page-specific stylesheet
+
+   Loaded after style.css.
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.cv-page {
+    width: calc(100% - 40px);
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.cv-hero {
+    padding: 100px 0 110px;
+}
+
+
+.cv-eyebrow {
+    margin-bottom: 18px;
+
+    color: var(--accent);
+
+    font-size: 0.78rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+.cv-hero h1 {
+    margin-bottom: 14px;
+
+    font-size: clamp(3.7rem, 8vw, 6.8rem);
+    line-height: 0.94;
+
+    letter-spacing: -0.06em;
+}
+
+
+.cv-role {
+    margin-bottom: 34px;
+
+    color: var(--text);
+
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 450;
+
+    letter-spacing: -0.025em;
+}
+
+
+.cv-introduction {
+    max-width: 700px;
+
+    margin-bottom: 38px;
+
+    font-size: 1.12rem;
+    line-height: 1.65;
+}
+
+
+.cv-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+.cv-secondary-links {
+    margin-top: 34px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 28px;
+}
+
+
+.cv-secondary-links a {
+    color: var(--muted);
+
+    font-size: 0.86rem;
+    font-weight: 550;
+}
+
+
+.cv-secondary-links a:hover {
+    color: var(--accent);
+}
+
+
+
+/* =========================================================
+   MAIN SECTIONS
+   ========================================================= */
+
+.cv-section {
+    padding: 100px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        70px
+        minmax(0, 1fr);
+
+    gap: 50px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.cv-section-index {
+    padding-top: 6px;
+
+    color: var(--muted);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.78rem;
+}
+
+
+.cv-section-content {
+    min-width: 0;
+}
+
+
+.cv-section-label {
+    margin-bottom: 12px;
+
+    color: var(--accent);
+
+    font-size: 0.75rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+.cv-section-content > h2 {
+    max-width: 880px;
+
+    margin-bottom: 55px;
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.cv-profile {
+    max-width: 790px;
+}
+
+
+.cv-profile p {
+    margin-bottom: 20px;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.cv-timeline {
+    max-width: 980px;
+}
+
+
+
+/* =========================================================
+   YEAR GROUP
+   ========================================================= */
+
+.cv-year-group {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        minmax(0, 1fr);
+
+    gap: 35px;
+}
+
+
+
+/* Timeline line */
+
+.cv-year-group::before {
+    content: "";
+
+    position: absolute;
+
+    top: 11px;
+    bottom: 0;
+    left: 4px;
+
+    width: 1px;
+
+    background: var(--border);
+}
+
+
+.cv-year-group-last::before {
+    bottom: 72px;
+}
+
+
+
+/* =========================================================
+   YEAR MARKER
+   ========================================================= */
+
+.cv-year {
+    position: relative;
+
+    padding-top: 1px;
+    padding-left: 25px;
+}
+
+
+.cv-year::before {
+    content: "";
+
+    position: absolute;
+
+    top: 7px;
+    left: 0;
+
+    width: 9px;
+    height: 9px;
+
+    background: var(--background);
+
+    border: 2px solid var(--accent);
+
+    border-radius: 50%;
+}
+
+
+.cv-year span {
+    color: var(--text);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+
+.cv-year-content {
+    min-width: 0;
+}
+
+
+
+/* =========================================================
+   TIMELINE ENTRIES
+   ========================================================= */
+
+.cv-entry {
+    padding-bottom: 78px;
+}
+
+
+.cv-entry + .cv-entry {
+    padding-top: 2px;
+}
+
+
+.cv-entry-heading {
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.cv-entry-type {
+    margin-bottom: 8px;
+
+    color: var(--accent);
+
+    font-size: 0.7rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+.cv-entry h3 {
+    margin-bottom: 5px;
+
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+
+    letter-spacing: -0.025em;
+}
+
+
+.cv-entry-organisation {
+    margin-bottom: 0;
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+}
+
+
+.cv-entry-date {
+    flex-shrink: 0;
+
+    padding-top: 5px;
+
+    color: var(--muted);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.72rem;
+
+    text-align: right;
+}
+
+
+.cv-entry-summary {
+    max-width: 780px;
+
+    margin-bottom: 23px;
+
+    color: var(--text);
+
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+
+.cv-entry-points {
+    max-width: 800px;
+
+    margin: 0 0 26px;
+
+    padding-left: 20px;
+}
+
+
+.cv-entry-points li {
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    line-height: 1.65;
+}
+
+
+.cv-entry-points li::marker {
+    color: var(--accent);
+}
+
+
+
+/* =========================================================
+   PROJECT / EXPERIENCE TAGS
+   ========================================================= */
+
+.cv-tags {
+    margin-bottom: 22px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.cv-tags span {
+    padding: 6px 11px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 100px;
+
+    color: var(--muted);
+
+    font-size: 0.71rem;
+}
+
+
+.cv-entry-link {
+    display: inline-block;
+
+    color: var(--text);
+
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+
+.cv-entry-link:hover {
+    color: var(--accent);
+}
+
+
+
+/* =========================================================
+   EDUCATION RESULT
+   ========================================================= */
+
+.cv-result {
+    max-width: 500px;
+
+    margin-top: 28px;
+
+    padding: 20px 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.cv-result span {
+    color: var(--muted);
+
+    font-size: 0.78rem;
+}
+
+
+.cv-result strong {
+    color: var(--text);
+
+    font-size: 1rem;
+}
+
+
+
+/* =========================================================
+   ADDITIONAL / SECONDARY EXPERIENCE
+   ========================================================= */
+
+.cv-entry-secondary {
+    max-width: 800px;
+}
+
+
+.cv-details {
+    max-width: 760px;
+
+    margin-top: 20px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.cv-details summary {
+    padding: 15px 0;
+
+    cursor: pointer;
+
+    color: var(--text);
+
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+
+.cv-details summary:hover {
+    color: var(--accent);
+}
+
+
+.cv-details-content {
+    padding: 5px 0 18px;
+}
+
+
+.cv-details-content p {
+    max-width: 700px;
+
+    margin-bottom: 12px;
+
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+
+
+/* =========================================================
+   A-LEVEL / AS GRADES
+   ========================================================= */
+
+.cv-grades {
+    max-width: 760px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+
+.cv-grades > div {
+    min-height: 105px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.cv-grades span {
+    color: var(--muted);
+
+    font-size: 0.75rem;
+}
+
+
+.cv-grades strong {
+    color: var(--text);
+
+    font-size: 1.1rem;
+}
+
+
+
+/* =========================================================
+   TECHNICAL SKILLS
+   ========================================================= */
+
+.cv-skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+
+.cv-skills-grid article {
+    min-height: 220px;
+
+    padding: 28px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.cv-skill-number {
+    display: block;
+
+    margin-bottom: 34px;
+
+    color: var(--accent);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.72rem;
+}
+
+
+.cv-skills-grid h3 {
+    margin-bottom: 14px;
+
+    font-size: 1.15rem;
+}
+
+
+.cv-skills-grid p {
+    max-width: 390px;
+
+    margin-bottom: 0;
+
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+
+
+/* =========================================================
+   SOFTWARE
+   ========================================================= */
+
+.cv-software {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+
+.cv-software > div {
+    min-height: 125px;
+
+    padding: 22px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.cv-software-category {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 0.71rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+.cv-software p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 0.93rem;
+    line-height: 1.55;
+}
+
+
+
+/* =========================================================
+   ENGINEERING INTERESTS
+   ========================================================= */
+
+.cv-interests {
+    max-width: 850px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.cv-interests span {
+    padding: 9px 15px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 100px;
+
+    color: var(--text);
+
+    font-size: 0.83rem;
+}
+
+
+
+/* =========================================================
+   FINAL PDF SECTION
+   ========================================================= */
+
+.cv-end {
+    padding: 120px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.cv-end h2 {
+    max-width: 760px;
+
+    margin-bottom: 20px;
+
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+}
+
+
+.cv-end > p:not(.cv-section-label) {
+    max-width: 620px;
+
+    margin-bottom: 35px;
+
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .cv-section {
+        grid-template-columns:
+            45px
+            minmax(0, 1fr);
+
+        gap: 30px;
+    }
+
+
+    .cv-year-group {
+        grid-template-columns:
+            85px
+            minmax(0, 1fr);
+
+        gap: 25px;
+    }
+
+
+    .cv-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cv-software {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .cv-page {
+        width: calc(100% - 32px);
+    }
+
+
+    /* Hero */
+
+    .cv-hero {
+        padding: 75px 0 80px;
+    }
+
+
+    .cv-hero h1 {
+        font-size: clamp(3.3rem, 17vw, 5rem);
+    }
+
+
+    .cv-role {
+        font-size: 1.45rem;
+    }
+
+
+    /* Main sections */
+
+    .cv-section {
+        padding: 70px 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .cv-section-content > h2 {
+        margin-bottom: 45px;
+    }
+
+
+    /* Timeline */
+
+    .cv-year-group {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .cv-year-group::before {
+        display: none;
+    }
+
+
+    .cv-year {
+        padding-left: 22px;
+    }
+
+
+    .cv-year::before {
+        top: 7px;
+    }
+
+
+    .cv-entry {
+        padding-bottom: 62px;
+    }
+
+
+    .cv-entry-heading {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .cv-entry-date {
+        padding-top: 0;
+
+        text-align: left;
+    }
+
+
+    /* Grades */
+
+    .cv-grades {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Skills */
+
+    .cv-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cv-skills-grid article {
+        min-height: auto;
+    }
+
+
+    /* Software */
+
+    .cv-software {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cv-software > div {
+        min-height: auto;
+    }
+
+
+    /* Final section */
+
+    .cv-end {
+        padding: 80px 0;
+    }
+
+}

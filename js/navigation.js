@@ -21,11 +21,8 @@ if (navigation) {
                     Projects
                 </a>
 
-                <a
-                    href="${prefix}assets/documents/Linus_Adzanku-resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    View CV
+                <a href="${prefix}cv.html">
+                    CV
                 </a>
 
                 <a
