@@ -1,60 +1,1266 @@
 <!DOCTYPE html>
+
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="600 N N₂O/HDPE hybrid rocket engine capstone project: preliminary sizing, injector design, CFD, manufacturing, system integration and hot-fire testing." name="description">
+        <title>
+            600 N Hybrid Rocket Engine | Linus Adzanku
+        </title>
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/rocket-engine.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="navigation"></div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <main class="rocket-page">
+            <header class="rocket-hero">
+                <p class="rocket-kicker">Assessed MEng Capstone Project</p>
 
-    <title>Hybrid Rocket Engine | Linus Adzanku</title>
+                <h1>600 N N₂O/HDPE Hybrid Rocket Engine</h1>
 
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+                <p class="rocket-subtitle"><strong>Race2Space MEng Capstone Project · 2024–2025</strong></p>
 
-<body>
+                <div class="rocket-hero-copy">
+                    <p>I worked within a 5-person student engineering team to design, manufacture and test a <strong>600 N nitrous-oxide/HDPE hybrid rocket engine</strong>.</p>
 
-    <div id="navigation"></div>
+                    <p>My principal technical responsibility was the oxidiser injector. I developed it from early literature review and concept down-selection through analytical sizing, CFD, CAD, design-for-manufacture and system integration. I also contributed to the shared preliminary engine sizing and carried out early nozzle sizing before detailed nozzle development passed to another member of the team.</p>
 
-    <h1>500 N Hybrid Rocket Engine</h1>
+                    <p>The completed engine was hot-fired and ignition was achieved, but leakage at the injector–chamber interface prevented the chamber from building to its intended operating pressure. Sustained combustion was therefore not established.</p>
+                </div>
 
-    <img src="../assets/images/rocket/engine-cad.png" alt="Hybrid rocket engine assembly">
+                <figure class="rocket-media rocket-hero-media">
+                    <div class="rocket-media-frame">
+                        <img alt="Completed 600 N N₂O/HDPE hybrid rocket engine" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/hero-assembled-engine.jpg">
 
-    <p>
-        Design and development of a nitrous oxide and HDPE
-        hybrid rocket engine as part of the Race2Space programme.
-    </p>
+                        <div class="rocket-media-placeholder" hidden>
+                            <span>Image placeholder</span>
+                            <code>hero-assembled-engine.jpg</code>
+                        </div>
+                    </div>
 
-    <h2>Project Overview</h2>
+                    <figcaption>Completed hybrid rocket engine following manufacture and integration.</figcaption>
+                </figure>
+            </header>
 
-    <p>
-        Project description goes here.
-    </p>
+            <aside class="rocket-quick-route">
+                <h2 id="quick-route">If you are short on time</h2>
 
-    <h2>My Role</h2>
+                <p>This is my flagship university hardware project, so this case study is intentionally more detailed than the other projects on this site.</p>
 
-    <p>
-        Injector design and propulsion-system development.
-    </p>
+                <p>For the quickest overview, I would read:</p>
 
-    <h2>Design Process</h2>
+                <ol>
+                    <li>
+                        <p><a href="#project-at-a-glance"><strong>Project at a glance</strong></a> — what we designed and my role.</p>
+                    </li>
+                    <li>
+                        <p><a href="#injector-concept-development"><strong>Injector development</strong></a> — how the design moved from swirl to showerhead to a two-ring impinging injector.</p>
+                    </li>
+                    <li>
+                        <p><a href="#system-integration"><strong>System integration</strong></a> — how manufacturing, the chamber, ignitor and test stand changed the design.</p>
+                    </li>
+                    <li>
+                        <p><a href="#the-hot-fire-attempt"><strong>Hot-fire outcome</strong></a> — what happened when the engine was tested.</p>
+                    </li>
+                    <li>
+                        <p><a href="#what-i-would-do-differently-now"><strong>What I would do differently</strong></a> — the technical and process lessons I took from the project.</p>
+                    </li>
+                </ol>
+            </aside>
 
-    <p>
-        Design work goes here.
-    </p>
+            <section aria-labelledby="project-at-a-glance" class="rocket-section rocket-quick-destination">
+                <div class="rocket-section-index">
+                    01
+                </div>
 
-    <h2>Testing</h2>
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="project-at-a-glance">Project at a glance</h2>
 
-    <p>
-        Test programme and results go here.
-    </p>
+                    <p>The project brief was not simply to analyse a rocket motor. The team was expected to take a hybrid propulsion system from preliminary calculations into detailed hardware, assemble it, integrate it with the Race2Space test infrastructure and attempt a static hot fire.</p>
 
-    <h2>Lessons Learnt</h2>
+                    <p>The engine used <strong>N₂O as the oxidiser and HDPE as the solid fuel</strong>. The common theoretical design was built around a <strong>600 N thrust target</strong>, <strong>5 s nominal burn</strong>, <strong>O/F = 7</strong> and <strong>33 bar chamber pressure</strong>.</p>
 
-    <p>
-        Engineering lessons and design improvements go here.
-    </p>
+                    <p>The shared MATLAB file <code>preliminary_calculations.m</code> acted as the working engineering notebook for the theoretical design. It contained calculations and notes for propellant sizing, grain regression, chamber geometry, nozzle sizing and early injector work.</p>
 
-    <script src="../js/navigation.js"></script>
+                    <p>As component ownership became clearer, I took responsibility for the injector. I also contributed to the common engine sizing and performed early nozzle calculations before the detailed nozzle work moved to another engineer.</p>
 
-</body>
+                    <h4 class="rocket-minor-heading">Key design values</h4>
 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Design basis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Target thrust</td>
+                                <td>600 N</td>
+                            </tr>
+                            <tr>
+                                <td>Nominal burn</td>
+                                <td>5 s</td>
+                            </tr>
+                            <tr>
+                                <td>Propellants</td>
+                                <td>N₂O / HDPE</td>
+                            </tr>
+                            <tr>
+                                <td>O/F ratio</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>Chamber pressure</td>
+                                <td>33 bar</td>
+                            </tr>
+                            <tr>
+                                <td>Initial fuel port diameter</td>
+                                <td>20 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel grain overall diameter</td>
+                                <td>100 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Nominal grain length</td>
+                                <td>300 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Primary responsibility</td>
+                                <td>Injector design</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div aria-label="Engine system overview" class="rocket-system-map">
+                        <div class="rocket-system-node">
+                            <span>01</span>
+                            <strong>N₂O feed</strong>
+                        </div>
+
+                        <div class="rocket-system-arrow">
+                            ↓
+                        </div>
+
+                        <div class="rocket-system-node rocket-system-node-accent">
+                            <span>02</span>
+                            <strong>Injector</strong>
+                            <small>Primary responsibility</small>
+                        </div>
+
+                        <div class="rocket-system-arrow">
+                            ↓
+                        </div>
+
+                        <div class="rocket-system-node">
+                            <span>03</span>
+                            <strong>Combustion chamber + HDPE grain</strong>
+                        </div>
+
+                        <div class="rocket-system-arrow">
+                            ↓
+                        </div>
+
+                        <div class="rocket-system-node">
+                            <span>04</span>
+                            <strong>Nozzle</strong>
+                        </div>
+
+                        <div class="rocket-system-arrow">
+                            ↓
+                        </div>
+
+                        <div class="rocket-system-node">
+                            <span>05</span>
+                            <strong>Protolaunch test stand</strong>
+                        </div>
+                    </div>
+
+                    <a class="rocket-next-route" href="#injector-concept-development">
+<span>Quick route</span>
+<strong>Next: Injector development →</strong>
+</a>
+                </div>
+            </section>
+
+            <section aria-labelledby="building-the-common-engine-model" class="rocket-section">
+                <div class="rocket-section-index">
+                    02
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="building-the-common-engine-model">Building the common engine model</h2>
+
+                    <p>Before the individual components could be designed, the team needed a common estimate of propellant demand, fuel-grain behaviour, chamber dimensions and nozzle requirements.</p>
+
+                    <p>The first sizing step used the 600 N thrust target and an assumed specific impulse to estimate total propellant mass flow. At the initial design point, the model produced a total flow of roughly <strong>0.235 kg/s</strong>, divided into approximately <strong>0.206 kg/s oxidiser</strong> and <strong>0.029 kg/s fuel</strong>.</p>
+
+                    <p>The fuel grain was modelled as a <strong>single circular port</strong>, initially 20 mm in diameter, inside a 100 mm outer-diameter HDPE grain. Rather than keeping the geometry fixed, the MATLAB model stepped through the nominal five-second burn and updated oxidiser flux, regression rate, port diameter, remaining web thickness and fuel consumption.</p>
+
+                    <p>That model was not a validated prediction of real engine performance. Its purpose was to give the team a consistent theoretical baseline that could then be challenged by CAD, manufacturing feedback and testing.</p>
+
+                    <h3 class="rocket-subheading">Interactive preliminary model</h3>
+
+                    <p>For this portfolio, I am rebuilding a small part of the original MATLAB logic in JavaScript so it can run directly in the browser.</p>
+
+                    <p>The default state will reproduce the original project values. You will be able to adjust a limited set of inputs and see how the <strong>predicted fuel-port diameter and remaining web thickness</strong> change over the burn.</p>
+
+                    <p>The point is not to create a general rocket-design tool. It is to show how the original assumptions interact and how the model informed the hardware.</p>
+
+                    <blockquote>
+                        <p><strong>Model note:</strong> the interactive plot represents the theoretical project model, not measured engine performance.</p>
+                    </blockquote>
+
+                    <div class="rocket-model" id="rocket-model">
+                        <div class="rocket-model-controls">
+                            <div class="rocket-model-control">
+                                <label for="rocket-port-input">Initial fuel port diameter <output id="rocket-port-output">20 mm</output></label>
+                                <input id="rocket-port-input" max="30" min="15" step="1" type="range" value="20">
+                            </div>
+
+                            <div class="rocket-model-control">
+                                <label for="rocket-burn-input">Nominal burn duration <output id="rocket-burn-output">5 s</output></label>
+                                <input id="rocket-burn-input" max="7" min="3" step="0.5" type="range" value="5">
+                            </div>
+
+                            <button class="rocket-model-reset" id="rocket-model-reset" type="button">Reset to project values</button>
+                        </div>
+
+                        <div class="rocket-chart-shell">
+                            <canvas aria-label="Predicted fuel port diameter and web thickness over time" id="rocket-regression-chart"></canvas>
+                        </div>
+
+                        <div aria-live="polite" class="rocket-model-readout">
+                            <span>Final predicted port <strong id="rocket-final-port">—</strong></span>
+                            <span>Final predicted web <strong id="rocket-final-web">—</strong></span>
+                        </div>
+                    </div>
+
+                    <noscript>
+                        <p class="rocket-model-noscript">JavaScript is required for the interactive reconstruction.</p>
+                    </noscript>
+                </div>
+            </section>
+
+            <section aria-labelledby="thermochemical-analysis-with-nasa-cea" class="rocket-section">
+                <div class="rocket-section-index">
+                    03
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="thermochemical-analysis-with-nasa-cea">Thermochemical analysis with NASA CEA</h2>
+
+                    <p>NASA CEA was used during preliminary sizing to estimate combustion-gas properties needed by the chamber and nozzle calculations.</p>
+
+                    <p>Several CEA runs were performed while the engine design was being refined. The surviving analysis files include a later parameter sweep across chamber pressures from <strong>11 to 34 bar</strong> and O/F ratios from <strong>4.8 to 7</strong>.</p>
+
+                    <p>At the time, CEA was part of an iterative sizing workflow: choose a plausible operating point, obtain the required thermodynamic properties, carry them into the shared engine calculations and then continue developing the physical geometry.</p>
+
+                    <p>A later audit of those files exposed an analysis-traceability problem that I discuss in the reflections section.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="early-nozzle-sizing" class="rocket-section">
+                <div class="rocket-section-index">
+                    04
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="early-nozzle-sizing">Early nozzle sizing</h2>
+
+                    <p>Although the injector became my main component responsibility, I also worked on the early nozzle calculations while the team was still establishing the wider engine design.</p>
+
+                    <p>My work included area-ratio sweeps, conical and bell-nozzle length estimates, throat-length considerations and approximate nozzle-mass comparisons.</p>
+
+                    <p>One useful example of the route from theory to hardware is the throat diameter. The preliminary model gave a value of approximately <strong>19.33 mm</strong>, while the later detailed nozzle drawing shows a nominal throat close to <strong>19.30 mm</strong>.</p>
+
+                    <p>I include this comparison as an example of how the common engine sizing propagated into detailed hardware. The final nozzle was not my individually owned component, so I treat it as system-level context rather than claiming detailed nozzle-design ownership.</p>
+
+                    <p>The chamber provides a similar link. The common sizing model used the 100 mm fuel-grain diameter together with liner thickness and internal clearance to establish a <strong>120 mm internal chamber design basis</strong>. That 120 mm dimension later became a direct geometric constraint on the injector.</p>
+
+                    <div class="rocket-media-grid rocket-media-grid-two">
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="Comparison between preliminary nozzle throat sizing and detailed drawing" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/nozzle-sizing-comparison.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>nozzle-sizing-comparison.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Preliminary throat sizing compared with the later detailed nozzle drawing.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="Nozzle technical drawing" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/nozzle-drawing.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>nozzle-drawing.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Nozzle technical drawing shown as team-level system context.</figcaption>
+                        </figure>
+                    </div>
+
+                    <figure class="rocket-media rocket-media-wide">
+                        <div class="rocket-media-frame">
+                            <img alt="Combustion chamber technical drawing" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/chamber-drawing.png">
+
+                            <div class="rocket-media-placeholder" hidden>
+                                <span>Image placeholder</span>
+                                <code>chamber-drawing.png</code>
+                            </div>
+                        </div>
+
+                        <figcaption>Combustion-chamber drawing showing the dimensional context surrounding the injector interface.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section aria-labelledby="my-main-subsystem-the-oxidiser-injector" class="rocket-section">
+                <div class="rocket-section-index">
+                    05
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="my-main-subsystem-the-oxidiser-injector">My main subsystem: the oxidiser injector</h2>
+
+                    <p>The injector had to meter and distribute oxidiser into the combustion chamber in a way that supported mixing and combustion while remaining compatible with the physical engine around it.</p>
+
+                    <p>That meant the problem was larger than calculating an orifice diameter.</p>
+
+                    <p>The injector had to satisfy several competing requirements:</p>
+
+                    <ul>
+                        <li>
+                            <p>provide useful atomisation and mixing;</p>
+                        </li>
+                        <li>
+                            <p>remain within the chamber interface;</p>
+                        </li>
+                        <li>
+                            <p>maintain an appropriate pressure relationship with the feed system and chamber;</p>
+                        </li>
+                        <li>
+                            <p>coexist with the torch ignitor;</p>
+                        </li>
+                        <li>
+                            <p>be manufacturable within a limited student budget;</p>
+                        </li>
+                        <li>
+                            <p>bolt to the chamber and seal correctly;</p>
+                        </li>
+                        <li>
+                            <p>and ultimately operate as part of an engine mounted to external test equipment.</p>
+                        </li>
+                    </ul>
+
+                    <p>The project became increasingly valuable to me as those constraints started interacting.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="injector-concept-development" class="rocket-section rocket-quick-destination">
+                <div class="rocket-section-index">
+                    06
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="injector-concept-development">Injector concept development</h2>
+
+                    <h3 class="rocket-subheading">Concentric swirl</h3>
+
+                    <p>My initial preference was a <strong>concentric swirl injector</strong>.</p>
+
+                    <p>The concept was attractive because swirl elements can provide good atomisation and mixing while avoiding an excessive pressure drop. NASA SP-8089 was one of the main references I used during this early stage.</p>
+
+                    <p>The problem appeared when the concept was considered as a real manufactured part.</p>
+
+                    <p>Small annular gaps, delicate swirl features and a more complicated internal geometry would have been difficult to manufacture reliably with the resources available to the team. The design was technically attractive, but too ambitious relative to the manufacturing route and budget.</p>
+
+                    <p>The swirl concept was rejected before I committed to detailed CAD.</p>
+
+                    <h3 class="rocket-subheading">Showerhead</h3>
+
+                    <p>The next concept was a <strong>showerhead injector</strong>: a simpler plate containing multiple axial holes.</p>
+
+                    <p>Its main advantage was manufacturability. It was easier to drill, easier to inspect and offered a relatively uniform axial flow distribution.</p>
+
+                    <p>It became a useful baseline because it showed what could be achieved with low geometric complexity.</p>
+
+                    <p>The trade-off was that it did less to promote primary atomisation than an impinging arrangement.</p>
+
+                    <p>Again, this concept was down-selected through literature review, theoretical reasoning and manufacturing considerations rather than detailed CAD.</p>
+
+                    <h3 class="rocket-subheading">Like-doublet impinging injector</h3>
+
+                    <p>Following further study and discussion with the Race2Space external supervisor, the design moved to a <strong>like-doublet impinging injector</strong>.</p>
+
+                    <p>Pairs of oxidiser jets were angled toward one another so that they collided after leaving the plate. The momentum interaction formed a spray sheet, offering more deliberate atomisation than the showerhead concept without returning to the complexity of the original swirl design.</p>
+
+                    <p>This became the final architecture and was the only injector concept I took into full CAD.</p>
+
+                    <div aria-label="Injector concept down-selection" class="rocket-concept-flow">
+                        <article>
+                            <span>01</span>
+
+                            <h3>Concentric swirl</h3>
+
+                            <p>Literature-led preferred concept</p>
+
+                            <small>Rejected before detailed CAD</small>
+                        </article>
+
+                        <div class="rocket-concept-arrow">
+                            →
+                        </div>
+
+                        <article>
+                            <span>02</span>
+
+                            <h3>Showerhead</h3>
+
+                            <p>Simple manufacturable baseline</p>
+
+                            <small>Rejected before detailed CAD</small>
+                        </article>
+
+                        <div class="rocket-concept-arrow">
+                            →
+                        </div>
+
+                        <article class="selected">
+                            <span>03</span>
+
+                            <h3>Like-doublet impinging</h3>
+
+                            <p>Selected architecture</p>
+
+                            <small>Analytical sizing → CFD → CAD → manufacture</small>
+                        </article>
+                    </div>
+
+                    <a class="rocket-next-route" href="#system-integration">
+<span>Quick route</span>
+<strong>Next: System integration →</strong>
+</a>
+                </div>
+            </section>
+
+            <section aria-labelledby="final-injector-design" class="rocket-section">
+                <div class="rocket-section-index">
+                    07
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="final-injector-design">Final injector design</h2>
+
+                    <p>The final design used a <strong>two-ring like-doublet arrangement</strong> with <strong>20 orifices</strong>, each <strong>1.5 mm in diameter</strong>, within the 120 mm chamber interface.</p>
+
+                    <p>The injector was designed around a nominal pressure-drop target expressed as a fraction of chamber pressure, with the wider engine operating point centred on a 33 bar chamber condition.</p>
+
+                    <p>The material selected was <strong>304 stainless steel</strong>, chosen as a practical balance of availability, cost and expected performance.</p>
+
+                    <h4 class="rocket-minor-heading">Final injector geometry</h4>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Parameter</td>
+                                <td>Final design</td>
+                            </tr>
+                            <tr>
+                                <td>Architecture</td>
+                                <td>Like-doublet impinging</td>
+                            </tr>
+                            <tr>
+                                <td>Ring count</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Number of orifices</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>Orifice diameter</td>
+                                <td>1.5 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Injector/interface diameter</td>
+                                <td>120 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Impingement half-angle</td>
+                                <td>45°</td>
+                            </tr>
+                            <tr>
+                                <td>Material</td>
+                                <td>304 stainless steel</td>
+                            </tr>
+                            <tr>
+                                <td>Final manufacturing route</td>
+                                <td>CNC + welded closure</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>The technical drawings and CAD show how the analytical injector work became a manufacturable component.</p>
+
+                    <div class="rocket-media-grid rocket-media-grid-two">
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="Isometric CAD view of final injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-cad-isometric.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>injector-cad-isometric.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Final like-doublet injector CAD model.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="Section CAD view of final injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-cad-section.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>injector-cad-section.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Section view showing the internal oxidiser cavity and injector geometry.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="Front technical drawing of injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-drawing-front.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>injector-drawing-front.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Front-plate technical drawing.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="Section technical drawing of injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-drawing-section.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>injector-drawing-section.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Injector section drawing showing the final manufacturable geometry.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="why-the-impingement-angle-was-45" class="rocket-section">
+                <div class="rocket-section-index">
+                    08
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="why-the-impingement-angle-was-45">Why the impingement angle was 45°</h2>
+
+                    <p>The final injector used a <strong>45° impingement half-angle</strong>, even though the literature used during the project suggested smaller angles.</p>
+
+                    <p>The submitted report mainly explained this as a packaging problem: the oxidiser jets had to clear the torch ignitor.</p>
+
+                    <p>That was true, but it was only part of the decision.</p>
+
+                    <p>The ignitor arrangement occupied real space at the injector/chamber interface. At the same time, a highly specific alternative angle could be easy to draw in CAD while being unnecessarily awkward to manufacture and inspect.</p>
+
+                    <p>A geometry such as 32.5°, for example, might require additional setup, specialist measurement or extra technician effort for a relatively small local improvement.</p>
+
+                    <p>The goal of the project was to <strong>design and manufacture a working engine</strong>. We did not have the budget to optimise every parameter independently.</p>
+
+                    <p>Forty-five degrees:</p>
+
+                    <ul>
+                        <li>
+                            <p>cleared the ignitor;</p>
+                        </li>
+                        <li>
+                            <p>was straightforward to define and inspect;</p>
+                        </li>
+                        <li>
+                            <p>remained manufacturable;</p>
+                        </li>
+                        <li>
+                            <p>produced acceptable behaviour in the comparative CFD;</p>
+                        </li>
+                        <li>
+                            <p>and avoided consuming a disproportionate amount of the budget on one injector parameter.</p>
+                        </li>
+                    </ul>
+
+                    <p>This was one of the decisions that changed how I think about optimisation. The best local parameter is not necessarily the best system decision.</p>
+
+                    <figure class="rocket-media rocket-media-wide">
+                        <div class="rocket-media-frame">
+                            <img alt="Annotated injector integration view" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-integration.png">
+
+                            <div class="rocket-media-placeholder" hidden>
+                                <span>Image placeholder</span>
+                                <code>injector-integration.png</code>
+                            </div>
+                        </div>
+
+                        <figcaption>Injector integration view showing the geometry around the chamber interface and ignitor.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section aria-labelledby="cfd-as-a-design-selection-tool" class="rocket-section">
+                <div class="rocket-section-index">
+                    09
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="cfd-as-a-design-selection-tool">CFD as a design-selection tool</h2>
+
+                    <p>I used ANSYS Fluent to compare simplified <strong>2D transient mid-plane models</strong> representing one-, two- and three-ring injector arrangements.</p>
+
+                    <p>The CFD was primarily a <strong>comparative design tool</strong>. It helped answer which layout was worth manufacturing. It was not intended to prove that the full three-dimensional, multiphase injector behaviour had been resolved.</p>
+
+                    <h3 class="rocket-subheading">One ring</h3>
+
+                    <p>The one-ring arrangement became increasingly undesirable as the simulation progressed. The interacting jets did not maintain the desired central behaviour and the flow showed a stronger tendency to move toward the chamber walls.</p>
+
+                    <p>That configuration was rejected.</p>
+
+                    <h3 class="rocket-subheading">Two rings</h3>
+
+                    <p>The two-ring arrangement produced a more useful and stable flow direction toward the region occupied by the fuel grain.</p>
+
+                    <p>Its simulated behaviour was good enough to continue into detailed design.</p>
+
+                    <h3 class="rocket-subheading">Three rings</h3>
+
+                    <p>The three-ring model produced the strongest apparent spray behaviour of the three cases.</p>
+
+                    <p>We still did not choose it.</p>
+
+                    <p>The additional stepped geometry increased machining effort, material removal and the opportunity for manufacturing asymmetry. With small orifices, even relatively small deviations could change the balance between opposing jets.</p>
+
+                    <p>The team therefore selected the <strong>two-ring design</strong> because it offered adequate predicted performance with lower manufacturing complexity and cost.</p>
+
+                    <p>That became one of my favourite decisions from the project:</p>
+
+                    <blockquote>
+                        <p><strong>The best CFD result was not the best overall engineering solution.</strong></p>
+                    </blockquote>
+
+                    <div class="rocket-cfd-grid">
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="One-ring injector CFD result" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cfd-one-ring.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>cfd-one-ring.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>One-ring model — rejected.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media rocket-media-selected">
+                            <div class="rocket-media-frame">
+                                <img alt="Two-ring injector CFD result" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cfd-two-ring.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>cfd-two-ring.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Two-ring model — selected.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame">
+                                <img alt="Three-ring injector CFD result" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cfd-three-ring.png">
+
+                                <div class="rocket-media-placeholder" hidden>
+                                    <span>Image placeholder</span>
+                                    <code>cfd-three-ring.png</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Three-ring model — strongest apparent spray behaviour, but not selected.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="manufacturing-strategy-additive-manufacture-to-cnc" class="rocket-section">
+                <div class="rocket-section-index">
+                    10
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="manufacturing-strategy-additive-manufacture-to-cnc">Manufacturing strategy: additive manufacture to CNC</h2>
+
+                    <p>At the start of the project, the team expected additive manufacture to play a major role across the engine.</p>
+
+                    <p>An on-campus facility had offered to sponsor manufacture, which meant complex metal geometry could potentially be produced without consuming most of the project budget.</p>
+
+                    <p>That changed what we considered realistic.</p>
+
+                    <p>The sponsored route later fell through.</p>
+
+                    <p>Commercial metal additive manufacture was prohibitively expensive, so the team had to reconsider how the engine could actually be produced.</p>
+
+                    <p>For the injector, we ultimately chose <strong>CNC machining in 304 stainless steel</strong>. CNC was not necessarily the cheapest possible process, but the geometry was complex enough that the cleaner and more controlled manufacturing route was worth the cost if it reduced defects.</p>
+
+                    <p>The change in manufacturing process also changed the geometry.</p>
+
+                    <p>An additively manufactured injector could have contained the internal oxidiser cavity within a largely monolithic component. Conventional CNC tooling could not reach the enclosed cavity.</p>
+
+                    <p>The design therefore had to be opened for tool access and then closed again.</p>
+
+                    <p>The rear section was machined separately and reattached using a <strong>circumferential weld</strong>.</p>
+
+                    <p>That solved the access problem, but it introduced a new manufacturing risk: distortion and another potential leak path.</p>
+
+                    <p>That trade-off became important during the hot fire.</p>
+
+                    <div class="rocket-media-grid rocket-media-grid-three">
+                        <figure class="rocket-media rocket-video-card" data-video-placeholder="">
+                            <div class="rocket-media-frame rocket-video-frame">
+                                <video controls playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/injector-rotation.mp4" type="video/mp4">
+                                </video>
+
+                                <div class="rocket-media-placeholder rocket-video-placeholder">
+                                    <span>Video placeholder</span>
+                                    <code>injector-rotation.mp4</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Manufactured injector — hand-held rotation showing the physical geometry and scale.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media rocket-video-card" data-video-placeholder="">
+                            <div class="rocket-media-frame rocket-video-frame">
+                                <video controls playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/chamber-rotation.mp4" type="video/mp4">
+                                </video>
+
+                                <div class="rocket-media-placeholder rocket-video-placeholder">
+                                    <span>Video placeholder</span>
+                                    <code>chamber-rotation.mp4</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Combustion-chamber hardware.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media rocket-video-card" data-video-placeholder="">
+                            <div class="rocket-media-frame rocket-video-frame">
+                                <video controls playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/nozzle-rotation.mp4" type="video/mp4">
+                                </video>
+
+                                <div class="rocket-media-placeholder rocket-video-placeholder">
+                                    <span>Video placeholder</span>
+                                    <code>nozzle-rotation.mp4</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Manufactured nozzle, shown as team-level system context.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="system-integration" class="rocket-section rocket-quick-destination">
+                <div class="rocket-section-index">
+                    11
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="system-integration">System integration</h2>
+
+                    <p>As the manufactured components arrived, the project stopped feeling like a set of individual component reports and started behaving like a real mechanical system.</p>
+
+                    <p>The injector had to connect correctly to the <strong>combustion chamber</strong>. The chamber, injector and nozzle then had to behave as one pressure-containing assembly. The complete engine had to interface with the test stand at Protolaunch - the company Race2Space had matched us with for the hot-fire test.</p>
+
+                    <p>This introduced requirements that had not been obvious when I was focused on internal injector flow:</p>
+
+                    <ol>
+                        <li>
+                            <p>The injector flange had to sit correctly against the chamber.</p>
+                        </li>
+                        <li>
+                            <p>The sealing interface had to retain chamber pressure.</p>
+                        </li>
+                        <li>
+                            <p>The torch ignitor had to coexist with the injector geometry.</p>
+                        </li>
+                        <li>
+                            <p>The pressure relationship between the oxidiser feed and chamber had to make sense at system level.</p>
+                        </li>
+                        <li>
+                            <p>The assembled engine then had to fit and behave appropriately on test infrastructure that belonged to someone else.</p>
+                        </li>
+                    </ol>
+
+                    <h3 class="rocket-subheading">Designing around the test stand</h3>
+
+                    <p>Late in the project, the team also revisited the intended <strong>failure behaviour</strong> of the system.</p>
+
+                    <p>We considered how an off-nominal event could affect Protolaunch's test equipment and adjusted the system-level approach so that protecting the external test infrastructure took priority over preserving our own engine hardware.</p>
+
+                    <p>This work happened much more informally than the earlier component analysis.</p>
+
+                    <p>Calculations were performed collaboratively on paper, options were discussed as a group and the resulting decisions were summarised back to Protolaunch. It was real engineering work, but it did not leave the same clean design trail as the MATLAB files, CAD or component reports.</p>
+
+                    <p>That became an important lesson in itself: important engineering decisions still need to be documented somewhere even when they happen quickly during integration.</p>
+
+                    <a class="rocket-next-route" href="#the-hot-fire-attempt">
+<span>Quick route</span>
+<strong>Next: Hot-fire outcome →</strong>
+</a>
+                </div>
+            </section>
+
+            <section aria-labelledby="the-hot-fire-attempt" class="rocket-section rocket-quick-destination">
+                <div class="rocket-section-index">
+                    12
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="the-hot-fire-attempt">The hot-fire attempt</h2>
+
+                    <p>The completed engine was hot-fired!</p>
+
+                    <p>Ignition was achieved and a small visible flame was produced at the nozzle, but the engine did not transition into sustained combustion at the intended operating condition. Amongst ourselves we refer to it as the cough...</p>
+
+                    <p>The limiting issue was leakage at the <strong>injector–chamber sealing interface</strong>.</p>
+
+                    <p>The team's post-test assessment was that the injector flange had warped during welding, most likely because the component had not been adequately clamped while the welded section was being joined.</p>
+
+                    <p>The distortion meant that the flange could not sit fully flush against the mating chamber surface.</p>
+
+                    <p>The resulting leak prevented the chamber from building toward its <strong>33 bar design pressure</strong>, so sustained combustion was not established.</p>
+
+                    <p>The test therefore demonstrated an important distinction:</p>
+
+                    <blockquote>
+                        <p><strong>Successful ignition was not the same as successful engine operation.</strong></p>
+                    </blockquote>
+
+                    <p>The injector had, admittedly, been manufactured for us free of charge. In hindsight, the free part found another way to collect its payment.</p>
+
+                    <p>More importantly, the failure changed how I think about component design. I had spent a great deal of time considering orifice geometry, atomisation, pressure drop and spray behaviour. The flatness and integrity of a mechanical interface ultimately became just as important to whether the engine could function.</p>
+
+                    <figure class="rocket-media rocket-media-wide">
+                        <div class="rocket-media-frame">
+                            <img alt="Hot-fire attempt showing a small flame at the nozzle" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/hot-fire.jpg">
+
+                            <div class="rocket-media-placeholder" hidden>
+                                <span>Image placeholder</span>
+                                <code>hot-fire.jpg</code>
+                            </div>
+                        </div>
+
+                        <figcaption>Hot-fire attempt. Ignition was achieved, but leakage at the injector–chamber interface prevented the chamber from reaching the pressure required for sustained combustion.</figcaption>
+                    </figure>
+
+                    <a class="rocket-next-route" href="#what-i-would-do-differently-now">
+<span>Quick route</span>
+<strong>Next: What I would do differently →</strong>
+</a>
+                </div>
+            </section>
+
+            <section aria-labelledby="following-the-failure-backwards" class="rocket-section">
+                <div class="rocket-section-index">
+                    13
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="following-the-failure-backwards">Following the failure backwards</h2>
+
+                    <p>The sealing problem was not an isolated event.</p>
+
+                    <p>Looking backwards, the chain was:</p>
+
+                    <p><strong>sponsored additive route fell through → commercial AM became too expensive → injector moved to CNC → internal cavity required a split construction → split construction required welding → welding introduced distortion risk → flange warped → injector did not sit flush against the chamber → chamber leaked → pressure could not build → sustained combustion was not achieved.</strong></p>
+
+                    <p>That is one of the strongest lessons I took from the project.</p>
+
+                    <p>A decision that begins as a manufacturing-cost problem can eventually become a propulsion-performance problem.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="reflections-on-the-report" class="rocket-section">
+                <div class="rocket-section-index">
+                    14
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="reflections-on-the-report">Reflections on the Report</h2>
+
+                    <p>My injector report received <strong>68%</strong>, a 2:1 classification.</p>
+
+                    <p>I do not think the mark belongs prominently on the portfolio page, but the post-submission feedback from my supervisor combined with my own thoughts was useful because it highlighted the gap between the engineering work that happened and the way I had documented it.</p>
+
+                    <p>The largest issue was that the report was too component-centred.</p>
+
+                    <p>It described injector theory, geometry, CFD and manufacturing, but it did not adequately explain how the injector fit into the wider engine.</p>
+
+                    <p>By the end of the project, some of the most important work involved:</p>
+
+                    <ul>
+                        <li>
+                            <p>chamber and nozzle interfaces;</p>
+                        </li>
+                        <li>
+                            <p>ignitor packaging;</p>
+                        </li>
+                        <li>
+                            <p>sealing;</p>
+                        </li>
+                        <li>
+                            <p>full-engine integration;</p>
+                        </li>
+                        <li>
+                            <p>test-stand constraints;</p>
+                        </li>
+                        <li>
+                            <p>and the system-level failure-mode discussion with Protolaunch.</p>
+                        </li>
+                    </ul>
+
+                    <p>That work existed, but the report did not capture it well enough.</p>
+
+                    <p>The feedback also made me more critical of sections that were <strong>descriptive rather than quantitative</strong>. It is not enough to explain that a parameter matters or that one design is “better”. A stronger technical argument should make it clear where a number came from, what assumption produced it and what would happen if it changed.</p>
+
+                    <p>To this end, the report should have included:</p>
+
+                    <ol>
+                        <li>
+                            More mathematical modelling - to counterbalance the descriptiveness of the rest of the work
+                        </li>
+                        <li>
+                            A better model of the two phase flows
+                        </li>
+                        <li>
+                            Better justifications of the numbers I did provide
+                        </li>
+                        <li>
+                            More concrete costs and justifications for manufacturing and material-selection decisions
+                        </li>
+                        <li>
+                            A mesh independence study alongside a proper CFD simulation case to verify physics
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section aria-labelledby="retrospective-technical-review" class="rocket-section">
+                <div class="rocket-section-index">
+                    15
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="retrospective-technical-review">Retrospective technical review</h2>
+
+                    <h3 class="rocket-subheading">1. Two-phase N₂O flow</h3>
+
+                    <p>The original injector sizing relied too heavily on conventional single-phase flow relationships.</p>
+
+                    <p>Nitrous oxide can flash as pressure falls across an injector. Under relevant conditions, density change, cavitation and two-phase choking can alter the mass-flow behaviour significantly.</p>
+
+                    <p>My original report recognised this limitation and discussed more appropriate two-phase approaches, but I did not fully implement them into the final sizing.</p>
+
+                    <p>If I repeated the design, this would be one of the first analytical improvements.</p>
+
+                    <h3 class="rocket-subheading">2. Cold-flow characterisation</h3>
+
+                    <p>The injector discharge coefficient was estimated rather than experimentally measured before the design was frozen.</p>
+
+                    <p>A dedicated cold-flow programme would have provided a much stronger basis for mass-flow predictions and could have exposed leakage, feed behaviour or unexpected losses before the hot-fire campaign.</p>
+
+                    <h3 class="rocket-subheading">3. CFD verification</h3>
+
+                    <p>The original CFD did not include a proper <strong>mesh-independence study</strong>.</p>
+
+                    <p>That means the results were useful for comparative design guidance, but they were not sufficiently verified to support strong quantitative claims.</p>
+
+                    <p>The 2D mid-plane representation also could not establish full-face symmetry or capture all of the three-dimensional jet interaction.</p>
+
+                    <h3 class="rocket-subheading">4. Cost and manufacturability</h3>
+
+                    <p>Cost influenced several major technical decisions, but the report did not quantify those trade-offs strongly enough.</p>
+
+                    <p>The additive-manufacturing pivot, the choice of two rings over three and the decision to retain a simple 45° impingement geometry were all partly shaped by manufacturing effort and budget.</p>
+
+                    <p>A stronger report would have preserved quotations, technician feedback, machining complexity and cost alongside the engineering calculations.</p>
+
+                    <h3 class="rocket-subheading">5. System integration</h3>
+
+                    <p>The final integration work should have appeared much more clearly in the report.</p>
+
+                    <p>The injector was not just a flow device. It was a mechanical interface between the feed system and the combustion chamber, part of a pressure-containing engine assembly, and part of a test article mounted to external equipment.</p>
+
+                    <p>The hot-fire outcome made that impossible to ignore.</p>
+
+                    <h3 class="rocket-subheading">6. Analysis traceability: N₂O vs NO₂</h3>
+
+                    <p>A post-project audit of the saved NASA CEA files exposed a configuration-control problem.</p>
+
+                    <p>An early archived run correctly specified <strong>N₂O</strong> as the oxidiser.</p>
+
+                    <p>Later parameter-sweep files were saved with <strong>NO₂</strong> instead, and values from the later analysis history were carried into the shared design calculations.</p>
+
+                    <p>The larger lesson is not simply that two chemical formulae were confused.</p>
+
+                    <p>The project lacked a sufficiently controlled chain linking:</p>
+
+                    <p><strong>input deck → run identifier → output → approved design value → downstream calculation.</strong></p>
+
+                    <p>In future I would treat analysis files as controlled engineering artefacts rather than simply a collection of solver outputs.</p>
+
+                    <h3 class="rocket-subheading">7. Define success before testing</h3>
+
+                    <p>The original injector work did not contain enough explicit numerical pass/fail criteria.</p>
+
+                    <p>A stronger programme would define acceptance criteria before each test so that the result can be judged against a requirement rather than interpreted retrospectively.</p>
+
+                    <figure class="rocket-media rocket-media-wide">
+                        <div class="rocket-media-frame">
+                            <img alt="Comparison of archived CEA inputs showing N2O in an early run and NO2 in later sweeps" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cea-input-comparison.png">
+
+                            <div class="rocket-media-placeholder" hidden>
+                                <span>Image placeholder</span>
+                                <code>cea-input-comparison.png</code>
+                            </div>
+                        </div>
+
+                        <figcaption>Post-project audit of the archived CEA inputs revealed inconsistent oxidiser specification between analysis runs.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section aria-labelledby="what-i-would-do-differently-now" class="rocket-section rocket-quick-destination">
+                <div class="rocket-section-index">
+                    16
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="what-i-would-do-differently-now">What I would do differently now</h2>
+
+                    <p>If I started a second injector design cycle, I would not simply redraw the existing component.</p>
+
+                    <p>I would rebuild the design and validation chain.</p>
+
+                    <h4 class="rocket-minor-heading">Re-establish the thermochemical design basis</h4>
+
+                    <p>I would rerun the relevant NASA CEA cases using controlled N₂O input files, explicit run identifiers and a clear record of which output feeds each downstream calculation.</p>
+
+                    <h4 class="rocket-minor-heading">Improve the nitrous-oxide flow model</h4>
+
+                    <p>I would replace the simplified single-phase treatment with a more appropriate two-phase model and reassess the injector sizing across the expected operating envelope.</p>
+
+                    <h4 class="rocket-minor-heading">Cold-flow the injector</h4>
+
+                    <p>I would experimentally characterise the discharge behaviour and compare the measured result with the analytical model.</p>
+
+                    <h4 class="rocket-minor-heading">Perform a full 3D injector CFD study</h4>
+
+                    <p>I still have the final injector CAD, so this is a realistic future personal project.</p>
+
+                    <p>I want to model the complete injector geometry in three dimensions, perform a proper mesh study and see whether the full flow field supports the conclusions drawn from the original 2D comparison.</p>
+
+                    <p>This is <strong>future work</strong>, not something I am claiming to have completed during the capstone.</p>
+
+                    <h4 class="rocket-minor-heading">Bring interface design forward</h4>
+
+                    <p>I would treat flange flatness, sealing, ignitor packaging, chamber geometry and test-stand requirements as formal design inputs before the injector geometry is frozen.</p>
+
+                    <h4 class="rocket-minor-heading">Improve manufacturing requirements</h4>
+
+                    <p>A future drawing would not only define the nominal geometry. It would also make the functional manufacturing requirements clearer, particularly where interface quality affects engine operation.</p>
+
+                    <h4 class="rocket-minor-heading">Keep a proper decision log</h4>
+
+                    <p>For every major design change, I would preserve:</p>
+
+                    <p><strong>requirement → options → evidence → trade-off → decision → consequence.</strong></p>
+
+                    <p>That would make later technical reviews much stronger.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="what-this-project-changed-for-me" class="rocket-section">
+                <div class="rocket-section-index">
+                    17
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="what-this-project-changed-for-me">What this project changed for me</h2>
+
+                    <p>At the start of the project, I thought about engineering optimisation much more locally.</p>
+
+                    <p>By the end of the project, I had a different perspective.</p>
+
+                    <p>The three-ring injector produced the best CFD result, yet we opted for the two rings arrangement</p>
+
+                    <p>Published guidance suggested a smaller impingement angle yet we used 45° for a mixture of reasons: anxiety, budget constraints, engineering concerns etc.</p>
+
+                    <p>Additive manufacture offered cleaner internal geometry, yet we chose CNC in the end.</p>
+
+                    <p>None of those choices make sense if 'optimisation' means maximising one technical metric.</p>
+
+                    <p>They make much more sense if optimisation means finding a design that gives the <strong>whole system</strong> the best chance of being manufactured, integrated and tested within the constraints that actually exist.</p>
+
+                    <p>The project also taught me that engineering confidence has to survive every transition:</p>
+
+                    <p><strong>theory → code → CAD → manufacture → assembly → test → analysis of the result.</strong></p>
+
+                    <p>The injector could be theoretically sensible and still fail to support engine operation because the flange was not sufficiently flat to seal against the chamber.</p>
+
+                    <p>That is probably the single most useful lesson I took from the capstone.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="project-outcome" class="rocket-section">
+                <div class="rocket-section-index">
+                    18
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="project-outcome">Project outcome</h2>
+
+                    <p>The unavoidable fact is that the engine did <strong>not</strong> demonstrate sustained operation at its intended design condition.</p>
+
+                    <p>But the project did progress through:</p>
+
+                    <ul>
+                        <li>
+                            <p>preliminary propulsion sizing;</p>
+                        </li>
+                        <li>
+                            <p>fuel-grain and chamber calculations;</p>
+                        </li>
+                        <li>
+                            <p>early nozzle sizing;</p>
+                        </li>
+                        <li>
+                            <p>injector concept development;</p>
+                        </li>
+                        <li>
+                            <p>analytical injector sizing;</p>
+                        </li>
+                        <li>
+                            <p>CFD comparison;</p>
+                        </li>
+                        <li>
+                            <p>detailed injector CAD;</p>
+                        </li>
+                        <li>
+                            <p>technical drawings;</p>
+                        </li>
+                        <li>
+                            <p>manufacture;</p>
+                        </li>
+                        <li>
+                            <p>engine assembly;</p>
+                        </li>
+                        <li>
+                            <p>test-stand integration;</p>
+                        </li>
+                        <li>
+                            <p>and hot-fire ignition.</p>
+                        </li>
+                    </ul>
+
+                    <p>The test then exposed a manufacturing/interface problem that the earlier component-level work had not controlled well enough.</p>
+
+                    <p>For me, that makes the project more valuable as an engineering case study, not less.</p>
+
+                    <p>It is a record of what happened when theory met manufacturing, cost, interfaces and real hardware.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="selected-technical-documents" class="rocket-section">
+                <div class="rocket-section-index">
+                    19
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="selected-technical-documents">Selected technical documents</h2>
+
+                    <p>The detailed injector report contains the original literature review, analytical sizing, CFD comparison, CAD development, manufacturing discussion and the first set of design reflections.</p>
+
+                    <p><a class="rocket-document-link" href="../assets/documents/rocket-engine/injector-design-report.pdf" rel="noopener noreferrer" target="_blank">Injector Design Report →</a></p>
+
+                    <p>The historical project repository also contains the surviving MATLAB scripts, saved plots and part of the analysis history.</p>
+
+                    <p><a class="rocket-document-link" href="https://github.com/Nusnaaa/capstone-engine" rel="noopener noreferrer" target="_blank">Historical project calculations on GitHub →</a></p>
+                </div>
+            </section>
+
+            <section aria-labelledby="selected-references" class="rocket-section">
+                <div class="rocket-section-index">
+                    20
+                </div>
+
+                <div class="rocket-section-body">
+                    <h2 class="rocket-section-title" id="selected-references">Selected references</h2>
+
+                    <p>The following were among the main technical sources directly used during the injector and propulsion work:</p>
+
+                    <ul class="rocket-reference-list">
+                        <li>
+                            Ashley Chandler Karp and Elizabeth Therese Jens (2023) Hybrid Rocket Propulsion Design Handbook. Academic Press.
+                        </li>
+                        <li>
+                            NASA (1976) Liquid Rocket Engine Injectors. NASA SP-8089 [online]. Available from:
+                            <a href="https://ntrs.nasa.gov/api/citations/19760023196/downloads/19760023196.pdf" rel="noopener noreferrer" target="_blank">https://ntrs.nasa.gov/api/citations/19760023196/downloads/19760023196.pdf</a>
+                            [Accessed 15 December 2024].
+                        </li>
+                        <li>
+                            Newlands, R.M. (2017) The Science and Design of the Hybrid Rocket Engine. Lulu Press, Inc.
+                        </li>
+                        <li>
+                            Razavi, M.R. and Niño, E.V. (2019) Design of Two-Phase Injectors Using Analytical and Numerical Methods with Application to Hybrid Rockets | AIAA Propulsion and Energy Forum. AIAA Propulsion and Energy Forum [online]. Available from:
+                            <a href="https://doi.org/10.2514/6.2019-4154" rel="noopener noreferrer" target="_blank">https://doi.org/10.2514/6.2019-4154</a>
+                            [Accessed 15 February 2025].
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <footer class="project-footer rocket-project-footer">
+                <a href="../projects.html">← Back to projects</a>
+            </footer>
+        </main>
+        <script src="../js/navigation.js"></script>
+        <script src="../js/rocket-model.js"></script>
+    </body>
 </html>

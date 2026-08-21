@@ -1,0 +1,1418 @@
+/* =========================================================
+   Race2Space Hybrid Rocket Engine
+   Page-specific styles.
+
+   This stylesheet extends css/style.css and is intentionally
+   structured for hand editing.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Page shell
+   --------------------------------------------------------- */
+
+.rocket-page {
+    width: calc(100% - 40px);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 0 120px;
+}
+
+
+/* ---------------------------------------------------------
+   Hero
+   --------------------------------------------------------- */
+
+.rocket-hero {
+    padding: 60px 0 96px;
+}
+
+.rocket-kicker {
+    margin-bottom: 18px;
+    color: var(--accent);
+    font-size: .78rem;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: .11em;
+}
+
+.rocket-hero h1 {
+    max-width: 1040px;
+    margin-bottom: 20px;
+    font-size: clamp(3.2rem, 7vw, 6.4rem);
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+.rocket-subtitle {
+    margin-bottom: 38px;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.rocket-hero-copy {
+    max-width: 850px;
+}
+
+.rocket-hero-copy p {
+    margin-bottom: 22px;
+    font-size: 1.12rem;
+    line-height: 1.78;
+}
+
+.rocket-hero-copy p:first-child {
+    color: var(--text);
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    line-height: 1.58;
+}
+
+.rocket-hero-media {
+    max-width: 1100px;
+    margin-top: 40px;
+}
+
+.rocket-hero-media .rocket-media-frame {
+    min-height: 560px;
+}
+
+
+/* ---------------------------------------------------------
+   Recruiter / short-on-time route
+   --------------------------------------------------------- */
+
+.rocket-quick-route {
+    margin-bottom: 78px;
+    padding: 38px 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-quick-route h2 {
+    margin-bottom: 14px;
+    font-size: 1.7rem;
+    letter-spacing: -.025em;
+}
+
+.rocket-quick-route > p {
+    max-width: 780px;
+    margin-bottom: 18px;
+}
+
+.rocket-quick-route ol {
+    margin: 30px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    list-style: none;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.rocket-quick-route li {
+    margin: 0;
+    min-width: 0;
+    padding: 21px 18px 23px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.rocket-quick-route li p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .82rem;
+    line-height: 1.55;
+}
+
+.rocket-quick-route li a {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--text);
+}
+
+.rocket-quick-route li a:hover {
+    color: var(--accent);
+}
+
+.rocket-quick-route li strong {
+    font-size: .93rem;
+}
+
+
+/* ---------------------------------------------------------
+   Large page chapters
+   --------------------------------------------------------- */
+
+.rocket-chapter {
+    position: relative;
+}
+
+.rocket-chapter + .rocket-chapter {
+    margin-top: 0;
+}
+
+.rocket-chapter-injector,
+.rocket-chapter-hardware,
+.rocket-chapter-review {
+    padding-top: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Core section structure
+   --------------------------------------------------------- */
+
+.rocket-section {
+    padding: 42px 0 50px;
+    border-top: 1px solid var(--border);
+}
+
+.rocket-section-heading-group {
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.rocket-section-index {
+    padding-top: 7px;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: .78rem;
+}
+
+.rocket-section-header {
+    min-width: 0;
+}
+
+.rocket-section-kicker {
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-size: .76rem;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.rocket-section-title {
+    max-width: 940px;
+    margin-bottom: 0;
+    font-size: clamp(2.15rem, 4.2vw, 3.45rem);
+    letter-spacing: -.04em;
+    scroll-margin-top: 42px;
+}
+
+.rocket-section-body {
+    max-width: 980px;
+    margin-left: 102px;
+}
+
+.rocket-section-body > p,
+.rocket-section-body > ul,
+.rocket-section-body > ol,
+.rocket-section-body > blockquote {
+    max-width: 820px;
+}
+
+.rocket-section-body p {
+    margin-bottom: 22px;
+}
+
+.rocket-section-body strong {
+    color: var(--text);
+}
+
+.rocket-section-body code {
+    padding: 2px 6px;
+    background: rgba(0, 0, 0, .035);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-size: .9em;
+}
+
+.rocket-section-lead {
+    max-width: 860px;
+    margin-bottom: 36px;
+}
+
+.rocket-section-lead p {
+    font-size: 1.08rem;
+    line-height: 1.72;
+}
+
+.rocket-section-lead p:first-child {
+    color: var(--text);
+}
+
+.rocket-subheading {
+    margin: 0 0 20px;
+    color: var(--text);
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    letter-spacing: -.025em;
+}
+
+.rocket-minor-heading {
+    margin: 46px 0 15px;
+    color: var(--text);
+    font-size: 1.12rem;
+    letter-spacing: -.01em;
+}
+
+
+/* ---------------------------------------------------------
+   Tables and data panels
+   --------------------------------------------------------- */
+
+.rocket-data-panel {
+    max-width: 860px;
+    margin: 34px 0 52px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-section-body table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+.rocket-section-body th,
+.rocket-section-body td {
+    padding: 15px 18px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+}
+
+.rocket-section-body th {
+    color: var(--text);
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
+
+.rocket-section-body td {
+    color: var(--muted);
+}
+
+.rocket-section-body tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Quick-route next links
+   --------------------------------------------------------- */
+
+.rocket-next-route {
+    max-width: 820px;
+    margin-top: 34px;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    color: var(--text);
+}
+
+.rocket-next-route:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.rocket-next-route span {
+    color: var(--muted);
+    font-size: .73rem;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+}
+
+.rocket-next-route strong {
+    font-size: .96rem;
+}
+
+
+/* ---------------------------------------------------------
+   System overview
+   --------------------------------------------------------- */
+
+.rocket-evidence-block {
+    max-width: 930px;
+    margin: 48px 0;
+}
+
+.rocket-system-map {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1.15fr)
+        auto
+        minmax(0, 1.45fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 9px;
+}
+
+.rocket-system-node {
+    min-width: 0;
+    min-height: 132px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+}
+
+.rocket-system-node span {
+    color: var(--muted);
+    font-family: monospace;
+    font-size: .7rem;
+}
+
+.rocket-system-node strong {
+    font-size: .86rem;
+    line-height: 1.35;
+}
+
+.rocket-system-node small {
+    color: var(--accent);
+    font-size: .7rem;
+}
+
+.rocket-system-node-accent {
+    border-color: var(--accent);
+}
+
+.rocket-system-arrow {
+    align-self: center;
+    color: var(--muted);
+    transform: rotate(-90deg);
+}
+
+
+/* ---------------------------------------------------------
+   Interactive preliminary model
+   --------------------------------------------------------- */
+
+.rocket-interactive-feature {
+    max-width: 940px;
+    margin-top: 38px;
+}
+
+.rocket-model {
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-model-controls {
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.rocket-model-control label {
+    margin-bottom: 11px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--text);
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.rocket-model-control output {
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+
+.rocket-model-control input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+}
+
+.rocket-model-reset {
+    min-height: 42px;
+    padding: 0 16px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.rocket-model-reset:hover {
+    border-color: var(--accent);
+}
+
+.rocket-chart-shell {
+    position: relative;
+    min-height: 470px;
+    padding: 26px;
+}
+
+#rocket-regression-chart {
+    display: block;
+    width: 100%;
+    height: 425px;
+}
+
+.rocket-model-readout {
+    padding: 19px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .82rem;
+}
+
+.rocket-model-readout strong {
+    margin-left: 5px;
+}
+
+.rocket-model-noscript {
+    padding: 14px;
+    border: 1px dashed var(--border);
+}
+
+
+/* ---------------------------------------------------------
+   Thermochemistry narrative
+   --------------------------------------------------------- */
+
+.rocket-analysis-narrative {
+    max-width: 820px;
+    margin-top: 34px;
+    padding: 30px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-analysis-narrative p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Injector requirements
+   --------------------------------------------------------- */
+
+.rocket-requirement-grid {
+    max-width: 920px;
+    margin: 42px 0 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.rocket-requirement-card {
+    min-height: 112px;
+    padding: 22px 23px;
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   Injector concept development
+   --------------------------------------------------------- */
+
+.rocket-concept-section {
+    max-width: 860px;
+    margin: 32px 0;
+    padding: 32px 34px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-concept-section .rocket-subheading {
+    margin-bottom: 20px;
+}
+
+.rocket-concept-section p:last-child {
+    margin-bottom: 0;
+}
+
+.rocket-concept-summary {
+    max-width: 940px;
+    margin: 40px 0 10px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+    gap: 11px;
+}
+
+.rocket-concept-summary article {
+    min-height: 190px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-concept-summary article.selected {
+    border-color: var(--accent);
+}
+
+.rocket-concept-summary article > span {
+    color: var(--muted);
+    font-family: monospace;
+    font-size: .72rem;
+}
+
+.rocket-concept-summary h3 {
+    margin: 17px 0 10px;
+    font-size: 1.08rem;
+}
+
+.rocket-concept-summary p {
+    margin-bottom: 12px;
+    font-size: .87rem;
+}
+
+.rocket-concept-summary small {
+    color: var(--accent);
+    font-size: .75rem;
+}
+
+.rocket-concept-arrow {
+    align-self: center;
+    color: var(--muted);
+}
+
+
+/* ---------------------------------------------------------
+   Detailed injector design and trade-offs
+   --------------------------------------------------------- */
+
+.rocket-injector-spec-panel {
+    max-width: 880px;
+}
+
+.rocket-drawing-gallery {
+    margin-top: 38px;
+}
+
+.rocket-tradeoff-grid {
+    max-width: 920px;
+    margin: 38px 0 52px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.rocket-tradeoff-card {
+    min-height: 110px;
+    padding: 21px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.rocket-integration-figure {
+    margin-top: 40px;
+}
+
+
+/* ---------------------------------------------------------
+   CFD results
+   --------------------------------------------------------- */
+
+.rocket-cfd-result {
+    max-width: 930px;
+    margin: 40px 0;
+    padding: 34px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-cfd-result .rocket-media {
+    margin: 26px 0 30px;
+}
+
+.rocket-cfd-result .rocket-media-frame {
+    min-height: 390px;
+}
+
+.rocket-cfd-result p {
+    max-width: 760px;
+}
+
+.rocket-cfd-result p:last-child {
+    margin-bottom: 0;
+}
+
+.rocket-cfd-result:has(.rocket-media-selected) {
+    border-color: var(--accent);
+}
+
+
+/* ---------------------------------------------------------
+   Manufacturing hardware gallery
+   --------------------------------------------------------- */
+
+.rocket-hardware-gallery {
+    max-width: 940px;
+    margin-top: 42px;
+    display: grid;
+    gap: 34px;
+}
+
+.rocket-hardware-row {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-hardware-row .rocket-media {
+    margin: 0;
+}
+
+.rocket-hardware-row .rocket-media-frame {
+    min-height: 470px;
+}
+
+
+/* ---------------------------------------------------------
+   System integration
+   --------------------------------------------------------- */
+
+.rocket-interface-grid {
+    max-width: 930px;
+    margin: 42px 0 54px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.rocket-interface-card {
+    min-height: 124px;
+    padding: 23px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.rocket-interface-card:nth-child(5) {
+    grid-column: 1 / -1;
+}
+
+.rocket-integration-subsection {
+    max-width: 860px;
+    margin: 40px 0 0;
+    padding: 31px 33px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+
+/* ---------------------------------------------------------
+   Hot fire and failure analysis
+   --------------------------------------------------------- */
+
+.rocket-test-result-callout {
+    max-width: 820px;
+    margin: 36px 0;
+    padding: 24px 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius-small) var(--radius-small) 0;
+}
+
+.rocket-test-result-callout p {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.08rem;
+}
+
+.rocket-hot-fire-figure {
+    max-width: 960px;
+    margin-top: 42px;
+}
+
+.rocket-hot-fire-figure .rocket-media-frame {
+    min-height: 570px;
+}
+
+.rocket-failure-chain {
+    max-width: 920px;
+    margin: 32px 0;
+    padding: 30px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-failure-chain p {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.02rem;
+    line-height: 1.9;
+}
+
+
+/* ---------------------------------------------------------
+   Report reflections
+   --------------------------------------------------------- */
+
+.rocket-reflection-list,
+.rocket-improvement-list {
+    max-width: 900px;
+    margin: 38px 0 52px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.rocket-reflection-item {
+    min-height: 110px;
+    padding: 22px 23px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.rocket-improvement-list .rocket-reflection-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+
+/* ---------------------------------------------------------
+   Retrospective technical review
+   --------------------------------------------------------- */
+
+.rocket-review-card {
+    max-width: 900px;
+    margin: 26px 0;
+    padding: 32px 34px 34px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-review-card .rocket-subheading {
+    margin-bottom: 20px;
+}
+
+.rocket-review-card .rocket-section-lead {
+    margin-bottom: 0;
+}
+
+.rocket-review-card p:last-child {
+    margin-bottom: 0;
+}
+
+.rocket-review-card .rocket-media {
+    margin: 38px 0 0;
+}
+
+
+/* ---------------------------------------------------------
+   Future design cycle
+   --------------------------------------------------------- */
+
+.rocket-future-grid {
+    max-width: 920px;
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.rocket-future-card {
+    min-height: 230px;
+    padding: 28px 29px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-future-card .rocket-minor-heading {
+    margin: 0 0 16px;
+    font-size: 1.08rem;
+}
+
+.rocket-future-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Engineering perspective
+   --------------------------------------------------------- */
+
+.rocket-engineering-chain {
+    max-width: 900px;
+    margin: 32px 0;
+    padding: 27px 30px;
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+}
+
+.rocket-engineering-chain p {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   Project outcome trail
+   --------------------------------------------------------- */
+
+.rocket-outcome-trail {
+    max-width: 860px;
+    margin: 30px 0 38px;
+    border-top: 1px solid var(--border);
+}
+
+.rocket-outcome-step {
+    min-height: 66px;
+    padding: 17px 0;
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.rocket-outcome-number {
+    color: var(--muted);
+    font-family: monospace;
+    font-size: .72rem;
+}
+
+.rocket-outcome-step {
+    color: var(--muted);
+}
+
+
+/* ---------------------------------------------------------
+   Media
+   --------------------------------------------------------- */
+
+.rocket-media {
+    margin: 34px 0;
+}
+
+.rocket-media-frame {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-media-frame img {
+    width: 100%;
+    height: auto;
+    max-height: 780px;
+    object-fit: contain;
+}
+
+.rocket-media figcaption {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: .79rem;
+    line-height: 1.55;
+}
+
+.rocket-media-placeholder {
+    width: 100%;
+    min-height: 360px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 49.6%,
+            var(--border) 49.8%,
+            var(--border) 50.2%,
+            transparent 50.4%
+        ),
+        linear-gradient(
+            45deg,
+            transparent 49.6%,
+            var(--border) 49.8%,
+            var(--border) 50.2%,
+            transparent 50.4%
+        );
+    color: var(--muted);
+    text-align: center;
+}
+
+.rocket-media-placeholder span {
+    padding: 5px 9px;
+    background: var(--surface);
+    font-size: .72rem;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.rocket-media-placeholder code {
+    padding: 6px 9px;
+    background: var(--surface);
+    font-size: .77rem;
+}
+
+.rocket-media-grid {
+    max-width: 940px;
+    display: grid;
+    gap: 24px;
+}
+
+.rocket-media-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rocket-media-grid-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rocket-media-grid .rocket-media {
+    margin: 24px 0;
+}
+
+.rocket-media-wide {
+    max-width: 940px;
+}
+
+.rocket-evidence-gallery {
+    margin-top: 34px;
+}
+
+.rocket-media-selected .rocket-media-frame {
+    border: 2px solid var(--accent);
+}
+
+
+/* ---------------------------------------------------------
+   Video
+   --------------------------------------------------------- */
+
+.rocket-video-frame {
+    min-height: 470px;
+    background: #111;
+}
+
+.rocket-video-frame video {
+    display: none;
+    width: 100%;
+    max-height: 650px;
+}
+
+.rocket-video-frame.is-ready video {
+    display: block;
+}
+
+.rocket-video-frame.is-ready .rocket-video-placeholder {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   Documents and embedded report
+   --------------------------------------------------------- */
+
+.rocket-document-grid {
+    max-width: 900px;
+    margin: 38px 0 50px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.rocket-document-card {
+    padding: 25px 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-document-card p {
+    margin: 0;
+}
+
+.rocket-document-link {
+    display: inline-flex;
+    margin: 0;
+    padding-bottom: 2px;
+    color: var(--accent);
+    border-bottom: 1px solid currentColor;
+    font-weight: 600;
+}
+
+.rocket-report-embed {
+    max-width: 940px;
+    margin-top: 40px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+}
+
+.rocket-report-label {
+    margin: 0;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: .82rem;
+    font-weight: 650;
+}
+
+.rocket-report-viewer {
+    display: block;
+    width: 100%;
+    height: 78vh;
+    min-height: 680px;
+    border: 0;
+}
+
+
+/* ---------------------------------------------------------
+   References
+   --------------------------------------------------------- */
+
+.rocket-reference-block {
+    max-width: 900px;
+    margin: 34px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--border);
+}
+
+.rocket-reference-block li {
+    margin: 0;
+    padding: 19px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.rocket-reference-block a {
+    color: var(--accent);
+    overflow-wrap: anywhere;
+}
+
+
+
+/* ---------------------------------------------------------
+   Key engineering callouts
+
+   These highlight existing conclusions from the project copy.
+   They are intentionally restrained: enough contrast to break
+   up long technical sections without turning every observation
+   into a banner.
+   --------------------------------------------------------- */
+
+.rocket-key-callout {
+    max-width: 820px;
+    margin: 24px 0 18px;
+    padding: 20px 23px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius-small) var(--radius-small) 0;
+}
+
+.rocket-key-callout p {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.06rem;
+    font-weight: 550;
+    line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   General page links and footer
+   --------------------------------------------------------- */
+
+.rocket-section-body a:not(.rocket-next-route):not(.rocket-document-link) {
+    color: var(--accent);
+}
+
+.rocket-project-footer {
+    max-width: 100%;
+    margin-top: 46px;
+}
+
+
+
+/* ---------------------------------------------------------
+   Reading contrast
+
+   Main technical prose stays the same dark text colour
+   throughout the case study. Muted grey is reserved for
+   metadata, captions, numbering and secondary UI labels.
+   --------------------------------------------------------- */
+
+.rocket-section-body p,
+.rocket-section-body li,
+.rocket-section-body td,
+.rocket-section-lead p,
+.rocket-concept-section p,
+.rocket-cfd-result p,
+.rocket-analysis-narrative p,
+.rocket-future-card p,
+.rocket-review-card p,
+.rocket-integration-subsection p {
+    color: var(--text);
+}
+
+.rocket-requirement-card,
+.rocket-tradeoff-card,
+.rocket-interface-card,
+.rocket-reflection-item,
+.rocket-outcome-step {
+    color: var(--text);
+}
+
+.rocket-quick-route > p,
+.rocket-quick-route li p {
+    color: var(--text);
+}
+
+.rocket-section-body blockquote p,
+.rocket-test-result-callout p,
+.rocket-failure-chain p,
+.rocket-engineering-chain p {
+    color: var(--text);
+}
+
+/* Keep only genuinely secondary information muted. */
+
+.rocket-section-index,
+.rocket-media figcaption,
+.rocket-system-node span,
+.rocket-model-readout,
+.rocket-outcome-number,
+.rocket-next-route span {
+    color: var(--muted);
+}
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+    .rocket-quick-route ol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rocket-system-map {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-system-arrow {
+        transform: none;
+        text-align: center;
+    }
+
+    .rocket-model-controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rocket-model-reset {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+
+    .rocket-concept-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-concept-arrow {
+        justify-self: center;
+        transform: rotate(90deg);
+    }
+
+    .rocket-hardware-row .rocket-media-frame,
+    .rocket-video-frame {
+        min-height: 390px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+    .rocket-page {
+        padding-top: 40px;
+    }
+
+    .rocket-hero {
+        padding: 34px 0 68px;
+    }
+
+    .rocket-hero h1 {
+        font-size: clamp(2.8rem, 13vw, 4.6rem);
+    }
+
+    .rocket-hero-copy p {
+        font-size: 1rem;
+    }
+
+    .rocket-hero-media .rocket-media-frame {
+        min-height: 270px;
+    }
+
+    .rocket-quick-route {
+        margin-bottom: 54px;
+        padding: 27px 23px;
+    }
+
+    .rocket-quick-route ol {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-section {
+        padding: 38px 0 46px;
+    }
+
+    .rocket-section-heading-group {
+        margin-bottom: 30px;
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .rocket-section-index {
+        padding-top: 0;
+    }
+
+    .rocket-section-body {
+        margin-left: 0;
+    }
+
+    .rocket-section-title {
+        font-size: clamp(2rem, 9vw, 2.9rem);
+    }
+
+    .rocket-section-lead p {
+        font-size: 1rem;
+    }
+
+    .rocket-requirement-grid,
+    .rocket-tradeoff-grid,
+    .rocket-interface-grid,
+    .rocket-reflection-list,
+    .rocket-improvement-list,
+    .rocket-future-grid,
+    .rocket-document-grid,
+    .rocket-media-grid-two,
+    .rocket-media-grid-three {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-interface-card:nth-child(5),
+    .rocket-improvement-list .rocket-reflection-item:last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+
+    .rocket-model-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-model-reset {
+        grid-column: auto;
+        justify-self: start;
+    }
+
+    .rocket-chart-shell {
+        min-height: 340px;
+        padding: 12px;
+    }
+
+    #rocket-regression-chart {
+        height: 315px;
+    }
+
+    .rocket-next-route {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .rocket-media-frame,
+    .rocket-media-placeholder {
+        min-height: 250px;
+    }
+
+    .rocket-cfd-result {
+        padding: 24px;
+    }
+
+    .rocket-cfd-result .rocket-media-frame {
+        min-height: 270px;
+    }
+
+    .rocket-hardware-row {
+        padding: 18px;
+    }
+
+    .rocket-hardware-row .rocket-media-frame,
+    .rocket-video-frame {
+        min-height: 300px;
+    }
+
+    .rocket-hot-fire-figure .rocket-media-frame {
+        min-height: 320px;
+    }
+
+    .rocket-report-viewer {
+        height: 68vh;
+        min-height: 520px;
+    }
+}
