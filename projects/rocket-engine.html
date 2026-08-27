@@ -31,13 +31,9 @@
                 </div>
 
                 <figure class="rocket-media rocket-hero-media">
-                    <div class="rocket-media-frame">
-                        <img alt="Completed 600 N N₂O/HDPE hybrid rocket engine" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/hero-assembled-engine.jpg">
+                    <div class="rocket-media-frame rocket-image-frame">
+                        <img alt="Completed 600 N N₂O/HDPE hybrid rocket engine" loading="lazy" src="../assets/images/rocket-engine/hero-assembled-engine.jpg">
 
-                        <div class="rocket-media-placeholder" hidden>
-                            <span>Image placeholder</span>
-                            <code>hero-assembled-engine.jpg</code>
-                        </div>
                     </div>
 
                     <figcaption>Completed hybrid rocket engine following manufacture and integration.</figcaption>
@@ -85,6 +81,8 @@
                     <p>The shared MATLAB file <code>preliminary_calculations.m</code> acted as the working engineering notebook for the theoretical design. It contained calculations and notes for propellant sizing, grain regression, chamber geometry, nozzle sizing and early injector work.</p>
 
                     <p>As component ownership became clearer, I took responsibility for the injector. I also contributed to the common engine sizing and performed early nozzle calculations before the detailed nozzle work moved to another engineer.</p>
+
+                    <p>The completed engine shown at the top of this page is the hardware that emerged from that process. Later sections follow the same system from fuel stock and machined components through assembly, test-cell installation and post-fire inspection.</p>
 
                     <h4 class="rocket-minor-heading">Key design values</h4>
 
@@ -202,6 +200,28 @@
 
                     <p>That model was not a validated prediction of real engine performance. Its purpose was to give the team a consistent theoretical baseline that could then be challenged by CAD, manufacturing feedback and testing.</p>
 
+                    <p>The photographs below show the HDPE stock used for the fuel grain before and after it was cut into shorter billets for further machining. They provide a physical reference for the 100 mm grain diameter used in the sizing model.</p>
+
+                    <div class="rocket-media-grid rocket-media-grid-two rocket-fuel-sequence">
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="HDPE stock before being cut into fuel-grain billets" loading="lazy" src="../assets/images/rocket-engine/hdpe-fuel-stock.jpg">
+
+                            </div>
+
+                            <figcaption>100 mm HDPE stock before cutting.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="HDPE stock after being cut into shorter billets for further machining" loading="lazy" src="../assets/images/rocket-engine/hdpe-fuel-sections.jpg">
+
+                            </div>
+
+                            <figcaption>HDPE after cutting into shorter billets for further grain machining.</figcaption>
+                        </figure>
+                    </div>
+
                     <h3 class="rocket-subheading">Interactive preliminary model</h3>
 
                     <p>For this portfolio, I am rebuilding a small part of the original MATLAB logic in JavaScript so it can run directly in the browser.</p>
@@ -210,9 +230,9 @@
 
                     <p>The point is not to create a general rocket-design tool. It is to show how the original assumptions interact and how the model informed the hardware.</p>
 
-                    <blockquote>
+                    <aside class="rocket-key-callout rocket-model-note">
                         <p><strong>Model note:</strong> the interactive plot represents the theoretical project model, not measured engine performance.</p>
-                    </blockquote>
+                    </aside>
 
                     <div class="rocket-model" id="rocket-model">
                         <div class="rocket-model-controls">
@@ -277,46 +297,22 @@
 
                     <p>One useful example of the route from theory to hardware is the throat diameter. The preliminary model gave a value of approximately <strong>19.33 mm</strong>, while the later detailed nozzle drawing shows a nominal throat close to <strong>19.30 mm</strong>.</p>
 
-                    <p>I include this comparison as an example of how the common engine sizing propagated into detailed hardware. The final nozzle was not my individually owned component, so I treat it as system-level context rather than claiming detailed nozzle-design ownership.</p>
+                    <p>The numerical agreement above provides the comparison; the detailed nozzle drawing below shows the hardware geometry that followed. The final nozzle was not my individually owned component, so I treat it as system-level context rather than claiming detailed nozzle-design ownership.</p>
 
-                    <p>The chamber provides a similar link. The common sizing model used the 100 mm fuel-grain diameter together with liner thickness and internal clearance to establish a <strong>120 mm internal chamber design basis</strong>. That 120 mm dimension later became a direct geometric constraint on the injector.</p>
-
-                    <div class="rocket-media-grid rocket-media-grid-two">
-                        <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="Comparison between preliminary nozzle throat sizing and detailed drawing" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/nozzle-sizing-comparison.png">
-
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>nozzle-sizing-comparison.png</code>
-                                </div>
-                            </div>
-
-                            <figcaption>Preliminary throat sizing compared with the later detailed nozzle drawing.</figcaption>
-                        </figure>
-
-                        <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="Nozzle technical drawing" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/nozzle-drawing.png">
-
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>nozzle-drawing.png</code>
-                                </div>
-                            </div>
-
-                            <figcaption>Nozzle technical drawing shown as team-level system context.</figcaption>
-                        </figure>
-                    </div>
+                    <p>The chamber drawing below provides a similar link. The common sizing model used the 100 mm fuel-grain diameter together with liner thickness and internal clearance to establish a <strong>120 mm internal chamber design basis</strong>. That 120 mm dimension later became a direct geometric constraint on the injector.</p>
 
                     <figure class="rocket-media rocket-media-wide">
-                        <div class="rocket-media-frame">
-                            <img alt="Combustion chamber technical drawing" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/chamber-drawing.png">
+                        <div class="rocket-media-frame rocket-image-frame">
+                            <img alt="Nozzle technical drawing" loading="lazy" src="../assets/images/rocket-engine/nozzle-drawing.png">
+                        </div>
 
-                            <div class="rocket-media-placeholder" hidden>
-                                <span>Image placeholder</span>
-                                <code>chamber-drawing.png</code>
-                            </div>
+                        <figcaption>Nozzle technical drawing shown as team-level system context.</figcaption>
+                    </figure>
+
+                    <figure class="rocket-media rocket-media-wide">
+                        <div class="rocket-media-frame rocket-image-frame">
+                            <img alt="Combustion chamber technical drawing" loading="lazy" src="../assets/images/rocket-engine/chamber-drawing.png">
+
                         </div>
 
                         <figcaption>Combustion-chamber drawing showing the dimensional context surrounding the injector interface.</figcaption>
@@ -406,7 +402,7 @@
 
                     <p>This became the final architecture and was the only injector concept I took into full CAD.</p>
 
-                    <div aria-label="Injector concept down-selection" class="rocket-concept-flow">
+                    <div aria-label="Injector concept down-selection" class="rocket-concept-summary">
                         <article>
                             <span>01</span>
 
@@ -516,56 +512,40 @@
                         </tbody>
                     </table>
 
-                    <p>The technical drawings and CAD show how the analytical injector work became a manufacturable component.</p>
+                    <p>The CAD and technical drawings below show how the analytical injector work became a manufacturable component. The manufacturing photographs later in the page show the same design after machining and welding.</p>
 
                     <div class="rocket-media-grid rocket-media-grid-two">
                         <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="Isometric CAD view of final injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-cad-isometric.png">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Isometric CAD view of final injector" loading="lazy" src="../assets/images/rocket-engine/injector-cad-isometric.png">
 
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>injector-cad-isometric.png</code>
-                                </div>
                             </div>
 
                             <figcaption>Final like-doublet injector CAD model.</figcaption>
                         </figure>
 
                         <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="Section CAD view of final injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-cad-section.png">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Section CAD view of final injector" loading="lazy" src="../assets/images/rocket-engine/injector-cad-section.png">
 
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>injector-cad-section.png</code>
-                                </div>
                             </div>
 
                             <figcaption>Section view showing the internal oxidiser cavity and injector geometry.</figcaption>
                         </figure>
 
                         <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="Front technical drawing of injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-drawing-front.png">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Front technical drawing of injector" loading="lazy" src="../assets/images/rocket-engine/injector-drawing-front.png">
 
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>injector-drawing-front.png</code>
-                                </div>
                             </div>
 
                             <figcaption>Front-plate technical drawing.</figcaption>
                         </figure>
 
                         <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="Section technical drawing of injector" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-drawing-section.png">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Section technical drawing of injector" loading="lazy" src="../assets/images/rocket-engine/injector-drawing-section.png">
 
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>injector-drawing-section.png</code>
-                                </div>
                             </div>
 
                             <figcaption>Injector section drawing showing the final manufacturable geometry.</figcaption>
@@ -614,20 +594,11 @@
                         </li>
                     </ul>
 
-                    <p>This was one of the decisions that changed how I think about optimisation. The best local parameter is not necessarily the best system decision.</p>
+                    <aside class="rocket-key-callout">
+                        <p>This was one of the decisions that changed how I think about optimisation. The best local parameter is not necessarily the best system decision.</p>
+                    </aside>
 
-                    <figure class="rocket-media rocket-media-wide">
-                        <div class="rocket-media-frame">
-                            <img alt="Annotated injector integration view" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/injector-integration.png">
 
-                            <div class="rocket-media-placeholder" hidden>
-                                <span>Image placeholder</span>
-                                <code>injector-integration.png</code>
-                            </div>
-                        </div>
-
-                        <figcaption>Injector integration view showing the geometry around the chamber interface and ignitor.</figcaption>
-                    </figure>
                 </div>
             </section>
 
@@ -667,45 +638,33 @@
 
                     <p>That became one of my favourite decisions from the project:</p>
 
-                    <blockquote>
+                    <aside class="rocket-key-callout">
                         <p><strong>The best CFD result was not the best overall engineering solution.</strong></p>
-                    </blockquote>
+                    </aside>
 
                     <div class="rocket-cfd-grid">
                         <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="One-ring injector CFD result" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cfd-one-ring.png">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="One-ring injector CFD result" loading="lazy" src="../assets/images/rocket-engine/cfd-one-ring.png">
 
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>cfd-one-ring.png</code>
-                                </div>
                             </div>
 
                             <figcaption>One-ring model — rejected.</figcaption>
                         </figure>
 
                         <figure class="rocket-media rocket-media-selected">
-                            <div class="rocket-media-frame">
-                                <img alt="Two-ring injector CFD result" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cfd-two-ring.png">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Two-ring injector CFD result" loading="lazy" src="../assets/images/rocket-engine/cfd-two-ring.png">
 
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>cfd-two-ring.png</code>
-                                </div>
                             </div>
 
                             <figcaption>Two-ring model — selected.</figcaption>
                         </figure>
 
                         <figure class="rocket-media">
-                            <div class="rocket-media-frame">
-                                <img alt="Three-ring injector CFD result" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cfd-three-ring.png">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Three-ring injector CFD result" loading="lazy" src="../assets/images/rocket-engine/cfd-three-ring.png">
 
-                                <div class="rocket-media-placeholder" hidden>
-                                    <span>Image placeholder</span>
-                                    <code>cfd-three-ring.png</code>
-                                </div>
                             </div>
 
                             <figcaption>Three-ring model — strongest apparent spray behaviour, but not selected.</figcaption>
@@ -742,54 +701,61 @@
 
                     <p>The rear section was machined separately and reattached using a <strong>circumferential weld</strong>.</p>
 
+                    <p>The photographs below show that split construction in the manufactured injector, including the welded rear closure. The component overview and silent videos also show the chamber, nozzle and injector after finishing and during inspection.</p>
+
                     <p>That solved the access problem, but it introduced a new manufacturing risk: distortion and another potential leak path.</p>
 
                     <p>That trade-off became important during the hot fire.</p>
 
-                    <div class="rocket-media-grid rocket-media-grid-three">
+                    <div class="rocket-media-grid rocket-media-grid-two rocket-manufacturing-photo-grid">
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Manufactured chamber, nozzle, injector and test-stand hardware laid out after finishing" loading="lazy" src="../assets/images/rocket-engine/manufactured-components-overview.jpg">
+
+                            </div>
+
+                            <figcaption>Manufactured engine hardware after finishing: chamber, nozzle, injector and test-stand structure.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Close view of the injector rear closure and circumferential weld" loading="lazy" src="../assets/images/rocket-engine/injector-welded-closure.jpg">
+
+                            </div>
+
+                            <figcaption>The separately machined rear closure after circumferential welding.</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="rocket-media-grid rocket-media-grid-two rocket-manufacturing-video-grid">
                         <figure class="rocket-media rocket-video-card" data-video-placeholder="">
                             <div class="rocket-media-frame rocket-video-frame">
-                                <video controls playsinline preload="metadata">
-                                    <source src="../assets/videos/rocket-engine/injector-rotation.mp4" type="video/mp4">
+                                <video controls muted playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/component-inspection.mp4" type="video/mp4">
                                 </video>
 
                                 <div class="rocket-media-placeholder rocket-video-placeholder">
                                     <span>Video placeholder</span>
-                                    <code>injector-rotation.mp4</code>
+                                    <code>component-inspection.mp4</code>
                                 </div>
                             </div>
 
-                            <figcaption>Manufactured injector — hand-held rotation showing the physical geometry and scale.</figcaption>
+                            <figcaption>Silent component-inspection clip showing the manufactured hardware in hand.</figcaption>
                         </figure>
 
                         <figure class="rocket-media rocket-video-card" data-video-placeholder="">
                             <div class="rocket-media-frame rocket-video-frame">
-                                <video controls playsinline preload="metadata">
-                                    <source src="../assets/videos/rocket-engine/chamber-rotation.mp4" type="video/mp4">
+                                <video controls muted playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/polished-components-overview.mp4" type="video/mp4">
                                 </video>
 
                                 <div class="rocket-media-placeholder rocket-video-placeholder">
                                     <span>Video placeholder</span>
-                                    <code>chamber-rotation.mp4</code>
+                                    <code>polished-components-overview.mp4</code>
                                 </div>
                             </div>
 
-                            <figcaption>Combustion-chamber hardware.</figcaption>
-                        </figure>
-
-                        <figure class="rocket-media rocket-video-card" data-video-placeholder="">
-                            <div class="rocket-media-frame rocket-video-frame">
-                                <video controls playsinline preload="metadata">
-                                    <source src="../assets/videos/rocket-engine/nozzle-rotation.mp4" type="video/mp4">
-                                </video>
-
-                                <div class="rocket-media-placeholder rocket-video-placeholder">
-                                    <span>Video placeholder</span>
-                                    <code>nozzle-rotation.mp4</code>
-                                </div>
-                            </div>
-
-                            <figcaption>Manufactured nozzle, shown as team-level system context.</figcaption>
+                            <figcaption>Silent overview of the polished components before final assembly.</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -806,6 +772,52 @@
                     <p>As the manufactured components arrived, the project stopped feeling like a set of individual component reports and started behaving like a real mechanical system.</p>
 
                     <p>The injector had to connect correctly to the <strong>combustion chamber</strong>. The chamber, injector and nozzle then had to behave as one pressure-containing assembly. The complete engine had to interface with the test stand at Protolaunch - the company Race2Space had matched us with for the hot-fire test.</p>
+
+                    <p>The exploded CAD view below shows the engine and test-stand relationship before assembly. The workshop photograph and short pre-test video then show the same system as physical hardware.</p>
+
+                    <div class="rocket-media-grid rocket-media-grid-two rocket-integration-media-grid">
+                        <figure class="rocket-media rocket-exploded-cad-figure">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Exploded CAD view of the hybrid rocket engine and test stand" loading="lazy" src="../assets/images/rocket-engine/engine-exploded-cad.png">
+
+                            </div>
+
+                            <figcaption>Exploded system CAD showing the engine components and test-stand relationship.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Hybrid rocket engine being assembled on its fabricated test stand" loading="lazy" src="../assets/images/rocket-engine/engine-assembly-on-stand.jpg">
+
+                            </div>
+
+                            <figcaption>Physical engine assembly on the fabricated stand before transfer to the test cell.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media">
+                            <div class="rocket-media-frame rocket-image-frame">
+                                <img alt="Fabricated steel test stand before engine installation" loading="lazy" src="../assets/images/rocket-engine/test-stand-frame.jpg">
+
+                            </div>
+
+                            <figcaption>The fabricated test stand as a standalone mechanical interface.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media rocket-video-card" data-video-placeholder="">
+                            <div class="rocket-media-frame rocket-video-frame">
+                                <video controls muted playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/pre-test-engine-on-rig.mp4" type="video/mp4">
+                                </video>
+
+                                <div class="rocket-media-placeholder rocket-video-placeholder">
+                                    <span>Video placeholder</span>
+                                    <code>pre-test-engine-on-rig.mp4</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Silent pre-test clip of the assembled engine on the Protolaunch rig.</figcaption>
+                        </figure>
+                    </div>
 
                     <p>This introduced requirements that had not been obvious when I was focused on internal injector flow:</p>
 
@@ -837,7 +849,9 @@
 
                     <p>Calculations were performed collaboratively on paper, options were discussed as a group and the resulting decisions were summarised back to Protolaunch. It was real engineering work, but it did not leave the same clean design trail as the MATLAB files, CAD or component reports.</p>
 
-                    <p>That became an important lesson in itself: important engineering decisions still need to be documented somewhere even when they happen quickly during integration.</p>
+                    <aside class="rocket-key-callout">
+                        <p>That became an important lesson in itself: important engineering decisions still need to be documented somewhere even when they happen quickly during integration.</p>
+                    </aside>
 
                     <a class="rocket-next-route" href="#the-hot-fire-attempt">
 <span>Quick route</span>
@@ -858,6 +872,8 @@
 
                     <p>Ignition was achieved and a small visible flame was produced at the nozzle, but the engine did not transition into sustained combustion at the intended operating condition. Amongst ourselves we refer to it as the cough...</p>
 
+                    <p>The hot-fire image captures that brief visible flame. Two silent post-test clips below show evidence from the hardware itself: first, burn evidence inside the fuel grain; second, the injector–chamber interface associated with the leak.</p>
+
                     <p>The limiting issue was leakage at the <strong>injector–chamber sealing interface</strong>.</p>
 
                     <p>The team's post-test assessment was that the injector flange had warped during welding, most likely because the component had not been adequately clamped while the welded section was being joined.</p>
@@ -868,26 +884,54 @@
 
                     <p>The test therefore demonstrated an important distinction:</p>
 
-                    <blockquote>
+                    <aside class="rocket-key-callout rocket-test-result-callout">
                         <p><strong>Successful ignition was not the same as successful engine operation.</strong></p>
-                    </blockquote>
+                    </aside>
 
                     <p>The injector had, admittedly, been manufactured for us free of charge. In hindsight, the free part found another way to collect its payment.</p>
 
                     <p>More importantly, the failure changed how I think about component design. I had spent a great deal of time considering orifice geometry, atomisation, pressure drop and spray behaviour. The flatness and integrity of a mechanical interface ultimately became just as important to whether the engine could function.</p>
 
                     <figure class="rocket-media rocket-media-wide">
-                        <div class="rocket-media-frame">
-                            <img alt="Hot-fire attempt showing a small flame at the nozzle" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/hot-fire.jpg">
+                        <div class="rocket-media-frame rocket-image-frame">
+                            <img alt="Hot-fire attempt showing a small flame at the nozzle" loading="lazy" src="../assets/images/rocket-engine/hot-fire.jpg">
 
-                            <div class="rocket-media-placeholder" hidden>
-                                <span>Image placeholder</span>
-                                <code>hot-fire.jpg</code>
-                            </div>
                         </div>
 
                         <figcaption>Hot-fire attempt. Ignition was achieved, but leakage at the injector–chamber interface prevented the chamber from reaching the pressure required for sustained combustion.</figcaption>
                     </figure>
+
+                    <div class="rocket-media-grid rocket-media-grid-two rocket-post-test-grid">
+                        <figure class="rocket-media rocket-video-card" data-video-placeholder="">
+                            <div class="rocket-media-frame rocket-video-frame">
+                                <video controls muted playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/post-fire-fuel-burn-evidence.mp4" type="video/mp4">
+                                </video>
+
+                                <div class="rocket-media-placeholder rocket-video-placeholder">
+                                    <span>Video placeholder</span>
+                                    <code>post-fire-fuel-burn-evidence.mp4</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Post-fire inspection showing burn evidence inside the fuel grain.</figcaption>
+                        </figure>
+
+                        <figure class="rocket-media rocket-video-card" data-video-placeholder="">
+                            <div class="rocket-media-frame rocket-video-frame">
+                                <video controls muted playsinline preload="metadata">
+                                    <source src="../assets/videos/rocket-engine/injector-chamber-seal-interface.mp4" type="video/mp4">
+                                </video>
+
+                                <div class="rocket-media-placeholder rocket-video-placeholder">
+                                    <span>Video placeholder</span>
+                                    <code>injector-chamber-seal-interface.mp4</code>
+                                </div>
+                            </div>
+
+                            <figcaption>Post-fire inspection of the injector–chamber sealing interface associated with the leak.</figcaption>
+                        </figure>
+                    </div>
 
                     <a class="rocket-next-route" href="#what-i-would-do-differently-now">
 <span>Quick route</span>
@@ -912,7 +956,9 @@
 
                     <p>That is one of the strongest lessons I took from the project.</p>
 
-                    <p>A decision that begins as a manufacturing-cost problem can eventually become a propulsion-performance problem.</p>
+                    <aside class="rocket-key-callout">
+                        <p>A decision that begins as a manufacturing-cost problem can eventually become a propulsion-performance problem.</p>
+                    </aside>
                 </div>
             </section>
 
@@ -1041,9 +1087,20 @@
 
                     <p>The project lacked a sufficiently controlled chain linking:</p>
 
-                    <p><strong>input deck → run identifier → output → approved design value → downstream calculation.</strong></p>
+                    <div class="rocket-engineering-chain rocket-analysis-chain">
+                        <p><strong>input deck → run identifier → output → approved design value → downstream calculation.</strong></p>
+                    </div>
 
                     <p>In future I would treat analysis files as controlled engineering artefacts rather than simply a collection of solver outputs.</p>
+
+                    <figure class="rocket-media rocket-media-wide rocket-cea-figure">
+                        <div class="rocket-media-frame rocket-image-frame">
+                            <img alt="Comparison of archived CEA inputs showing N2O in an early run and NO2 in later sweeps" loading="lazy" src="../assets/images/rocket-engine/cea-input-comparison.png">
+
+                        </div>
+
+                        <figcaption>Post-project audit of the archived CEA inputs revealed inconsistent oxidiser specification between analysis runs.</figcaption>
+                    </figure>
 
                     <h3 class="rocket-subheading">7. Define success before testing</h3>
 
@@ -1051,18 +1108,7 @@
 
                     <p>A stronger programme would define acceptance criteria before each test so that the result can be judged against a requirement rather than interpreted retrospectively.</p>
 
-                    <figure class="rocket-media rocket-media-wide">
-                        <div class="rocket-media-frame">
-                            <img alt="Comparison of archived CEA inputs showing N2O in an early run and NO2 in later sweeps" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="../assets/images/rocket-engine/cea-input-comparison.png">
 
-                            <div class="rocket-media-placeholder" hidden>
-                                <span>Image placeholder</span>
-                                <code>cea-input-comparison.png</code>
-                            </div>
-                        </div>
-
-                        <figcaption>Post-project audit of the archived CEA inputs revealed inconsistent oxidiser specification between analysis runs.</figcaption>
-                    </figure>
                 </div>
             </section>
 
@@ -1140,11 +1186,15 @@
 
                     <p>The project also taught me that engineering confidence has to survive every transition:</p>
 
-                    <p><strong>theory → code → CAD → manufacture → assembly → test → analysis of the result.</strong></p>
+                    <div class="rocket-engineering-chain">
+                        <p><strong>theory → code → CAD → manufacture → assembly → test → analysis of the result.</strong></p>
+                    </div>
 
                     <p>The injector could be theoretically sensible and still fail to support engine operation because the flange was not sufficiently flat to seal against the chamber.</p>
 
-                    <p>That is probably the single most useful lesson I took from the capstone.</p>
+                    <aside class="rocket-key-callout">
+                        <p>That is probably the single most useful lesson I took from the capstone.</p>
+                    </aside>
                 </div>
             </section>
 
@@ -1203,7 +1253,20 @@
 
                     <p>For me, that makes the project more valuable as an engineering case study, not less.</p>
 
-                    <p>It is a record of what happened when theory met manufacturing, cost, interfaces and real hardware.</p>
+                    <p>A Degree Show photograph at the end of the page provides a final view of the manufactured hardware in the wider project context.</p>
+
+                    <aside class="rocket-key-callout">
+                        <p>It is a record of what happened when theory met manufacturing, cost, interfaces and real hardware.</p>
+                    </aside>
+
+                    <figure class="rocket-media rocket-media-wide rocket-degree-show-figure">
+                        <div class="rocket-media-frame rocket-image-frame">
+                            <img alt="Race2Space hybrid rocket engine project displayed at the UWE Degree Show" loading="lazy" src="../assets/images/rocket-engine/degree-show-display.jpg">
+
+                        </div>
+
+                        <figcaption>The Race2Space project display at the UWE Degree Show.</figcaption>
+                    </figure>
                 </div>
             </section>
 

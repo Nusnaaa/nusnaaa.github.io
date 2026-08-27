@@ -1416,3 +1416,767 @@
         min-height: 520px;
     }
 }
+/* =========================================================
+   Media-revision additions
+   ========================================================= */
+
+/*
+   Explicit callouts
+   -----------------
+   The current HTML now marks the model note, CFD conclusion,
+   ignition conclusion and major engineering lessons with
+   .rocket-key-callout rather than relying on bare blockquote
+   styling.
+*/
+
+.rocket-model-note {
+    margin-top: 28px;
+    margin-bottom: 34px;
+}
+
+.rocket-model-note p {
+    font-weight: 450;
+}
+
+.rocket-model-note strong {
+    font-weight: 700;
+}
+
+
+/*
+   Injector concept flow
+   ---------------------
+   Keep all three concept cards in a deliberate horizontal
+   progression on desktop. This prevents the arrow elements
+   from falling onto their own awkward vertical rows.
+*/
+
+.rocket-concept-summary {
+    grid-template-columns:
+        minmax(0, 1fr)
+        34px
+        minmax(0, 1fr)
+        34px
+        minmax(0, 1fr);
+}
+
+.rocket-concept-summary article {
+    display: flex;
+    flex-direction: column;
+}
+
+.rocket-concept-summary article small {
+    margin-top: auto;
+}
+
+.rocket-concept-arrow {
+    width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+}
+
+
+/*
+   Existing CFD figure trio
+   ------------------------
+   The current HTML keeps the three CFD images together after
+   the written comparison. Give that group an intentional
+   three-column layout instead of allowing it to inherit plain
+   figure flow.
+*/
+
+.rocket-cfd-grid {
+    max-width: 940px;
+    margin: 36px 0 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.rocket-cfd-grid .rocket-media {
+    margin: 0;
+}
+
+.rocket-cfd-grid .rocket-media-frame {
+    min-height: 310px;
+}
+
+.rocket-cfd-grid figcaption {
+    min-height: 48px;
+}
+
+
+/*
+   New media sequences
+   -------------------
+*/
+
+.rocket-fuel-sequence,
+.rocket-manufacturing-photo-grid,
+.rocket-manufacturing-video-grid,
+.rocket-integration-media-grid,
+.rocket-post-test-grid {
+    margin-top: 34px;
+    margin-bottom: 42px;
+}
+
+.rocket-fuel-sequence .rocket-media,
+.rocket-manufacturing-photo-grid .rocket-media,
+.rocket-manufacturing-video-grid .rocket-media,
+.rocket-integration-media-grid .rocket-media,
+.rocket-post-test-grid .rocket-media {
+    margin: 0;
+}
+
+.rocket-fuel-sequence .rocket-media-frame {
+    min-height: 430px;
+}
+
+.rocket-manufacturing-photo-grid .rocket-media-frame,
+.rocket-integration-media-grid .rocket-media-frame {
+    min-height: 390px;
+}
+
+.rocket-manufacturing-video-grid .rocket-video-frame,
+.rocket-post-test-grid .rocket-video-frame {
+    min-height: 390px;
+}
+
+.rocket-degree-show-figure {
+    margin-top: 38px;
+}
+
+
+/*
+   Analysis chains
+   ---------------
+*/
+
+.rocket-analysis-chain {
+    margin-top: 26px;
+    margin-bottom: 30px;
+}
+
+
+/*
+   Keep the important conclusions fully dark. These selectors
+   intentionally reinforce the canonical reading-contrast
+   section rather than introducing another text colour.
+*/
+
+.rocket-key-callout,
+.rocket-key-callout p,
+.rocket-key-callout strong,
+.rocket-model-note,
+.rocket-model-note p,
+.rocket-test-result-callout,
+.rocket-test-result-callout p {
+    color: var(--text);
+}
+
+
+/* ---------------------------------------------------------
+   Media-revision responsive behaviour
+   --------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+    .rocket-cfd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-cfd-grid .rocket-media-frame {
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 760px) {
+    .rocket-concept-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-concept-arrow {
+        width: auto;
+        min-height: 26px;
+        transform: rotate(90deg);
+    }
+
+    .rocket-cfd-grid .rocket-media-frame,
+    .rocket-fuel-sequence .rocket-media-frame,
+    .rocket-manufacturing-photo-grid .rocket-media-frame,
+    .rocket-integration-media-grid .rocket-media-frame,
+    .rocket-manufacturing-video-grid .rocket-video-frame,
+    .rocket-post-test-grid .rocket-video-frame {
+        min-height: 270px;
+    }
+}
+/* =========================================================
+   Final image sizing and layout
+   ========================================================= */
+
+/*
+   Image frames no longer behave like placeholder boxes.
+
+   Real images keep a consistent visible height, while the frame
+   border/background is removed so any unused width simply blends
+   into the page instead of appearing as dead boxed space.
+*/
+
+.rocket-image-frame {
+    height: 360px;
+    min-height: 360px;
+    background: transparent;
+    border: 0;
+    overflow: hidden;
+}
+
+.rocket-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    object-position: center center;
+}
+
+
+/*
+   Hero and other full-width images
+   --------------------------------
+
+   Preserve the current generous height. Images are never stretched
+   or cropped merely to fill the width. If their aspect ratio leaves
+   spare horizontal space, they remain centred.
+*/
+
+.rocket-hero-media .rocket-image-frame {
+    height: 560px;
+    min-height: 560px;
+}
+
+.rocket-media-wide .rocket-image-frame {
+    height: 500px;
+    min-height: 500px;
+}
+
+.rocket-hot-fire-figure .rocket-image-frame {
+    height: 570px;
+    min-height: 570px;
+}
+
+.rocket-hero-media .rocket-image-frame img,
+.rocket-media-wide .rocket-image-frame img,
+.rocket-hot-fire-figure .rocket-image-frame img,
+.rocket-degree-show-figure .rocket-image-frame img {
+    object-fit: contain;
+    object-position: center center;
+}
+
+
+/*
+   Side-by-side images
+   -------------------
+
+   All image frames in a comparison row use the same height.
+   The height is preserved or increased rather than reduced.
+*/
+
+.rocket-media-grid-two .rocket-image-frame,
+.rocket-fuel-sequence .rocket-image-frame,
+.rocket-manufacturing-photo-grid .rocket-image-frame,
+.rocket-integration-media-grid .rocket-image-frame {
+    height: 430px;
+    min-height: 430px;
+}
+
+
+/*
+   Photographs can fill their side-by-side frame completely.
+   Technical drawings, CAD exports and plots remain uncropped.
+*/
+
+.rocket-media-grid-two .rocket-image-frame img[src$=".jpg"],
+.rocket-media-grid-two .rocket-image-frame img[src$=".jpeg"],
+.rocket-manufacturing-photo-grid .rocket-image-frame img[src$=".jpg"],
+.rocket-integration-media-grid .rocket-image-frame img[src$=".jpg"] {
+    object-fit: cover;
+}
+
+
+/*
+   Three-image CFD comparison
+   --------------------------
+
+   Use two large images on the first row and centre the third
+   underneath. This keeps the results more legible than three
+   narrow columns.
+*/
+
+@media (min-width: 761px) {
+    .rocket-cfd-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .rocket-cfd-grid > .rocket-media:last-child:nth-child(odd) {
+        width: calc(50% - 10px);
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .rocket-cfd-grid .rocket-image-frame {
+        height: 390px;
+        min-height: 390px;
+    }
+}
+
+
+/*
+   Keep the selected CFD case obvious through its caption rather
+   than a large bordered image box.
+*/
+
+.rocket-media-selected .rocket-image-frame {
+    border: 0;
+}
+
+.rocket-media-selected figcaption {
+    color: var(--accent);
+    font-weight: 650;
+}
+
+
+/*
+   Video frames intentionally keep their existing placeholder and
+   loading behaviour. These rules apply only to real image frames.
+*/
+
+
+/* ---------------------------------------------------------
+   Responsive image sizing
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+    .rocket-hero-media .rocket-image-frame {
+        height: 360px;
+        min-height: 360px;
+    }
+
+    .rocket-media-wide .rocket-image-frame,
+    .rocket-hot-fire-figure .rocket-image-frame,
+    .rocket-media-grid-two .rocket-image-frame,
+    .rocket-fuel-sequence .rocket-image-frame,
+    .rocket-manufacturing-photo-grid .rocket-image-frame,
+    .rocket-integration-media-grid .rocket-image-frame,
+    .rocket-cfd-grid .rocket-image-frame {
+        height: 320px;
+        min-height: 320px;
+    }
+
+    .rocket-cfd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-cfd-grid > .rocket-media:last-child:nth-child(odd) {
+        width: 100%;
+        grid-column: auto;
+    }
+}
+/* =========================================================
+   Rounded media corners
+   ========================================================= */
+
+.rocket-image-frame,
+.rocket-video-frame {
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+}
+
+.rocket-image-frame img,
+.rocket-video-frame video {
+    border-radius: inherit;
+}
+
+.rocket-media-frame,
+.rocket-report-embed {
+    border-radius: var(--radius-medium);
+}
+/* =========================================================
+   Final media corner and CEA spacing corrections
+   ========================================================= */
+
+/*
+   Apply the radius directly to every image and video as well
+   as the media wrapper. The clip-path makes the rounded edge
+   explicit even where older media rules compete for control.
+*/
+
+.rocket-page figure img,
+.rocket-page figure video,
+.rocket-page .rocket-image-frame,
+.rocket-page .rocket-video-frame {
+    border-radius: var(--radius-medium) !important;
+}
+
+.rocket-page figure img,
+.rocket-page figure video {
+    overflow: hidden;
+    clip-path: inset(0 round var(--radius-medium));
+}
+
+
+/*
+   CEA comparison
+   --------------
+
+   The CEA graphic is very wide, so the generic fixed 500 px
+   full-width frame left large blank bands above and below it.
+   Let this figure use the image's natural aspect ratio instead.
+*/
+
+.rocket-cea-figure {
+    max-width: 980px;
+    margin-top: 20px;
+    margin-bottom: 38px;
+}
+
+.rocket-cea-figure .rocket-image-frame {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.rocket-cea-figure .rocket-image-frame img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: initial;
+    object-position: initial;
+    display: block;
+}
+
+.rocket-cea-figure figcaption {
+    margin-top: 8px;
+}
+
+
+/*
+   Keep all captions visually attached to their media.
+*/
+
+.rocket-media figcaption {
+    margin-top: 9px;
+}
+/* =========================================================
+   Definitive media geometry
+   ========================================================= */
+
+:root {
+    --rocket-media-radius: 18px;
+}
+
+
+/*
+   General media
+   -------------
+
+   The wrapper is transparent and shrink-wraps the actual image.
+   It therefore cannot create a larger white/empty box around an
+   image. Rounded corners are applied directly to the media itself.
+*/
+
+.rocket-page .rocket-image-frame {
+    display: block;
+    width: fit-content !important;
+    max-width: 100% !important;
+    height: fit-content !important;
+    min-height: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    line-height: 0;
+}
+
+.rocket-page .rocket-image-frame img {
+    display: block;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto;
+    max-height: none !important;
+    margin: 0 auto;
+    border: 0;
+    border-radius: var(--rocket-media-radius) !important;
+    clip-path: inset(0 round var(--rocket-media-radius)) !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+}
+
+
+/*
+   Captions
+   --------
+
+   Any image centred in its available space now has a caption
+   centred beneath it as well.
+*/
+
+.rocket-page .rocket-media figcaption {
+    width: 100%;
+    margin-top: 9px;
+    text-align: center;
+}
+
+
+/*
+   Hero
+   ----
+
+   Preserve the existing 560 px visual height. The image remains
+   centred if its aspect ratio does not fill the available width.
+*/
+
+.rocket-page .rocket-hero-media .rocket-image-frame img {
+    height: 560px !important;
+    width: auto !important;
+}
+
+
+/*
+   Standard full-width figures
+   ---------------------------
+
+   Keep the existing large 500 px image height. The wrapper
+   shrink-wraps the image so there is no dead space around it.
+*/
+
+.rocket-page .rocket-media-wide:not(.rocket-cea-figure) .rocket-image-frame img {
+    height: 500px !important;
+    width: auto !important;
+}
+
+
+/*
+   Hot-fire figure
+   ---------------
+
+   Preserve the existing 570 px display height and apply the
+   radius directly to the photograph.
+*/
+
+.rocket-page .rocket-hot-fire-figure .rocket-image-frame img,
+.rocket-page img[src$="hot-fire.jpg"] {
+    height: 570px !important;
+    width: auto !important;
+    border-radius: var(--rocket-media-radius) !important;
+    clip-path: inset(0 round var(--rocket-media-radius)) !important;
+}
+
+
+/*
+   Two-column comparisons
+   ----------------------
+
+   Images in the same comparison row use the same 430 px height.
+   Their wrappers shrink to the image width rather than filling
+   the whole grid cell.
+*/
+
+.rocket-page .rocket-media-grid-two .rocket-image-frame img,
+.rocket-page .rocket-fuel-sequence .rocket-image-frame img,
+.rocket-page .rocket-manufacturing-photo-grid .rocket-image-frame img,
+.rocket-page .rocket-integration-media-grid .rocket-image-frame img {
+    height: 430px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+
+/*
+   Injector CAD and technical drawings
+   -----------------------------------
+
+   These inherit the same 430 px comparison height, but this
+   explicit selector guarantees that every CAD/drawing export has
+   the radius even if other rules are added later.
+*/
+
+.rocket-page img[src*="injector-cad-"],
+.rocket-page img[src*="injector-drawing-"],
+.rocket-page img[src$="nozzle-drawing.png"],
+.rocket-page img[src$="chamber-drawing.png"] {
+    border-radius: var(--rocket-media-radius) !important;
+    clip-path: inset(0 round var(--rocket-media-radius)) !important;
+}
+
+
+/*
+   Exploded system CAD
+   -------------------
+
+   This is the one integration image that should span the full
+   available content width. The figure itself occupies both grid
+   columns and the wrapper is exactly the same width as the image.
+*/
+
+.rocket-page .rocket-integration-media-grid .rocket-exploded-cad-figure {
+    width: 100%;
+    grid-column: 1 / -1;
+    justify-self: stretch;
+}
+
+.rocket-page .rocket-exploded-cad-figure .rocket-image-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.rocket-page .rocket-exploded-cad-figure .rocket-image-frame img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    border-radius: var(--rocket-media-radius) !important;
+    clip-path: inset(0 round var(--rocket-media-radius)) !important;
+}
+
+
+/*
+   CFD comparison
+   --------------
+
+   Keep the 2 + 1 arrangement, preserve the existing 390 px image
+   height, and centre the third result on the second row.
+*/
+
+@media (min-width: 761px) {
+    .rocket-page .rocket-cfd-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .rocket-page .rocket-cfd-grid > .rocket-media:last-child:nth-child(odd) {
+        width: calc(50% - 10px);
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .rocket-page .rocket-cfd-grid .rocket-image-frame img {
+        height: 390px !important;
+        width: auto !important;
+        border-radius: var(--rocket-media-radius) !important;
+        clip-path: inset(0 round var(--rocket-media-radius)) !important;
+    }
+}
+
+
+/*
+   Selected two-ring CFD model
+   ---------------------------
+
+   The selected result is identified by a blue ring around the
+   image itself. Its caption returns to the same treatment as the
+   other CFD captions.
+*/
+
+.rocket-page .rocket-media-selected .rocket-image-frame img {
+    box-sizing: border-box;
+    border: 4px solid var(--accent) !important;
+    border-radius: var(--rocket-media-radius) !important;
+    clip-path: inset(0 round var(--rocket-media-radius)) !important;
+}
+
+.rocket-page .rocket-media-selected figcaption {
+    color: var(--muted) !important;
+    font-weight: 400 !important;
+}
+
+
+/*
+   CEA comparison
+   --------------
+
+   Keep the natural aspect ratio and make the wrapper exactly match
+   the image width/height. This preserves the spacing fix from the
+   previous revision.
+*/
+
+.rocket-page .rocket-cea-figure {
+    width: 100%;
+    max-width: 980px;
+    margin: 20px auto 38px;
+}
+
+.rocket-page .rocket-cea-figure .rocket-image-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.rocket-page .rocket-cea-figure .rocket-image-frame img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: var(--rocket-media-radius) !important;
+    clip-path: inset(0 round var(--rocket-media-radius)) !important;
+}
+
+
+/*
+   Video media
+   -----------
+
+   Apply the same visible radius directly to loaded video media.
+*/
+
+.rocket-page .rocket-video-frame {
+    border-radius: var(--rocket-media-radius) !important;
+    overflow: hidden !important;
+}
+
+.rocket-page .rocket-video-frame video {
+    display: block;
+    border-radius: var(--rocket-media-radius) !important;
+    clip-path: inset(0 round var(--rocket-media-radius)) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+    .rocket-page .rocket-hero-media .rocket-image-frame img {
+        height: 360px !important;
+        width: auto !important;
+    }
+
+    .rocket-page .rocket-media-wide:not(.rocket-cea-figure) .rocket-image-frame img,
+    .rocket-page .rocket-hot-fire-figure .rocket-image-frame img,
+    .rocket-page img[src$="hot-fire.jpg"],
+    .rocket-page .rocket-media-grid-two .rocket-image-frame img,
+    .rocket-page .rocket-fuel-sequence .rocket-image-frame img,
+    .rocket-page .rocket-manufacturing-photo-grid .rocket-image-frame img,
+    .rocket-page .rocket-integration-media-grid .rocket-image-frame img,
+    .rocket-page .rocket-cfd-grid .rocket-image-frame img {
+        height: 320px !important;
+        width: auto !important;
+        max-width: 100% !important;
+    }
+
+    .rocket-page .rocket-exploded-cad-figure .rocket-image-frame img,
+    .rocket-page .rocket-cea-figure .rocket-image-frame img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .rocket-page .rocket-cfd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rocket-page .rocket-cfd-grid > .rocket-media:last-child:nth-child(odd) {
+        width: 100%;
+        grid-column: auto;
+    }
+}
