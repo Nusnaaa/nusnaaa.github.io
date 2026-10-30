@@ -1,0 +1,186 @@
+{
+  "name": "Linus Adzanku",
+  "email": "linus.adzankuu@gmail.com",
+  "portfolio": "https://nusnaaa.github.io/",
+  "github": "https://github.com/Nusnaaa",
+  "linkedin": "https://www.linkedin.com/in/linus-adzanku",
+  "documents": [
+    {
+      "filename": "Linus_Adzanku-resume.pdf",
+      "title": "Aerospace Engineer | CFD & Numerical Modelling",
+      "pages": [
+        [
+          {
+            "heading": "Profile",
+            "paragraphs": [
+              "MEng Aerospace Engineering graduate (UWE Bristol, 2025, Merit) specialising in computational fluid dynamics, numerical modelling and engineering analysis. University project experience combines transient simulation, MATLAB analysis and mechanical design with critical assessment of model fidelity and test outcomes."
+            ]
+          },
+          {
+            "heading": "Technical Skills",
+            "bullets": [
+              "CFD and aerodynamics: ANSYS Fluent; transient sliding meshes, Transition SST/SBES, FW-H acoustic analysis and comparison against reference data.",
+              "Numerical analysis: MATLAB for engineering calculations, signal processing and CFD post-processing; NASA CEA thermochemical analysis, with configuration-control limitations documented in the rocket case study.",
+              "Mechanical design: SolidWorks CAD, engineering drawings, injector sizing, manufacturing constraints and system integration; university FEA experience using ANSYS Mechanical.",
+              "Programming and tools: MATLAB, developing Python skills, foundational C++; Git/GitHub, Linux and Excel. Experience is based on university and personal projects rather than professional software-development employment."
+            ]
+          },
+          {
+            "heading": "Engineering Projects",
+            "entries": [
+              {
+                "title": "VAWT Aeroacoustics",
+                "subtitle": "Individual MEng research project | April–June 2025",
+                "bullets": [
+                  "Developed a transient model of a three-bladed Darrieus turbine in ANSYS Fluent, following a published Transition SST/SBES approach. Built the domain, sliding mesh and local refinement strategy.",
+                  "Extended the model using FW-H acoustics at four receiver positions and MATLAB post-processing of pressure histories and frequency-domain behaviour.",
+                  "At TSR 3.3 and 9 m/s, predicted power coefficient was approximately 0.13 versus approximately 0.27 in the reference study. Mesh, time-step and computational constraints limited fidelity; reliable acoustic prediction was not established."
+                ],
+                "link": "https://nusnaaa.github.io/projects/aeroacoustics-overview.html"
+              },
+              {
+                "title": "600 N N₂O/HDPE Hybrid Rocket Engine",
+                "subtitle": "Five-person MEng capstone | November 2024–June 2025",
+                "bullets": [
+                  "Principal responsibility for oxidiser injector design from concept selection and analytical sizing through CFD, SolidWorks CAD, manufacture and integration, ending in a two-ring impinging configuration.",
+                  "Contributed to shared propulsion sizing using NASA CEA and MATLAB, and initial nozzle calculations before detailed nozzle work passed to another team member.",
+                  "Design targets were 600 N thrust, five-second nominal burn, O/F 7 and approximately 33 bar chamber pressure. Ignition occurred, but injector–chamber leakage prevented target pressure and sustained combustion. These figures are not measured performance."
+                ],
+                "link": "https://nusnaaa.github.io/projects/rocket-engine-overview.html"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "heading": "Professional Experience",
+            "entries": [
+              {
+                "title": "Junior Buyer — Unite Students",
+                "subtitle": "Bristol | June–December 2025",
+                "bullets": [
+                  "Supported tender and RFI/RFP workflows by coordinating supplier information, collating submissions and maintaining structured evaluation documentation.",
+                  "Built and maintained Excel-based tools for procurement information comparison and quality checking, including lookup functions and pivot tables.",
+                  "Worked with suppliers and internal stakeholders to resolve incomplete information, support supplier relationships and maintain progress across sourcing activities.",
+                  "Contributed to Oracle Fusion-related procurement workflows, process documentation and improvements to procurement working practices."
+                ]
+              },
+              {
+                "title": "Procurement Intern — Unite Students",
+                "subtitle": "Bristol | Summer 2024, ten weeks",
+                "bullets": [
+                  "Supported RFP administration by organising supplier submissions, collating responses and preparing information for evaluation.",
+                  "Produced and updated Excel tools for data organisation and comparison; checked, reformatted and validated procurement records.",
+                  "Obtained missing information from suppliers and stakeholders and provided regular updates across procurement tasks and deadlines."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Further Engineering Experience",
+            "entries": [
+              {
+                "title": "Cartography UAS",
+                "subtitle": "Personal project | Ongoing",
+                "paragraphs": [
+                  "Developing an unmanned aircraft from requirements and conceptual design towards detailed design, manufacture and eventual ground and flight testing. Later manufacture and testing remain planned work, not completed achievements."
+                ]
+              },
+              {
+                "title": "Turboprop Aircraft Conceptual Design",
+                "subtitle": "University group project",
+                "paragraphs": [
+                  "Contributed landing-gear design and economic analysis, with additional work on aerodynamics and weight-and-balance analysis using MATLAB and engineering calculations."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Education",
+            "entries": [
+              {
+                "title": "MEng Aerospace Engineering — Merit",
+                "subtitle": "University of the West of England, Bristol | October 2021–August 2025",
+                "paragraphs": [
+                  "Relevant study: aerodynamics, aeroacoustics, propulsion, structural mechanics, materials and manufacturing, aircraft design and systems engineering."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Additional Information",
+            "paragraphs": [
+              "Languages: English (fluent); Japanese (elementary).",
+              "Full engineering case studies document methods, figures, limitations and lessons learned. A separate procurement CV provides a commercial focus using the same work history and qualification."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "filename": "Linus_Adzanku-procurement-CV.pdf",
+      "title": "Procurement & Commercial Analysis",
+      "pages": [
+        [
+          {
+            "heading": "Profile",
+            "paragraphs": [
+              "Former Junior Buyer and Procurement Intern at Unite Students, with experience supporting sourcing, supplier engagement, tender coordination and Excel-based evaluation. MEng Aerospace Engineering graduate with an analytical approach to comparing information, documenting decisions and coordinating stakeholders. Seeking to apply this combination in procurement and commercial analysis."
+            ]
+          },
+          {
+            "heading": "Procurement & Analytical Skills",
+            "bullets": [
+              "Tendering: supplier information gathering, RFI/RFP administration, submission collation and structured evaluation documentation.",
+              "Commercial analysis: Excel-based comparative evaluation, lookup functions, pivot tables and procurement data-quality checks.",
+              "Supplier and stakeholder engagement: resolving information gaps, supporting supplier relationships and coordinating progress across activities.",
+              "Processes and systems: Oracle Fusion-related procurement workflows, process documentation and improvements to working practices."
+            ]
+          },
+          {
+            "heading": "Professional Experience",
+            "entries": [
+              {
+                "title": "Junior Buyer — Unite Students",
+                "subtitle": "Bristol | June–December 2025",
+                "bullets": [
+                  "Supported tender and RFI/RFP workflows by coordinating supplier information, collating responses and maintaining evaluation documentation.",
+                  "Built and maintained Excel tools to organise, compare and quality-check procurement information, including lookup functions and pivot tables.",
+                  "Worked with suppliers and internal stakeholders to resolve incomplete or inconsistent information and maintain progress across procurement activities.",
+                  "Supported supplier relationship management and improvements to procurement documentation; contributed to Oracle Fusion-related workflows and process standardisation."
+                ]
+              },
+              {
+                "title": "Procurement Intern — Unite Students",
+                "subtitle": "Bristol | Summer 2024, ten weeks",
+                "bullets": [
+                  "Supported RFP administration through supplier submission organisation, response collation and information preparation for evaluation.",
+                  "Produced and updated Excel tools for procurement data organisation and comparison; checked, reformatted and validated records to improve consistency.",
+                  "Communicated with suppliers and internal stakeholders to obtain missing information and provided regular progress updates across tasks and deadlines."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Education & Engineering Analysis",
+            "entries": [
+              {
+                "title": "MEng Aerospace Engineering — Merit",
+                "subtitle": "University of the West of England, Bristol | October 2021–August 2025",
+                "paragraphs": [
+                  "Developed numerical analysis, design trade-off and evidence-evaluation skills through CFD and propulsion projects. Used MATLAB, Excel and engineering calculations; contributed economic analysis and landing-gear design to a university aircraft concept."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Additional Information",
+            "paragraphs": [
+              "Languages: English (fluent); Japanese (elementary). Engineering CV and detailed project evidence are available through the portfolio."
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}
