@@ -1136,3 +1136,21 @@ iframe:focus-visible {
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
 }
+
+/* Refinement: readable links, compact navigation and explicit mobile targets. */
+.text-link { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.site-nav { gap: 14px 28px; padding: 20px 0; flex-wrap: wrap; }
+.nav-links { gap: 8px 24px; flex-wrap: wrap; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.site-logo { min-height: 44px; display: inline-flex; align-items: center; }
+.site-footer { width: calc(100% - 40px); max-width: var(--max-width); margin: auto; padding: 24px 0; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .85rem; }
+.site-footer p { margin: 0; }
+.fallback-nav { width: calc(100% - 40px); max-width: var(--max-width); margin: 20px auto; }
+.project-page { padding-top: 50px; }
+.project-header { margin-bottom: 40px; }
+.report-overview-link { display: inline-block; margin: 16px 0 24px; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+@media(max-width: 650px) {
+ .site-nav { align-items: flex-start; gap: 0; }
+ .nav-links { width: 100%; justify-content: space-between; gap: 0 12px; }
+ .nav-links a { font-size: .86rem; }
+}

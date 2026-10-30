@@ -1,691 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Engineering portfolio of Linus Adzanku, a mechanical and aerospace engineer working across mechanical design, CFD, propulsion, testing and unmanned systems."
-    >
-
-    <title>
-        Linus Adzanku | Mechanical Engineer
-    </title>
-
-    <!-- Site-wide styling -->
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-    <!-- Homepage only -->
-    <link
-        rel="stylesheet"
-        href="css/home.css"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerospace Engineer | CFD &amp; Numerical Modelling | Linus Adzanku</title>
+    <meta name="description" content="MEng Aerospace Engineering graduate specialising in CFD, numerical modelling and engineering analysis. Explore project evidence, CVs and contact details.">
+    <link rel="canonical" href="https://nusnaaa.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aerospace Engineer | CFD &amp; Numerical Modelling | Linus Adzanku">
+    <meta property="og:description" content="MEng Aerospace Engineering graduate specialising in CFD, numerical modelling and engineering analysis. Explore project evidence, CVs and contact details.">
+    <meta property="og:url" content="https://nusnaaa.github.io/">
+    <meta property="og:image" content="https://nusnaaa.github.io/assets/images/aeroacoustics/cp-comparison.png">
+    <meta property="og:image:alt" content="VAWT power-coefficient comparison with published reference results">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
-
-
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <!-- Shared navigation -->
     <div id="navigation"></div>
-
-
+    <noscript><nav class="fallback-nav" aria-label="Main navigation"><a href="index.html">Home</a> · <a href="projects.html">Projects</a> · <a href="cv.html">CV</a> · <a href="index.html#contact">Contact</a></nav></noscript>
     <main id="main-content" tabindex="-1" class="home-page">
-
-
-        <!-- =================================================
-             HERO
-             ================================================= -->
-
-        <section class="home-hero">
-
-            <div class="home-hero-content">
-
-                <p class="home-eyebrow">
-                    Mechanical Engineer
-                </p>
-
-                <h1>
-                    Linus Adzanku
-                </h1>
-
-                <p class="home-hero-intro">
-                    I hold an MEng in Aerospace Engineering (UWE, 2025, Merit), with project experience in CFD and numerical modelling, propulsion and mechanical design.
-                </p>
-
-                <p class="home-hero-secondary">
-                    Explore the analysis, hardware and practical verification behind my projects, including test outcomes, modelling limitations and lessons learned.
-                </p>
-
-
-                <div class="home-hero-actions">
-                    <a class="button button-primary" href="projects/aeroacoustics.html">VAWT Aeroacoustics</a>
-                    <a class="button button-secondary" href="projects/rocket-engine.html">600 N Rocket Case Study</a>
-                    <a class="button button-secondary" href="cv.html">Online CV</a>
-                </div>
-                <p class="home-hero-links">
-                    <a href="assets/documents/Linus_Adzanku-resume.pdf" target="_blank" rel="noopener noreferrer">PDF CV (previous version) ↗</a> ·
-                    <a href="https://github.com/Nusnaaa" target="_blank" rel="noopener noreferrer">GitHub ↗</a> ·
-                    <a href="https://www.linkedin.com/in/linus-adzanku" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                </p>
-
+        <section class="home-hero" aria-labelledby="home-name">
+            <p class="eyebrow">Aerospace Engineer | CFD &amp; Numerical Modelling</p>
+            <h1 id="home-name">Linus Adzanku</h1>
+            <p class="home-intro">I am an MEng Aerospace Engineering graduate specialising in computational fluid dynamics, numerical modelling and engineering analysis. My work combines simulation, programming and mechanical design, with projects spanning aeroacoustics, propulsion and aircraft systems.</p>
+            <div class="home-actions">
+                <a class="button button-primary" href="#selected-work">Explore engineering work</a>
+                <a class="button button-secondary" href="assets/documents/Linus_Adzanku-resume.pdf">Engineering CV (PDF)</a>
+                <a class="text-link" href="https://github.com/Nusnaaa">GitHub ↗</a>
+                <a class="text-link" href="#contact">Contact ↓</a>
             </div>
-
         </section>
-
-
-
-        <!-- =================================================
-             01 ABOUT
-             ================================================= -->
-
-        <section class="home-section">
-
-            <div class="home-section-number">
-                01
+        <section class="home-section" id="selected-work" aria-labelledby="selected-heading">
+            <div class="home-section-heading"><h2 id="selected-heading">Selected Work</h2><a class="text-link" href="projects.html">All projects →</a></div>
+            <div class="home-work-grid">
+                <article class="work-card">
+                    <p class="eyebrow">CFD · Aeroacoustics</p>
+                    <h3><a href="projects/aeroacoustics-overview.html">VAWT Aeroacoustics →</a></h3>
+                    <p>Transient Darrieus turbine modelling with Transition SST/SBES and an FW-H acoustic extension. Predicted Cp ≈ 0.13 versus reference ≈ 0.27: an investigation of model fidelity and its limits.</p>
+                    <p class="card-tools">ANSYS Fluent · MATLAB</p>
+                </article>
+                <article class="work-card">
+                    <p class="eyebrow">Propulsion · Mechanical Design</p>
+                    <h3><a href="projects/rocket-engine-overview.html">600 N Hybrid Rocket Engine →</a></h3>
+                    <p>Injector design, manufacture and integration for a student-team N₂O/HDPE engine with a 600 N thrust target. Ignition occurred; sealing leakage prevented sustained combustion.</p>
+                    <p class="card-tools">SolidWorks · CFD · NASA CEA</p>
+                </article>
             </div>
-
-
-            <div class="home-section-body">
-
-                <p class="home-section-label">
-                    About
-                </p>
-
-                <div class="home-about-grid">
-
-                    <h2>
-                        Engineering through projects.
-                    </h2>
-
-
-                    <div class="home-about-copy">
-
-                        <p>
-                            My background is in aerospace engineering,
-                            but much of the work I enjoy sits across the
-                            broader mechanical-engineering discipline:
-                            designing hardware, understanding how it behaves,
-                            testing assumptions and improving a design when
-                            the real result differs from the expected one.
-                        </p>
-
-                        <p>
-                            My university work has included rocket propulsion,
-                            CFD and aeroacoustics, aircraft conceptual design,
-                            structural analysis and systems engineering.
-                            Alongside that, I am developing personal projects
-                            that push me further into mechanical design,
-                            electronics, embedded systems and unmanned
-                            aircraft.
-                        </p>
-
-                        <p>
-                            This portfolio is intended to show more than final
-                            renders or finished reports. Where useful, I also
-                            document unsuccessful approaches, modelling
-                            limitations, design trade-offs and what I would
-                            change if I repeated the work.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </section>
-
-
-
-        <!-- =================================================
-             02 SELECTED PROJECTS
-             ================================================= -->
-
-        <section class="home-section">
-
-            <div class="home-section-number">
-                02
+        <section class="home-section" aria-labelledby="capabilities-heading">
+            <h2 id="capabilities-heading">Capabilities &amp; Experience</h2>
+            <div class="home-capabilities">
+                <div><h3>CFD &amp; simulation</h3><p>Transient flow modelling, sliding meshes, turbulence treatment and comparison with reference data in ANSYS Fluent.</p></div>
+                <div><h3>Numerical analysis</h3><p>MATLAB for engineering calculations, signal processing and interpreting simulation results; developing Python skills.</p></div>
+                <div><h3>Propulsion &amp; design</h3><p>Injector sizing, SolidWorks CAD, manufacturing constraints, mechanical interfaces and test-outcome analysis.</p></div>
             </div>
-
-
-            <div class="home-section-body">
-
-                <div class="home-section-heading">
-
-                    <div>
-
-                        <p class="home-section-label">
-                            Selected projects
-                        </p>
-
-                        <h2>
-                            Engineering work
-                        </h2>
-
-                    </div>
-
-
-                    <a
-                        class="home-inline-link"
-                        href="projects.html">
-                        View all projects →
-                    </a>
-
-                </div>
-
-
-
-                <div class="home-project-list">
-
-
-                    <!-- -------------------------------------
-                         Aeroacoustics
-                         ------------------------------------- -->
-
-                    <article class="home-project">
-
-                        <div class="home-project-index">
-                            01
-                        </div>
-
-
-                        <div class="home-project-main">
-
-                            <p class="home-project-type">
-                                CFD · Aeroacoustics
-                            </p>
-
-                            <h3>
-                                Vertical-Axis Wind Turbine Aeroacoustics
-                            </h3>
-
-                            <p>
-                                Replication of a published Transition SST +
-                                SBES model of a Darrieus wind turbine,
-                                followed by an FW-H acoustic analysis.
-                                The project became an investigation into
-                                model fidelity, computational limitations
-                                and the relationship between aerodynamic
-                                and acoustic resolution.
-                            </p>
-
-
-                            <div class="home-project-tags">
-
-                                <span>ANSYS Fluent</span>
-                                <span>SBES</span>
-                                <span>FW-H</span>
-                                <span>MATLAB</span>
-
-                            </div>
-
-
-                            <a
-                                class="home-project-link"
-                                href="projects/aeroacoustics.html">
-                                Read project →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- -------------------------------------
-                         Rocket engine
-                         ------------------------------------- -->
-
-                    <article class="home-project">
-
-                        <div class="home-project-index">
-                            02
-                        </div>
-
-
-                        <div class="home-project-main">
-
-                            <p class="home-project-type">
-                                Propulsion · Mechanical Design
-                            </p>
-
-                            <h3>
-                                600 N Hybrid Rocket Engine
-                            </h3>
-
-                            <p>
-                                University propulsion project centred on
-                                a 600 N thrust target for an N₂O/HDPE hybrid
-                                rocket engine. My primary responsibility
-                                was the injector, supported by preliminary
-                                propulsion sizing, analysis, manufacture,
-                                integration and test preparation.
-                            </p>
-
-
-                            <div class="home-project-tags">
-
-                                <span>SolidWorks</span>
-                                <span>NASA CEA</span>
-                                <span>MATLAB</span>
-                                <span>Testing</span>
-
-                            </div>
-
-
-                            <a
-                                class="home-project-link"
-                                href="projects/rocket-engine.html">
-                                Read project →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- -------------------------------------
-                         UAS
-                         ------------------------------------- -->
-
-                    <article class="home-project">
-
-                        <div class="home-project-index">
-                            03
-                        </div>
-
-
-                        <div class="home-project-main">
-
-                            <p class="home-project-type">
-                                Personal Project · In Development
-                            </p>
-
-                            <h3>
-                                Cartography UAS
-                            </h3>
-
-                            <p>
-                                An ongoing attempt to design and build an
-                                unmanned aircraft from first principles.
-                                The project combines aerodynamic and
-                                mechanical design with propulsion,
-                                electronics, flight control, embedded
-                                systems and eventual manufacture and
-                                flight testing.
-                            </p>
-
-
-                            <div class="home-project-tags">
-
-                                <span>Aircraft Design</span>
-                                <span>CAD</span>
-                                <span>ArduPilot</span>
-                                <span>Embedded Systems</span>
-
-                            </div>
-
-
-                            <a
-                                class="home-project-link"
-                                href="projects/uas.html">
-                                View project →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
+            <p class="home-industry">Alongside engineering projects, my Procurement Intern and Junior Buyer roles at Unite Students developed supplier engagement, Excel-based evaluation and stakeholder coordination skills. <a class="text-link" href="cv.html#professional-experience">Professional experience →</a></p>
         </section>
-
-
-
-        <!-- =================================================
-             03 CURRENT WORK
-             ================================================= -->
-
-        <section class="home-section">
-
-            <div class="home-section-number">
-                03
+        <section class="home-section home-contact" id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>For engineering opportunities and professional enquiries:</p>
+            <a class="contact-email" href="mailto:linus.adzankuu@gmail.com">linus.adzankuu@gmail.com</a>
+            <div class="contact-links">
+                <a href="https://github.com/Nusnaaa">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/linus-adzanku">LinkedIn ↗</a>
+                <a href="cv.html">Online CV →</a>
+                <a href="assets/documents/Linus_Adzanku-resume.pdf">Engineering CV (PDF) ↓</a>
             </div>
-
-
-            <div class="home-section-body">
-
-                <p class="home-section-label">
-                    Current work
-                </p>
-
-                <div class="home-current-grid">
-
-                    <div>
-
-                        <h2>
-                            Cartography UAS
-                        </h2>
-
-                        <p class="home-current-status">
-                            Personal project · In development
-                        </p>
-
-                    </div>
-
-
-                    <div class="home-current-copy">
-
-                        <p>
-                            I am currently developing a small unmanned
-                            aircraft intended as a long-term practical
-                            engineering project.
-                        </p>
-
-                        <p>
-                            Rather than starting with a purchased airframe
-                            and integrating components into it, I am using
-                            the project to work through a more complete
-                            engineering process: requirements, conceptual
-                            design, preliminary analysis, detailed design,
-                            manufacture, integration, ground testing and
-                            eventually flight testing.
-                        </p>
-
-                        <p>
-                            It is also giving me a reason to develop areas
-                            that sat outside the core of my aerospace degree,
-                            particularly embedded systems, electronics,
-                            software and networked aircraft systems.
-                        </p>
-
-
-                        <a
-                            class="home-inline-link"
-                            href="projects/uas.html">
-                            Follow the project →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </section>
-
-
-
-        <!-- =================================================
-             04 BACKGROUND
-             ================================================= -->
-
-        <section class="home-section">
-
-            <div class="home-section-number">
-                04
-            </div>
-
-
-            <div class="home-section-body">
-
-                <p class="home-section-label">
-                    Background
-                </p>
-
-                <h2>
-                    Engineering background
-                </h2>
-
-
-                <div class="home-background">
-
-
-                    <article>
-
-                        <div class="home-background-date">
-                            University
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                MEng Aerospace Engineering
-                            </h3>
-
-                            <p class="home-background-place">
-                                University of the West of England, Bristol
-                            </p>
-
-                            <p>
-                                Coursework and projects spanning
-                                aerodynamics, propulsion, structures,
-                                aircraft design, systems engineering,
-                                simulation and advanced manufacturing.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <article>
-
-                        <div class="home-background-date">
-                            Engineering
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Project-based technical work
-                            </h3>
-
-                            <p>
-                                Experience using CFD, FEA, CAD,
-                                numerical analysis and physical testing
-                                across individual and group engineering
-                                projects.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <article>
-
-                        <div class="home-background-date">
-                            Industry
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Procurement Intern / Junior Buyer
-                            </h3>
-
-                            <p class="home-background-place">
-                                Unite Students
-                            </p>
-
-                            <p>
-                                Procurement experience supporting RFI/RFP and tender coordination, supplier engagement, Excel-based comparative evaluation and Oracle Fusion procurement workflows, alongside cross-functional stakeholder coordination and process improvement.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             05 TOOLS
-             ================================================= -->
-
-        <section class="home-section">
-
-            <div class="home-section-number">
-                05
-            </div>
-
-
-            <div class="home-section-body">
-
-                <p class="home-section-label">
-                    Tools
-                </p>
-
-                <h2>
-                    Software and technical tools I use
-                </h2>
-
-
-                <div class="home-tools">
-
-                    <div>
-                        <span>CAD</span>
-
-                        <p>
-                            SolidWorks
-                        </p>
-                    </div>
-
-                    <div>
-                        <span>Simulation</span>
-
-                        <p>
-                            ANSYS Fluent · ANSYS Mechanical
-                        </p>
-                    </div>
-
-                    <div>
-                        <span>Engineering analysis</span>
-
-                        <p>
-                            MATLAB · NASA CEA · Excel
-                        </p>
-                    </div>
-
-                    <div>
-                        <span>Programming</span>
-
-                        <p>
-                            Python · C++ · MATLAB · Simulink
-                        </p>
-                    </div>
-
-                    <div>
-                        <span>Development</span>
-
-                        <p>
-                            Git · GitHub · Linux
-                        </p>
-                    </div>
-
-                    <div>
-                        <span>UAS</span>
-
-                        <p>
-                            ArduPilot · QGroundControl · SITL
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             CONTACT
-             ================================================= -->
-
-        <section class="home-contact">
-
-            <p class="home-section-label">
-                Contact
-            </p>
-
-            <h2>
-                Thanks for looking through my work.
-            </h2>
-
-            <p>
-                My CV and LinkedIn contain the shorter version.
-                This site is where I keep the engineering detail.
-            </p>
-
-
-            <div class="home-contact-links">
-
-                <a href="projects.html">
-                    Projects
-                </a>
-
-                <a
-                    href="assets/documents/Linus_Adzanku-resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    CV
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/linus-adzanku"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </section>
-
-
     </main>
-
-
-
-    <footer class="site-footer">
-
-        <p>
-            © Linus Adzanku
-        </p>
-
-        <p>
-            Engineering Portfolio
-        </p>
-
-    </footer>
-
-
-    <script src="js/navigation.js"></script>
-
+    <footer class="site-footer"><p>Linus Adzanku · Aerospace Engineering</p><a href="index.html#contact">Get in touch</a></footer>
+    <script src="js/navigation.js" defer></script>
 </body>
-
 </html>
