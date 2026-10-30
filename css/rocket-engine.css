@@ -2180,3 +2180,8 @@
         grid-column: auto;
     }
 }
+
+/* Keep long reference URLs within narrow project columns. */
+.rocket-page a {
+    overflow-wrap: anywhere;
+}
