@@ -9,14 +9,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <meta
-        name="description"
-        content="Technical case study of a vertical-axis wind turbine CFD and aeroacoustics project by Linus Adzanku, replicating a published Transition SST and SBES model before extending it using FW-H acoustic prediction."
-    >
+    <meta name="description" content="Full Darrieus turbine CFD and FW-H acoustic study: Transition SST/SBES methods, Cp shortfall, numerical limitations, figures and references.">
 
-    <title>
-        VAWT Aeroacoustics | Linus Adzanku
-    </title>
+    <title>VAWT Aeroacoustics — Full Technical Report | Linus Adzanku</title>
 
     <!-- Site-wide styling -->
     <link
@@ -29,6 +24,13 @@
         rel="stylesheet"
         href="../css/aeroacoustics.css"
     >
+    <link rel="canonical" href="https://nusnaaa.github.io/projects/aeroacoustics.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="VAWT Aeroacoustics — Full Technical Report | Linus Adzanku">
+    <meta property="og:description" content="Full Darrieus turbine CFD and FW-H acoustic study: Transition SST/SBES methods, Cp shortfall, numerical limitations, figures and references.">
+    <meta property="og:url" content="https://nusnaaa.github.io/projects/aeroacoustics.html">
+    <meta property="og:image" content="https://nusnaaa.github.io/assets/images/aeroacoustics/cp-comparison.png">
+    <meta property="og:image:alt" content="Power-coefficient comparison with published reference data">
 </head>
 
 
@@ -40,6 +42,7 @@
          ===================================================== -->
 
     <div id="navigation"></div>
+    <noscript><nav class="fallback-nav" aria-label="Main navigation"><a href="../index.html">Home</a> · <a href="../projects.html">Projects</a> · <a href="../cv.html">CV</a> · <a href="../index.html#contact">Contact</a></nav></noscript>
 
 
     <main id="main-content" tabindex="-1" class="project-page aeroacoustics-page">
@@ -308,7 +311,7 @@
                                     src="../assets/images/aeroacoustics/geometry-domain.png"
                                     alt="External computational domain used in the Syawitri VAWT simulation"
                                     loading="lazy"
-                                >
+                                 width="593" height="342">
 
                             </div>
 
@@ -336,7 +339,7 @@
                                     src="../assets/images/aeroacoustics/geometry-rotor.png"
                                     alt="Three-bladed Darrieus rotor and rotating control sub-domain from Syawitri et al."
                                     loading="lazy"
-                                >
+                                 width="542" height="477">
 
                             </div>
 
@@ -532,7 +535,7 @@
                                 src="../assets/images/aeroacoustics/mesh-farfield.png"
                                 alt="Far-field mesh used in the Darrieus VAWT CFD simulation"
                                 loading="lazy"
-                            >
+                             width="1637" height="1171">
 
                             <figcaption>
 
@@ -555,7 +558,7 @@
                                 src="../assets/images/aeroacoustics/mesh-rotating-core.png"
                                 alt="Rotating-core mesh containing the three Darrieus turbine blades"
                                 loading="lazy"
-                            >
+                             width="1372" height="1100">
 
                             <figcaption>
 
@@ -578,7 +581,7 @@
                                 src="../assets/images/aeroacoustics/mesh-boi.png"
                                 alt="Refined body-of-influence mesh surrounding a Darrieus turbine aerofoil"
                                 loading="lazy"
-                            >
+                             width="1491" height="1182">
 
                             <figcaption>
 
@@ -692,7 +695,7 @@
                                 src="../assets/images/aeroacoustics/near-wall-mesh.png"
                                 alt="Inflation-layer mesh around a Darrieus VAWT aerofoil"
                                 loading="lazy"
-                            >
+                             width="2909" height="872">
 
                             <figcaption>
 
@@ -767,7 +770,7 @@
                                 src="../assets/images/aeroacoustics/mesh-comparison.png"
                                 alt="Comparison of force behaviour from different VAWT mesh resolutions"
                                 loading="lazy"
-                            >
+                             width="1920" height="1106">
 
                             <figcaption>
 
@@ -802,7 +805,7 @@
                                 src="../assets/images/aeroacoustics/convergence-history.png"
                                 alt="Lift, drag, moment and power coefficients over repeated rotor revolutions"
                                 loading="lazy"
-                            >
+                             width="1920" height="1106">
 
                             <figcaption>
 
@@ -928,7 +931,7 @@
                             src="../assets/images/aeroacoustics/cp-comparison.png"
                             alt="Power coefficient from the current VAWT simulation compared with published CFD and experimental results"
                             loading="lazy"
-                        >
+                         width="1920" height="1106">
 
                         <figcaption>
 
@@ -1020,7 +1023,7 @@
                                         src="../assets/images/aeroacoustics/vorticity-local-scale.png"
                                         alt="Vorticity magnitude scale for the current simulation"
                                         loading="lazy"
-                                    >
+                                     width="226" height="464">
 
                                 </figure>
 
@@ -1037,7 +1040,7 @@
                                                 src="../assets/images/aeroacoustics/vorticity-local-135.png"
                                                 alt="Current simulation vorticity field at 135 degrees rotor position"
                                                 loading="lazy"
-                                            >
+                                             width="443" height="380">
                                         </div>
 
                                         <figcaption>
@@ -1055,7 +1058,7 @@
                                                 src="../assets/images/aeroacoustics/vorticity-local-150.png"
                                                 alt="Current simulation vorticity field at 150 degrees rotor position"
                                                 loading="lazy"
-                                            >
+                                             width="221" height="218">
                                         </div>
 
                                         <figcaption>
@@ -1073,7 +1076,7 @@
                                                 src="../assets/images/aeroacoustics/vorticity-local-180.png"
                                                 alt="Current simulation vorticity field at 180 degrees rotor position"
                                                 loading="lazy"
-                                            >
+                                             width="352" height="360">
                                         </div>
 
                                         <figcaption>
@@ -1124,7 +1127,7 @@
                                         src="../assets/images/aeroacoustics/vorticity-reference-results.png"
                                         alt="Vorticity fields at 135, 150 and 180 degrees reproduced from Syawitri et al. 2020"
                                         loading="lazy"
-                                    >
+                                     width="846" height="266">
 
                                 </figure>
 
@@ -1136,7 +1139,7 @@
                                         src="../assets/images/aeroacoustics/vorticity-reference-scale.png"
                                         alt="Vorticity magnitude scale used in the Syawitri reference results"
                                         loading="lazy"
-                                    >
+                                     width="352" height="107">
 
                                 </figure>
 
@@ -1255,7 +1258,7 @@
                                 src="../assets/images/aeroacoustics/receiver-setup.png"
                                 alt="Four FW-H acoustic receivers positioned one metre from the centre of the VAWT"
                                 loading="lazy"
-                            >
+                             width="418" height="366">
 
                             <figcaption>
 
@@ -1343,7 +1346,7 @@
                             src="../assets/images/aeroacoustics/pressure-history.png"
                             alt="Pressure-time histories recorded at the four acoustic receiver locations"
                             loading="lazy"
-                        >
+                         width="3119" height="1192">
 
                         <figcaption>
 
@@ -1436,7 +1439,7 @@
                             src="../assets/images/aeroacoustics/acoustic-spectrum.png"
                             alt="Sound pressure level spectra calculated for the four VAWT acoustic receivers"
                             loading="lazy"
-                        >
+                         width="1892" height="942">
 
                         <figcaption>
 
@@ -1650,7 +1653,7 @@
                                     src="../assets/images/aeroacoustics/courant-number.png"
                                     alt="Cell convective Courant number from the final VAWT transient simulation"
                                     loading="lazy"
-                                >
+                                 width="2583" height="955">
 
                                 <figcaption>
 
@@ -2256,6 +2259,7 @@
                 <div class="aa-pdf-container">
 
                     <iframe
+                        loading="lazy"
                         class="aa-pdf-viewer"
                         src="../assets/documents/aeroacoustics/aeroacoustics-presentation.pdf"
                         title="VAWT Aeroacoustics Project Presentation">
@@ -2298,7 +2302,7 @@
 
 
     <!-- Shared navigation script -->
-    <script src="../js/navigation.js"></script>
+    <script src="../js/navigation.js" defer></script>
 
 </body>
 
