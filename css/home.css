@@ -649,3 +649,13 @@
     }
 
 }
+
+.home-hero-links {
+    margin-top: 22px;
+}
+
+.home-hero-links a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

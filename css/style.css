@@ -1009,8 +1009,9 @@ p {
     }
 
 
-    .nav-links a:last-child {
-        display: none;
+    .site-nav {
+        flex-wrap: wrap;
+        gap: 16px;
     }
 
 
@@ -1104,4 +1105,34 @@ p {
         min-height: 500px;
     }
 
+}
+
+/* Keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+iframe:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    z-index: 1000;
+    padding: 10px 16px;
+    background: var(--text);
+    color: #fff;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+    color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }
