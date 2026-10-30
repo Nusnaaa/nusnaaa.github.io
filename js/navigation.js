@@ -11,7 +11,7 @@
                 <a href="${prefix}index.html">Home</a>
                 <a href="${prefix}projects.html">Projects</a>
                 <a href="${prefix}cv.html">CV</a>
-                <a href="https://github.com/Nusnaaa">GitHub</a>
+                <a href="https://github.com/Nusnaaa" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="${prefix}index.html#contact">Contact</a>
             </div>
         </nav>`;
