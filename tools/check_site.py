@@ -3,7 +3,6 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
-import hashlib
 import json
 import re
 import subprocess
@@ -22,6 +21,7 @@ class Page(HTMLParser):
         self.errors = []
         self.editorial_depth = None
         self.editorial = []
+        self.text = []
         self.main_count = 0
         self.h1_count = 0
         self.images = 0
@@ -50,6 +50,7 @@ class Page(HTMLParser):
             self.stack.pop()
 
     def handle_data(self, data):
+        self.text.append(data)
         if self.editorial_depth: self.editorial.append(data)
 
 
@@ -87,9 +88,33 @@ def check():
     assert not (ROOT/'projects/aircraft-design.html').exists()
     for path in [*ROOT.glob('*.html'), *ROOT.glob('projects/*.html'), *ROOT.glob('js/*.js'), *ROOT.glob('css/*.css')]:
         assert 'aircraft-design.html' not in path.read_text(), path
-    uas = (ROOT/'projects/uas.html').read_bytes()
-    blob = hashlib.sha1(b'blob '+str(len(uas)).encode()+b'\0'+uas).hexdigest()
-    assert blob == '8bc70dd14e66c34681a6db7aea5361f7e30175de', 'UAS was modified'
+    # November owner approval replaces the old immutable UAS blob guard.
+    # Protect the authorised progress facts, provisional status and private evidence.
+    uas_page = pages[(ROOT/'projects/uas.html').resolve()]
+    uas = ' '.join(' '.join(uas_page.text).split())
+    for fact in [
+        'Project Twilight', 'preliminary sizing', 'initial CAD model', 'September 2026',
+        '15.65 m/s', '20 m/s', '30–60 minutes', '120 m',
+        'These are design inputs and objectives, not demonstrated aircraft performance.',
+        'Zenotech has provided access to computational resources to support planned CFD investigations',
+        'Detailed aerodynamic validation, final propulsion selection, manufacture and flight testing remain future work.',
+    ]:
+        assert fact in uas, f'UAS progress safeguard missing: {fact}'
+    assert {'current-progress', 'preliminary-sizing-targets', 'planned-development'} <= uas_page.ids
+    assert len(uas.split()) < 350, 'Keep UAS a short progress update'
+    assert not re.search(r'\b(?:\d+(?:\.\d+)?\s*kg|MTOW|\d+\s*cameras?|sponsor(?:ship|ed)?|official partner|completed CFD|flight-ready)\b', uas, re.I), 'Unsettled/unsupported UAS claim'
+    public_paths = subprocess.check_output(
+        ['git', 'ls-files', '--cached', '--others', '--exclude-standard'], cwd=ROOT
+    ).decode().splitlines()
+    for name in public_paths:
+        path = Path(name)
+        assert '.codex-handover' not in path.parts, f'Private handover exposed: {name}'
+        assert path.name not in {'project journal', 'sizing_sheet.xlsx', 'owner-procurement-sop-statement.txt'}, f'Private source exposed: {name}'
+        assert 'HANDOVER' not in path.name, f'Private handover exposed: {name}'
+    for page in pages.values():
+        for ref in page.refs:
+            decoded = unquote(urlsplit(ref).path)
+            assert not any(token in decoded for token in ['.codex-handover', 'sizing_sheet.xlsx', 'project journal', 'owner-procurement-sop-statement']), f'Private evidence linked: {ref}'
     home = (ROOT/'index.html').read_text()
     assert len(re.findall(r'<section\b', home)) == 4
     cv = (ROOT/'cv.html').read_text()
@@ -101,11 +126,24 @@ def check():
     for doc in content['documents']:
         path = ROOT/'assets/documents'/doc['filename']
         assert path.read_bytes().startswith(b'%PDF-'), path
+    for phrase in ['procurement-wide standard operating procedures', 'tacit process knowledge',
+                   'intended to help new starters', 'version-controlled updates',
+                   "Nando's", 'September 2023–August 2026', 'CAIE A-levels',
+                   'Courtney House Learning Centre', '2019–2020']:
+        assert phrase in cv, f'CV evidence missing: {phrase}'
+    assert 'Physics <strong>A</strong> · Chemistry <strong>B</strong> · Mathematics <strong>B</strong>' in cv
+    for doc in content['documents']:
+        evidence = json.dumps(doc, ensure_ascii=False)
+        for phrase in ['procurement-wide standard operating procedures', "Nando's",
+                       'September 2023–August 2026', 'CAIE A-levels',
+                       'Physics A · Chemistry B · Mathematics B']:
+            assert phrase in evidence, f'{doc["filename"]}: missing {phrase}'
     assert not subprocess.check_output(['git', 'ls-files', '.codex-handover/'], cwd=ROOT)
-    for path in ['.codex-handover/PORTFOLIO_REFINEMENT_CODEX_HANDOVER_2026-10-30.md', '.codex-handover/PORTFOLIO_CODEX_HANDOVER_READY_TO_COPY_2026-10-30.zip']:
+    # Check the directory policy, independently of a particular handover filename.
+    for path in ['.codex-handover/ignore-check.md', '.codex-handover/ignore-check.zip', '.codex-handover/sources/ignore-check.xlsx']:
         subprocess.run(['git', 'check-ignore', '-q', path], cwd=ROOT, check=True)
     assert not errors, '\n'.join(errors)
-    print(f'PASS: {len(pages)} HTML pages parsed, {checked} relative references checked; CV order, homepage sections, overview lengths, PDFs, UAS hash and ignored handovers verified.')
+    print(f'PASS: {len(pages)} HTML pages parsed, {checked} relative references checked; CV order, homepage sections, overview lengths, PDFs, provisional UAS claims and source privacy verified.')
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="Cartography UAS project by Linus Adzanku."
+        content="Project Twilight: preliminary fixed-wing UAS design for cartography, initial CAD and sizing targets. CFD validation and flight testing remain future work."
     >
 
     <title>Cartography UAS | Linus Adzanku</title>
@@ -18,12 +18,14 @@
 
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Navigation -->
     <div id="navigation"></div>
+    <noscript><nav class="fallback-nav" aria-label="Main navigation"><a href="../index.html">Home</a> · <a href="../projects.html">Projects</a> · <a href="../cv.html">CV</a> · <a href="../index.html#contact">Contact</a></nav></noscript>
 
 
-    <main class="project-page">
+    <main id="main-content" tabindex="-1" class="project-page">
 
         <header class="project-header">
 
@@ -36,76 +38,27 @@
             </h1>
 
             <p class="project-summary">
-                Design and development of an unmanned aircraft system from
-                first principles, covering aerodynamic, mechanical, electrical
-                and embedded systems design.
+                Project Twilight — preliminary design of a fixed-wing aircraft for mapping and surveying.
             </p>
 
         </header>
 
 
-        <section class="project-section">
-
-            <h2>
-                Project in Development
-            </h2>
-
-            <p>
-                This project is currently under active development.
-            </p>
-
-            <p>
-                The full project page will document the aircraft requirements,
-                conceptual and preliminary design, propulsion system,
-                mechanical design, electronics, embedded systems, manufacture,
-                ground testing and flight testing as development progresses.
-            </p>
-
+        <section class="project-section" aria-labelledby="current-progress">
+            <h2 id="current-progress">Current Progress</h2>
+            <p>Progress record: journal through 28 October 2026.</p>
+            <p data-progress-copy>Project Twilight is a personal fixed-wing unmanned aircraft project intended for cartography and surveying. Development is currently centred on requirements, preliminary sizing and conceptual aircraft design. The configuration being explored uses a straight, unswept high wing, a conventional fuselage and tail, and propellers mounted beneath the wings. An initial CAD model was developed in September 2026 to visualise the arrangement and guide subsequent aerodynamic work.</p>
         </section>
 
-
-        <section class="project-section">
-
-            <h2>
-                Current Scope
-            </h2>
-
-            <ul>
-                <li>
-                    Aircraft requirements definition
-                </li>
-
-                <li>
-                    Conceptual configuration design
-                </li>
-
-                <li>
-                    Aerodynamic analysis
-                </li>
-
-                <li>
-                    Propulsion system selection and sizing
-                </li>
-
-                <li>
-                    Mechanical and structural design
-                </li>
-
-                <li>
-                    Electrical system architecture
-                </li>
-
-                <li>
-                    Embedded systems and flight-control development
-                </li>
-
-                <li>
-                    Manufacture, integration and testing
-                </li>
-            </ul>
-
+        <section class="project-section" aria-labelledby="preliminary-sizing-targets">
+            <h2 id="preliminary-sizing-targets">Preliminary Sizing Targets</h2>
+            <p data-progress-copy>A working sizing spreadsheet is being used to explore mission requirements and aerodynamic assumptions. Current preliminary targets are a cruise speed of 15.65 m/s, a maximum speed of 20 m/s, a mission duration of 30–60 minutes and a planned operating-altitude ceiling of 120 m. These are design inputs and objectives, not demonstrated aircraft performance. Estimates of lift-to-drag ratio, battery energy and system efficiency remain provisional as the design is refined.</p>
         </section>
 
+        <section class="project-section" aria-labelledby="planned-development">
+            <h2 id="planned-development">Planned Development</h2>
+            <p data-progress-copy>The initial approach is to develop the aeromechanical design around off-the-shelf electronics, with 3D printing under consideration for affordable prototyping. Zenotech has provided access to computational resources to support planned CFD investigations as the geometry matures. Detailed aerodynamic validation, final propulsion selection, manufacture and flight testing remain future work.</p>
+        </section>
 
         <section class="project-footer">
 
@@ -117,7 +70,7 @@
 
     </main>
     
-    <script src="../js/navigation.js"></script>
+    <script src="../js/navigation.js" defer></script>
 </body>
 
 </html>
