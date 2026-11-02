@@ -1,0 +1,21 @@
+/* Compact entry points; long-form technical reports keep their own styles. */
+.overview-page { width: calc(100% - 40px); max-width: 1000px; margin: auto; padding-top: 42px; }
+.overview-header h1 { font-size: clamp(2.2rem,5vw,3.8rem); letter-spacing: -.04em; }
+.overview-intro { max-width: 850px; font-size: 1.12rem; color: var(--text); }
+.overview-header .eyebrow { font-size: .75rem; margin-bottom: 20px; }
+.overview-hero { margin: 28px 0 36px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-small); overflow: hidden; }
+.overview-hero img { width: 100%; height: auto; max-height: 420px; object-fit: contain; }
+.overview-hero figcaption { padding: 14px 20px; }
+.overview-copy { max-width: 800px; margin: auto; }
+.overview-copy h2 { font-size: 1.45rem; margin-bottom: 16px; }
+.overview-section { padding: 24px 0 8px; border-top: 1px solid var(--border); }
+.overview-result { padding: 24px; margin-bottom: 28px; background: var(--surface); border-left: 4px solid var(--accent); }
+.overview-result p:last-child { margin-bottom: 0; }
+.overview-figure { margin: 28px 0; }
+.overview-figure img { width: 100%; max-height: 480px; object-fit: contain; background: #fff; }
+.overview-page figcaption { font-size: .85rem; color: var(--muted); line-height: 1.5; margin-top: 10px; }
+.overview-evidence { padding: 24px 0; border-top: 1px solid var(--border); }
+.overview-evidence ul { padding-left: 20px; }
+.overview-evidence li { margin-bottom: 12px; color: var(--muted); }
+.overview-evidence a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+@media(max-width: 550px) { .overview-page { padding-top: 30px; } .overview-result { padding: 20px; } }

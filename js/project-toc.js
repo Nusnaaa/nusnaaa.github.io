@@ -171,7 +171,9 @@
         toggle.setAttribute("aria-expanded", "true");
 
         if (isDrawerMode()) {
-            requestAnimationFrame(() => panel.focus());
+            requestAnimationFrame(() => {
+                if (toc.classList.contains("is-open")) panel.focus();
+            });
         }
     };
 
@@ -232,6 +234,9 @@
                 // The page still scrolls correctly if history is unavailable.
             }
 
+            // Continue keyboard reading at the chosen heading after closing the drawer.
+            if (!target.hasAttribute("tabindex")) target.tabIndex = -1;
+            target.focus({ preventScroll: true });
             if (isDrawerMode()) {
                 closeToc();
             }

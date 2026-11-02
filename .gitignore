@@ -1,0 +1,7 @@
+
+# Local Codex handovers
+/.codex-handover/
+
+# Python validation/build artefacts
+__pycache__/
+*.pyc

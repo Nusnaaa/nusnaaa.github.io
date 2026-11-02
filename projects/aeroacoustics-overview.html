@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAWT Aeroacoustics — Overview | Linus Adzanku</title>
+    <meta name="description" content="A concise account of transient Darrieus turbine CFD and FW-H acoustics, including the power-coefficient shortfall and model limitations.">
+    <link rel="canonical" href="https://nusnaaa.github.io/projects/aeroacoustics-overview.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VAWT Aeroacoustics — Overview | Linus Adzanku">
+    <meta property="og:description" content="A concise account of transient Darrieus turbine CFD and FW-H acoustics, including the power-coefficient shortfall and model limitations.">
+    <meta property="og:url" content="https://nusnaaa.github.io/projects/aeroacoustics-overview.html">
+    <meta property="og:image" content="https://nusnaaa.github.io/assets/images/aeroacoustics/geometry-rotor.png">
+    <meta property="og:image:alt" content="VAWT power-coefficient comparison with published reference results">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-overviews.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div id="navigation"></div>
+    <noscript><nav class="fallback-nav" aria-label="Main navigation"><a href="../index.html">Home</a> · <a href="../projects.html">Projects</a> · <a href="../cv.html">CV</a> · <a href="../index.html#contact">Contact</a></nav></noscript>
+    <main id="main-content" tabindex="-1" class="overview-page" data-project-overview>
+        <header class="overview-header"><p class="eyebrow">Individual MEng research project · 2025</p><h1>VAWT Aeroacoustics</h1>
+            <p class="overview-intro" data-editorial>How closely could I reproduce a published turbine simulation before extending it into acoustic prediction? This individual investigation used a three-bladed Darrieus vertical-axis wind turbine to connect transient aerodynamics with the reliability of the resulting noise estimates.</p>
+            <a class="button button-primary" href="aeroacoustics.html">Read the full technical case study →</a>
+        </header>
+        <figure class="overview-hero"><img src="../assets/images/aeroacoustics/geometry-rotor.png" alt="Three-bladed Darrieus rotor and circular rotating control region used as the basis of the CFD model" fetchpriority="high" width="542" height="477"><figcaption>Reference rotor geometry and rotating sub-domain. Source: Syawitri et al. (2020), as cited in the full report.</figcaption></figure>
+        <div class="overview-copy">
+            <section class="overview-result" aria-labelledby="section-0"><h2 id="section-0">Result and its limits</h2>
+                <p data-editorial>At a tip-speed ratio of 3.3 and a freestream velocity of 9 m/s, my predicted power coefficient was approximately 0.13, compared with approximately 0.27 in the reference study. The simulation reached periodic behaviour, but this substantial shortfall prevented a claim of quantitative agreement. The FW-H extension produced acoustic results at four receivers; reliable acoustic prediction was not established because the source flow remained insufficiently resolved.</p>
+</section>
+            <section class="overview-section" aria-labelledby="section-1"><h2 id="section-1">My role and method</h2>
+                <p data-editorial>I developed the computational domain, sliding-mesh model and refinement strategy in ANSYS Fluent, following the published Transition SST and Stress-Blended Eddy Simulation (SBES) approach. I used MATLAB for post-processing, including frequency-domain analysis of the acoustic receiver histories. The published work supplied the reference geometry and methodology; the model development, comparison and acoustic extension formed my own investigation.</p>
+                <p data-editorial>Transition SST treated the near-wall flow, while SBES permitted scale-resolving behaviour where the mesh supported it. The model combined a rotating core with a stationary far-field and local refinement around the blades. I compared power and vortex behaviour with reference results before interpreting the pressure histories through the Ffowcs Williams–Hawkings (FW-H) acoustic analogy.</p>
+</section>
+            <section class="overview-section" aria-labelledby="section-2"><h2 id="section-2">Engineering judgement</h2>
+                <p data-editorial>The main constraint was fidelity within the available computation. Local mesh resolution, time-step size, Courant number and numerical dissipation affected the transient structures that supplied the acoustic sources. A repeatable solution was useful for analysis, but did not demonstrate that those structures matched the physical flow. Acoustic spectra therefore had to be read alongside the aerodynamic discrepancy, rather than treated as independent evidence of accuracy.</p>
+</section>
+            <section class="overview-section" aria-labelledby="section-3"><h2 id="section-3">What I would change</h2>
+                <p data-editorial>I would treat aerodynamic replication as a gate before acoustic interpretation: run mesh and time-step sensitivity studies, compare both power and wake development, then select an acoustic sampling interval for the intended frequency range. Three-dimensional modelling and experimental microphone comparison remain future work. The full report preserves the setup, plots, references and negative findings so that these limitations can be assessed directly. This distinction between a converged calculation and a physically credible prediction became the central lesson: numerical output needs a traceable comparison before it can support an engineering claim.</p>
+</section>
+            <figure class="overview-figure"><img src="../assets/images/aeroacoustics/cp-comparison.png" alt="Power-coefficient history and comparison showing the simulation shortfall against reference results" loading="lazy" width="1920" height="1106"><figcaption>Power-coefficient comparison: the shortfall is a model limitation, not validation.</figcaption></figure>
+            <aside class="overview-evidence" aria-label="Project evidence"><h2>Explore the evidence</h2><ul>
+                <li><a href="aeroacoustics.html">Full technical case study, methods and references →</a></li>
+                <li><a href="../assets/documents/aeroacoustics/aeroacoustics-presentation.pdf">Original project presentation (PDF) →</a></li>
+            </ul></aside><p><a class="text-link" href="../projects.html">← All projects</a></p>
+        </div>
+    </main>
+    <footer class="site-footer"><p>Linus Adzanku · Aerospace Engineering</p><a href="../index.html#contact">Get in touch</a></footer>
+    <script src="../js/navigation.js" defer></script>
+</body>
+</html>

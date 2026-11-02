@@ -1,70 +1,49 @@
-const navigation = document.getElementById("navigation");
-
-if (navigation) {
-
-    // Project pages sit one directory below the root.
-    const isProjectPage =
-        window.location.pathname.includes("/projects/");
-
+(() => {
+    "use strict";
+    const navigation = document.getElementById("navigation");
+    if (!navigation) return;
+    const isProjectPage = window.location.pathname.includes("/projects/");
     const prefix = isProjectPage ? "../" : "";
-
     navigation.innerHTML = `
-
-        <nav class="site-nav">
-
-            <a class="site-logo" href="${prefix}index.html">
-                Linus Adzanku
-            </a>
-
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="site-logo" href="${prefix}index.html">Linus Adzanku</a>
             <div class="nav-links">
-
-                <a href="${prefix}projects.html">
-                    Projects
-                </a>
-
-                <a href="${prefix}cv.html">
-                    CV
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/linus-adzanku"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-
+                <a href="${prefix}index.html">Home</a>
+                <a href="${prefix}projects.html">Projects</a>
+                <a href="${prefix}cv.html">CV</a>
+                <a href="https://github.com/Nusnaaa" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="${prefix}index.html#contact">Contact</a>
             </div>
+        </nav>`;
 
-        </nav>
-
-    `;
-
-    /*
-       Project-page table of contents
-       --------------------------------
-       Only project pages load these two files. Root pages such as
-       index.html, projects.html, about.html and cv.html never request
-       them, so the feature remains completely project-specific.
-    */
-    if (isProjectPage) {
-
-        if (!document.querySelector('link[data-project-toc-styles]')) {
-            const tocStyles = document.createElement("link");
-
-            tocStyles.rel = "stylesheet";
-            tocStyles.href = `${prefix}css/project-toc.css`;
-            tocStyles.dataset.projectTocStyles = "";
-
-            document.head.appendChild(tocStyles);
-        }
-
-        if (!document.querySelector('script[data-project-toc-script]')) {
-            const tocScript = document.createElement("script");
-
-            tocScript.src = `${prefix}js/project-toc.js`;
-            tocScript.dataset.projectTocScript = "";
-
-            document.body.appendChild(tocScript);
+    // Supply a skip link on the owner-maintained UAS page without editing its HTML.
+    const main = document.querySelector("main");
+    if (main) {
+        if (!main.id) main.id = "main-content";
+        if (!main.hasAttribute("tabindex")) main.tabIndex = -1;
+        if (!document.querySelector(".skip-link")) {
+            const skip = document.createElement("a");
+            skip.className = "skip-link";
+            skip.href = `#${main.id}`;
+            skip.textContent = "Skip to main content";
+            document.body.prepend(skip);
         }
     }
-}
+
+    // Overview pages are intentionally short and do not need the report TOC.
+    if (isProjectPage && !document.querySelector("[data-project-overview]")) {
+        if (!document.querySelector("link[data-project-toc-styles]")) {
+            const styles = document.createElement("link");
+            styles.rel = "stylesheet";
+            styles.href = `${prefix}css/project-toc.css`;
+            styles.dataset.projectTocStyles = "";
+            document.head.appendChild(styles);
+        }
+        if (!document.querySelector("script[data-project-toc-script]")) {
+            const script = document.createElement("script");
+            script.src = `${prefix}js/project-toc.js`;
+            script.dataset.projectTocScript = "";
+            document.body.appendChild(script);
+        }
+    }
+})();
